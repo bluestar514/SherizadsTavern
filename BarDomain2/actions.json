@@ -1,0 +1,95 @@
+{
+	"fileName":"actions.json",
+	"actions":[
+		{
+			"name" : "LEARNINFORMATION",
+			"intent" : {
+					"category": "directed information",
+					"type": "knows",
+					"first": "initiator",
+					"second": "responder",
+					"intentType": true
+				},
+			"conditions" : [],
+			"influenceRules" : [],
+			"leadsTo" : ["askforInformation"]
+		},{
+			"name" : "askforInformation",
+			"conditions" : [],
+			"displayName" : "Ask for Information",
+			"influenceRules" : [],
+			"effects" : [{
+				"category" : "directed information",
+				"type" : "knows",
+				"first" : "initiator",
+				"second" : "responder",
+				"value": true	
+			}]
+		},
+
+		{
+			"name" : "SHAREINFORMATION",
+			"intent" : {
+				"category" : "feeling",
+				"type"  : "sharability",
+				"intentType" : true,
+				"first" : "initiator",
+				"second" : "responder"
+			},
+			"conditions" : [],
+			"influenceRules" : [],
+			"leadsTo" : ["shareInformation"]
+		},{
+			"name" : "shareInformation",
+			"conditions" : [],
+			"displayName" : "Share Information",
+			"influenceRules" : [],
+			"effects" : [
+			{
+				"category" : "feeling",
+				"type" : "friendship",
+				"first" : "initiator",
+				"second" : "responder",
+				"operator" : "+",
+				"value" : 10	
+			}]
+		},
+
+
+		{
+			"name" : "INCREASEFRIENDSHIP",
+			"intent" : {
+				"category" : "feeling",
+				"type"  : "friendship",
+				"intentType" : true,
+				"first" : "initiator",
+				"second" : "responder"
+			},
+			"conditions" : [],
+			"influenceRules" : [],
+			"leadsTo" : ["SmallTalk"]
+		},
+		{
+			"name" : "SmallTalk",
+			"conditions" : [],
+			"displayName" : "Small Talk",
+			"influenceRules" : [],
+			"effects" : [{
+				"category" : "feeling",
+				"type" : "friendship",
+				"first" : "responder",
+				"second" : "initiator",
+				"operator" : "+",
+				"value" : 10	
+			},
+			{
+				"category" : "feeling",
+				"type" : "friendship",
+				"first" : "initiator",
+				"second" : "responder",
+				"operator" : "+",
+				"value" : 10	
+			}]
+		}
+	]
+}

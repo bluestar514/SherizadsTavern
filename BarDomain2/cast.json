@@ -1,0 +1,19 @@
+{"cast":
+	{
+	"barkeep"	:{"name": "Barkeep"},
+	"alicia"	:{"name": "Alicia"},
+	"marco"		:{"name": "Marco"},
+	"rayne"		:{"name": "Rayne"},
+	"alicia runs clinic"			: {"name": "alicia runs clinic"},
+	"marco paints"					: {"name": "marco paints"},
+	"marco naps"					: {"name": "marco naps"},
+	"alicia is overworked"			: {"name": "alicia is overworked"},
+	"the clinic is busy"			: {"name": "the clinic is busy"},
+	"alicia collects lots of herbs"	: {"name": "alicia collects lots of herbs"},
+	"alicia treats patients"		: {"name": "alicia treats patients"},
+	"rayne has no money"			: {"name": "rayne has no money"},
+	"rayne sold her necklace"		: {"name": "rayne sold her necklace"},
+	"rayne made money"				: {"name": "rayne made money"},
+	"rayne did not steal"			: {"name": "rayne did not steal"}
+	}
+}

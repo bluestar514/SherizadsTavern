@@ -1,0 +1,426 @@
+{"history":[
+	{"pos": 0,
+		"data": [
+			{
+				"category" 	: "entity type",
+				"type"		: "person",
+				"first"		: "barkeep",
+				"value" 	: true
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "barkeep",
+				"second"	: "alicia",
+				"value"		: 25
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "barkeep",
+				"second"	: "marco",
+				"value"		: 75
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "barkeep",
+				"second"	: "rayne",
+				"value"		: -25
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "barkeep",
+				"second"	: "rayne has no money",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "barkeep",
+				"second"	: "rayne has no money",
+				"value"		: -10
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "person",
+				"first"		: "alicia",
+				"value" 	: true
+			},{
+				"category"	: "relation",
+				"type"		: "family",
+				"first"		: "alicia",
+				"second"	: "marco",
+				"value"		: true
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "alicia",
+				"second"	: "barkeep",
+				"value"		: 25
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "alicia",
+				"second"	: "marco",
+				"value"		: 75
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "alicia",
+				"second"	: "rayne",
+				"value"		: -25
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "alicia",
+				"second"	: "rayne has no money",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "alicia",
+				"second"	: "rayne has no money",
+				"value"		: -10
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "alicia",
+				"second"	: "alicia runs clinic",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "alicia",
+				"second"	: "alicia runs clinic",
+				"value"		: 5
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "alicia",
+				"second"	: "alicia collects lots of herbs",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "alicia",
+				"second"	: "alicia collects lots of herbs",
+				"value"		: 5
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "alicia",
+				"second"	: "alicia treats patients",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "alicia",
+				"second"	: "alicia treats patients",
+				"value"		: 5
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "alicia",
+				"second"	: "the clinic is busy",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "alicia",
+				"second"	: "the clinic is busy",
+				"value"		: -5
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "person",
+				"first"		: "marco",
+				"value" 	: true
+			},{
+				"category"	: "relation",
+				"type"		: "family",
+				"first"		: "marco",
+				"second"	: "alicia",
+				"value"		: true
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "marco",
+				"second"	: "barkeep",
+				"value"		: 75
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "marco",
+				"second"	: "alicia",
+				"value"		: 75
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "marco",
+				"second"	: "rayne",
+				"value"		: -25
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "marco",
+				"second"	: "rayne has no money",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "marco",
+				"second"	: "rayne has no money",
+				"value"		: -25
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "marco",
+				"second"	: "alicia runs clinic",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "marco",
+				"second"	: "alicia runs clinic",
+				"value"		: 25
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "marco",
+				"second"	: "alicia collects lots of herbs",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "marco",
+				"second"	: "alicia collects lots of herbs",
+				"value"		: -5
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "marco",
+				"second"	: "alicia treats patients",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "marco",
+				"second"	: "alicia treats patients",
+				"value"		: 15
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "marco",
+				"second"	: "the clinic is busy",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "marco",
+				"second"	: "the clinic is busy",
+				"value"		: 5
+			},
+
+
+			{
+				"category" 	: "entity type",
+				"type"		: "person",
+				"first"		: "rayne",
+				"value" 	: true
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "rayne",
+				"second"	: "barkeep",
+				"value"		: -25
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "rayne",
+				"second"	: "alicia",
+				"value"		: 0
+			},{
+				"category"	: "feeling",
+				"type"		: "friendship",
+				"first"		: "rayne",
+				"second"	: "marco",
+				"value"		: 25
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "rayne",
+				"second"	: "rayne sold her necklace",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "rayne",
+				"second"	: "rayne sold her necklace",
+				"value"		: 0
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "rayne",
+				"second"	: "rayne made money",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "rayne",
+				"second"	: "rayne made money",
+				"value"		: 75
+			},{
+				"category" 	: "directed information",
+				"type"		: "knows",
+				"first"		: "rayne",
+				"second"	: "rayne did not steal",
+				"value"		: true
+			},{
+				"category" 	: "feeling",
+				"type"		: "opinion",
+				"first"		: "rayne",
+				"second"	: "rayne did not steal",
+				"value"		: 100
+			},
+
+
+
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "alicia runs clinic",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "alicia runs clinic",
+				"second"	: "alicia",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "marco paints",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "marco paints",
+				"second"	: "marco",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "marco naps",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "marco naps",
+				"second"	: "marco",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "alicia is overworked",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "alicia is overworked",
+				"second"	: "alicia",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "the clinic is busy",
+				"value" 	: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "alicia collects lots of herbs",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "alicia collects lots of herbs",
+				"second"	: "alicia",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "alicia treats patients",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "alicia treats patients",
+				"second"	: "alicia",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "rayne has no money",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "rayne has no money",
+				"second"	: "rayne",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "rayne sold her necklace",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "rayne sold her necklace",
+				"second"	: "rayne",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "rayne made money",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "rayne made money",
+				"second"	: "rayne",
+				"value"		: true
+			},
+
+			{
+				"category" 	: "entity type",
+				"type"		: "information",
+				"first"		: "rayne did not steal",
+				"value" 	: true
+			},{
+				"category"	: "directed information",
+				"type"		: "subject",
+				"first"		: "rayne did not steal",
+				"second"	: "rayne",
+				"value"		: true
+			}
+		]
+	}
+]}

@@ -1,0 +1,56 @@
+{
+	"schema": [
+		{
+			"actionable": false,
+			"directionType": "undirected",
+			"isBoolean": true,
+			"cloneEachTimeStep": true,
+			"category": "entity type",
+			"types": [
+				"person",
+				"information"
+			],
+			"defaultValue": false
+		},
+		{
+			"actionable": true,
+			"directionType": "directed",
+			"isBoolean": true,
+			"cloneEachTimeStep": true,
+			"category": "directed information",
+			"types": [
+				"subject",
+				"knows"
+			],
+			"defaultValue": false
+		},
+		{
+			"actionable": true,
+			"directionType": "directed",
+			"isBoolean": true,
+			"cloneEachTimeStep": true,
+			"category": "relation",
+			"types": [
+				"family",
+				"works with",
+				"opinionof"
+			],
+			"defaultValue": false
+		},
+		{
+			"actionable": true,
+			"directionType": "directed",
+			"isBoolean": false,
+			"cloneEachTimeStep": true,
+			"category": "feeling",
+			"types": [
+				"friendship",
+				"sharability",
+				"opinion"
+			],
+			"defaultValue": 0,
+			"maxValue": 100,
+			"minValue": -100
+		}
+	]
+}

@@ -1,0 +1,409 @@
+{
+	"fileName": "volitions",
+	"type": "volition",
+	"rules": [
+		{
+			"name": "People want to know new things",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"value": true,
+					"second": "information"
+				},
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "other",
+					"value": false,
+					"second": "information"
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "other",
+					"second": "information",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_1",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People want to know about their friends",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "friend",
+					"value": true
+				},
+				{
+					"category": "feeling",
+					"type": "friendship",
+					"first": "someone",
+					"value": 24,
+					"operator": ">",
+					"second": "friend"
+				},
+				{
+					"category": "directed information",
+					"type": "subject",
+					"first": "information",
+					"value": true,
+					"second": "friend"
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"second": "information",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_2",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People want dirt on their enemies",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "enemy",
+					"value": true
+				},
+				{
+					"category": "feeling",
+					"type": "friendship",
+					"first": "someone",
+					"value": -24,
+					"operator": "<",
+					"second": "enemy"
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				},
+				{
+					"category": "directed information",
+					"type": "subject",
+					"first": "information",
+					"value": true,
+					"second": "enemy"
+				}
+			],
+			"effects": [
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"second": "information",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_3",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People like to talk about their friends",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "friend",
+					"value": true
+				},
+				{
+					"category": "feeling",
+					"type": "friendship",
+					"first": "someone",
+					"value": 24,
+					"operator": ">",
+					"second": "friend"
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				},
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"value": true,
+					"second": "information"
+				},
+				{
+					"category": "directed information",
+					"type": "subject",
+					"first": "information",
+					"value": true,
+					"second": "friend"
+				}
+			],
+			"effects": [
+				{
+					"category": "feeling",
+					"type": "sharability",
+					"first": "someone",
+					"second": "information",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_4",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People don't want to listen to things they already know",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"value": true,
+					"second": "information"
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"second": "information",
+					"weight": -5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_5",
+			"type": "volition"
+		},
+		{
+			"name": "People want to spill dirt on their enemies",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "enemy",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				},
+				{
+					"category": "feeling",
+					"type": "friendship",
+					"first": "someone",
+					"value": -24,
+					"operator": "<",
+					"second": "enemy"
+				},
+				{
+					"category": "directed information",
+					"type": "subject",
+					"first": "information",
+					"value": true,
+					"second": "enemy"
+				}
+			],
+			"effects": [
+				{
+					"category": "feeling",
+					"type": "sharability",
+					"first": "someone",
+					"second": "information",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_6",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People can't share what they don't know",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"value": false,
+					"second": "information"
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "feeling",
+					"type": "sharability",
+					"first": "someone",
+					"second": "information",
+					"weight": -10,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_7",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People are friendly",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "feeling",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_8",
+			"type": "volition",
+			"isActive": true
+		},
+		{
+			"name": "People are gossips",
+			"conditions": [
+				{
+					"category": "entity type",
+					"type": "person",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "entity type",
+					"type": "information",
+					"first": "information",
+					"value": true
+				},
+				{
+					"category": "directed information",
+					"type": "knows",
+					"first": "someone",
+					"value": true,
+					"second": "information"
+				}
+			],
+			"effects": [
+				{
+					"category": "feeling",
+					"type": "sharability",
+					"first": "someone",
+					"second": "information",
+					"weight": 2,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_9",
+			"type": "volition"
+		}
+	]
+}
