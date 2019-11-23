@@ -1,1 +1,13 @@
-{"history":[]}
+{"history":[
+  {"pos": 0,
+		"data": [
+      {
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "Barkeep",
+        "second" : "Marco",
+        "value" : 5
+      }
+    ]
+  }
+]}

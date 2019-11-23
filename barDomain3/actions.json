@@ -1,1 +1,55 @@
-{"fileName":"actions.json","actions":[]}
+{"fileName":"actions.json",
+  "actions":[
+    {
+      "name" : "INCREASEFRIENDSHIP",
+      "intent" : {
+          "category": "RelationshipReciprocal",
+          "type": "friendship",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["GREET"]
+    },
+    {
+			"name" : "GREET",
+			"conditions" : [],
+			"influenceRules" : [],
+			"leadsTo" : ["greetSuccess", "greetFail"]
+		},
+		{
+			"name" : "greetSuccess",
+			"conditions" : [],
+			"displayName" : "Weight Lift <SUCCESS>",
+			"influenceRules" : [],
+      "isAccept" : true,
+			"effects" : [{
+				"category" : "RelationshipReciprocal",
+				"type" : "friendship",
+				"first" : "initiator",
+        "second": "responder",
+				"operator" : "+",
+				"value" : 1
+			}]
+		},
+		{
+			"name" : "greetFail",
+			"displayName" : "Weight Lift <FAIL>",
+			"conditions" : [],
+			"influenceRules" : [],
+      "isAccept" : false,
+			"effects" : [{
+				"category" : "RelationshipReciprocal",
+				"type" : "friendship",
+				"first" : "initiator",
+        "second": "responder",
+				"operator" : "-",
+				"value" : 1
+			}]
+		}
+
+
+  ]
+}

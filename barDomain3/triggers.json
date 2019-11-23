@@ -1,0 +1,106 @@
+{
+	"fileName": "triggers",
+	"type": "trigger",
+	"rules": [
+		{
+			"name": "People who are good friends become BEST friends",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 8,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialTitlesReciprocal",
+					"type": "bestfriends",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"origin": "triggers",
+			"id": "triggerRules_8",
+			"type": "trigger"
+		},
+		{
+			"name": "People who are enemies become MORTAL enemies",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": -8,
+					"operator": "<"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialTitlesReciprocal",
+					"type": "mortalenemies",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"origin": "triggers",
+			"id": "triggerRules_9",
+			"type": "trigger"
+		},
+		{
+			"name": "Those you respect you consider your mentor",
+			"conditions": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"value": 8,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialTitlesDirected",
+					"type": "mentor",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"origin": "triggers",
+			"id": "triggerRules_10",
+			"type": "trigger"
+		},
+		{
+			"name": "Those you do not respect you consider a fool",
+			"conditions": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"value": -8,
+					"operator": "<"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialTitlesDirected",
+					"type": "fool",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"origin": "triggers",
+			"id": "triggerRules_11",
+			"type": "trigger"
+		}
+	]
+}

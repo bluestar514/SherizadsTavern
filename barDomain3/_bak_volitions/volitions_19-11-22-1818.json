@@ -1,0 +1,157 @@
+{
+	"fileName": "volitions",
+	"type": "volition",
+	"rules": [
+		{
+			"name": "People want to be better friends with their friends",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 2,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_1",
+			"type": "volition"
+		},
+		{
+			"name": "People want those they respect to like them",
+			"conditions": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"value": 3
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_2",
+			"type": "volition"
+		},
+		{
+			"name": "People don't want to be friendly with those that have insulted them",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "insulted",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": false
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_3",
+			"type": "volition"
+		},
+		{
+			"name": "People like those who compliment them",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "complimented",
+					"first": "Beth",
+					"second": "Rehaf",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "Beth",
+					"second": "Rehaf",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_4",
+			"type": "volition"
+		},
+		{
+			"name": "People don't respect those that give bad advice",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "badadvice",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": false
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_5",
+			"type": "volition"
+		},
+		{
+			"name": "People do respect those that give good advice",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_6",
+			"type": "volition"
+		}
+	]
+}
