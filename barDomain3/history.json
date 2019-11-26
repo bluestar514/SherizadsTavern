@@ -7,6 +7,31 @@
         "first" : "Barkeep",
         "second" : "Marco",
         "value" : 5
+      },
+      {
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "Barkeep",
+        "second" : "Jasper",
+        "value" : -5
+      },
+      {
+        "category" : "Traits",
+        "type" :"anyone",
+        "first" : "Barkeep",
+        "value": true
+      },
+      {
+        "category" : "Traits",
+        "type" :"anyone",
+        "first" : "Marco",
+        "value": true
+      },
+      {
+        "category" : "Traits",
+        "type" :"anyone",
+        "first" : "Jasper",
+        "value": true
       }
     ]
   }

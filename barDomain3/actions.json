@@ -22,7 +22,7 @@
 		{
 			"name" : "greetSuccess",
 			"conditions" : [],
-			"displayName" : "Weight Lift <SUCCESS>",
+			"displayName" : "Greet <SUCCESS>",
 			"influenceRules" : [],
       "isAccept" : true,
 			"effects" : [{
@@ -36,7 +36,7 @@
 		},
 		{
 			"name" : "greetFail",
-			"displayName" : "Weight Lift <FAIL>",
+			"displayName" : "Greet <FAIL>",
 			"conditions" : [],
 			"influenceRules" : [],
       "isAccept" : false,
@@ -48,7 +48,135 @@
 				"operator" : "-",
 				"value" : 1
 			}]
+		},
+
+    {
+      "name" : "INSULTOTHERS",
+      "intent" : {
+          "category": "SocialRecord",
+          "type": "insulted",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["insult"]
+    },
+    {
+      "name" : "insult",
+      "conditions" : [],
+      "displayName" : "Insult",
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "SocialRecord",
+        "type" : "insulted",
+        "first" : "initiator",
+        "second": "responder",
+        "value" : true
+      },
+      {
+       "category" : "RelationshipReciprocal",
+       "type" : "friendship",
+       "first" : "initiator",
+        "second": "responder",
+       "operator" : "-",
+       "value" : 1}]
+    },
+
+      {
+      "name" : "COMPLIMENTOTHERS",
+      "intent" : {
+          "category": "SocialRecord",
+          "type": "complimented",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["compliment"]
+    },
+    {
+      "name" : "compliment",
+      "conditions" : [],
+      "displayName" : "compliment",
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "SocialRecord",
+        "type" : "complimented",
+        "first" : "initiator",
+        "second": "responder",
+        "value" : true
+      },
+      {
+       "category" : "RelationshipReciprocal",
+       "type" : "friendship",
+       "first" : "initiator",
+        "second": "responder",
+       "operator" : "+",
+       "value" : 1}]
+    },
+
+    {
+      "name" : "BEAGOSSIP",
+      "intent" : {
+          "category": "InternalValues",
+          "type": "gossip",
+          "first": "initiator",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["ASKABOUT"]
+    },
+    {
+      "name" : "ASKABOUT",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["askaboutday", "askaboutfamily", "askaboutbusiness"]
+    },
+    {
+			"name" : "askaboutday",
+			"displayName" : "Ask About Day",
+			"conditions" : [],
+			"influenceRules" : [],
+			"effects" : [{
+				"category" : "RelationshipReciprocal",
+				"type" : "friendship",
+				"first" : "initiator",
+        "second": "responder",
+				"operator" : "+",
+				"value" : 1
+			}]
+		},{
+			"name" : "askaboutfamily",
+			"displayName" : "Ask About Family",
+			"conditions" : [],
+			"influenceRules" : [],
+			"effects" : [{
+				"category" : "RelationshipReciprocal",
+				"type" : "friendship",
+				"first" : "initiator",
+        "second": "responder",
+				"operator" : "+",
+				"value" : 1
+			}]
+		},{
+			"name" : "askaboutbusiness",
+			"displayName" : "Ask About Business",
+			"conditions" : [],
+			"influenceRules" : [],
+			"effects" : [{
+				"category" : "RelationshipReciprocal",
+				"type" : "friendship",
+				"first" : "initiator",
+        "second": "responder",
+				"operator" : "+",
+				"value" : 1
+			}]
 		}
+
 
 
   ]

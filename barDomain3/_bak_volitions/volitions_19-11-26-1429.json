@@ -243,36 +243,6 @@
 			"origin": "volitions",
 			"id": "volitionRules_13",
 			"type": "volition"
-		},
-		{
-			"name": "Everyone is a gossip [[TESTING]]",
-			"conditions": [
-				{
-					"category": "Traits",
-					"type": "anyone",
-					"first": "someone",
-					"value": true
-				},
-				{
-					"category": "Traits",
-					"type": "anyone",
-					"first": "other",
-					"value": true
-				}
-			],
-			"effects": [
-				{
-					"category": "InternalValues",
-					"type": "gossip",
-					"first": "someone",
-					"second": "other",
-					"weight": 5,
-					"intentType": true
-				}
-			],
-			"origin": "volitions",
-			"id": "volitionRules_15",
-			"type": "volition"
 		}
 	]
 }

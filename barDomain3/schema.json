@@ -76,6 +76,19 @@
 				"fool"
 			],
 			"defaultValue": false
+		},
+		{
+			"actionable": true,
+			"directionType": "directed",
+			"isBoolean": false,
+			"cloneEachTimeStep": true,
+			"category": "InternalValues",
+			"types": [
+				"gossip"
+			],
+			"defaultValue": 0,
+			"maxValue": 10,
+			"minValue": 0
 		}
 	]
 }
