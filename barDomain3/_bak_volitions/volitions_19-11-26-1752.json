@@ -323,31 +323,6 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_16",
-			"type": "volition"
-		},
-		{
-			"name": "People Try to give advice to those who complain",
-			"conditions": [
-				{
-					"category": "SocialRecord",
-					"type": "complainedto",
-					"first": "someone",
-					"second": "other",
-					"value": true
-				}
-			],
-			"effects": [
-				{
-					"category": "SocialRecord",
-					"type": "goodadvice",
-					"first": "someone",
-					"second": "other",
-					"weight": 5,
-					"intentType": true
-				}
-			],
-			"origin": "volitions",
 			"id": "volitionRules_17",
 			"type": "volition"
 		}

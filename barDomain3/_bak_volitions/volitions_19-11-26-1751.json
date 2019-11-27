@@ -25,7 +25,7 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_1",
+			"id": "volitionRules_5",
 			"type": "volition"
 		},
 		{
@@ -50,7 +50,7 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_2",
+			"id": "volitionRules_6",
 			"type": "volition"
 		},
 		{
@@ -75,7 +75,7 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_3",
+			"id": "volitionRules_7",
 			"type": "volition"
 		},
 		{
@@ -100,7 +100,7 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_4",
+			"id": "volitionRules_8",
 			"type": "volition"
 		},
 		{
@@ -125,7 +125,7 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_5",
+			"id": "volitionRules_9",
 			"type": "volition"
 		},
 		{
@@ -150,11 +150,11 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_6",
+			"id": "volitionRules_10",
 			"type": "volition"
 		},
 		{
-			"name": "People enjoy gossip",
+			"name": "People enjoy gossip (But don't respect them)",
 			"conditions": [
 				{
 					"category": "SocialRecord",
@@ -162,12 +162,52 @@
 					"first": "someone",
 					"second": "target of gossip",
 					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
 				}
 			],
 			"effects": [
 				{
 					"category": "RelationshipReciprocal",
 					"type": "friendship",
+					"first": "other",
+					"second": "someone",
+					"weight": 5,
+					"intentType": true
+				},
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "other",
+					"second": "someone",
+					"weight": 1,
+					"intentType": false
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_11",
+			"type": "volition"
+		},
+		{
+			"name": "People want to insult those they don't like",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": -3,
+					"operator": "<"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "insulted",
 					"first": "someone",
 					"second": "other",
 					"weight": 5,
@@ -175,7 +215,112 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_7",
+			"id": "volitionRules_12",
+			"type": "volition"
+		},
+		{
+			"name": "People want to compiment those they like ",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 3,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complimented",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_13",
+			"type": "volition"
+		},
+		{
+			"name": "Everyone is a gossip [[TESTING]]",
+			"conditions": [
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "InternalValues",
+					"type": "gossip",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_14",
+			"type": "volition"
+		},
+		{
+			"name": "People try to offer advice to their friends",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 4,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_15",
+			"type": "volition"
+		},
+		{
+			"name": "People kind of like to complain",
+			"conditions": [
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "someone",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecordUndirected",
+					"type": "complained",
+					"first": "someone",
+					"weight": 2,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_17",
 			"type": "volition"
 		}
 	]

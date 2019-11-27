@@ -27,22 +27,6 @@
 			"minValue": -10
 		},
 		{
-			"actionable": true,
-			"directionType": "directed",
-			"isBoolean": true,
-			"cloneEachTimeStep": true,
-			"duration": 3,
-			"category": "SocialRecord",
-			"types": [
-				"insulted",
-				"complimented",
-				"badadvice",
-				"goodadvice",
-				"gossipedabout"
-			],
-			"defaultValue": false
-		},
-		{
 			"actionable": false,
 			"directionType": "undirected",
 			"isBoolean": true,
@@ -89,6 +73,23 @@
 			"defaultValue": 0,
 			"maxValue": 10,
 			"minValue": 0
+		},
+		{
+			"actionable": true,
+			"directionType": "directed",
+			"isBoolean": true,
+			"cloneEachTimeStep": true,
+			"duration": 3,
+			"category": "SocialRecord",
+			"types": [
+				"insulted",
+				"complimented",
+				"badadvice",
+				"goodadvice",
+				"gossipedabout",
+				"complainedto"
+			],
+			"defaultValue": false
 		}
 	]
 }

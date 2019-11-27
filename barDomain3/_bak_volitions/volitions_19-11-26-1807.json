@@ -327,14 +327,15 @@
 			"type": "volition"
 		},
 		{
-			"name": "People Try to give advice to those who complain",
+			"name": "People don't want to accept advice from people they don't trust",
 			"conditions": [
 				{
-					"category": "SocialRecord",
-					"type": "complainedto",
+					"category": "RelationshipDirected",
+					"type": "respect",
 					"first": "someone",
 					"second": "other",
-					"value": true
+					"value": 4,
+					"operator": "<"
 				}
 			],
 			"effects": [
@@ -343,7 +344,7 @@
 					"type": "goodadvice",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": -10,
 					"intentType": true
 				}
 			],

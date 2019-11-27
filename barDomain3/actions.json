@@ -11,7 +11,7 @@
         },
       "conditions" : [],
       "influenceRules" : [],
-      "leadsTo" : ["GREET"]
+      "leadsTo" : ["GREET", "ASKABOUT"]
     },
     {
 			"name" : "GREET",
@@ -50,6 +50,13 @@
 			}]
 		},
 
+
+
+
+
+
+
+
     {
       "name" : "INSULTOTHERS",
       "intent" : {
@@ -84,7 +91,14 @@
        "value" : 1}]
     },
 
-      {
+
+
+
+
+
+
+
+    {
       "name" : "COMPLIMENTOTHERS",
       "intent" : {
           "category": "SocialRecord",
@@ -118,6 +132,10 @@
        "value" : 1}]
     },
 
+
+
+
+
     {
       "name" : "BEAGOSSIP",
       "intent" : {
@@ -128,13 +146,19 @@
         },
       "conditions" : [],
       "influenceRules" : [],
-      "leadsTo" : ["ASKABOUT"]
+      "leadsTo" : ["ASKABOUT", "TELLABOUT"]
     },
     {
       "name" : "ASKABOUT",
       "conditions" : [],
       "influenceRules" : [],
-      "leadsTo": ["askaboutday", "askaboutfamily", "askaboutbusiness"]
+      "leadsTo": ["ASKABOUTday", "ASKABOUTfamily", "ASKABOUTbusiness"]
+    },
+    {
+      "name" : "ASKABOUTday",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["askaboutday"]
     },
     {
 			"name" : "askaboutday",
@@ -149,7 +173,14 @@
 				"operator" : "+",
 				"value" : 1
 			}]
-		},{
+		},
+    {
+      "name" : "ASKABOUTfamily",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["askaboutfamily"]
+    },
+    {
 			"name" : "askaboutfamily",
 			"displayName" : "Ask About Family",
 			"conditions" : [],
@@ -162,7 +193,14 @@
 				"operator" : "+",
 				"value" : 1
 			}]
-		},{
+		},
+    {
+      "name" : "ASKABOUTbusiness",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["askaboutbusiness"]
+    },
+    {
 			"name" : "askaboutbusiness",
 			"displayName" : "Ask About Business",
 			"conditions" : [],
@@ -175,9 +213,220 @@
 				"operator" : "+",
 				"value" : 1
 			}]
-		}
+		},
+
+    {
+      "name" : "TELLABOUT",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["TELLABOUTgoodthing", "TELLABOUTbadthing", "TELLABOUTexcitingthing", "TELLABOUTobject", "TELLABOUTperson"]
+    },
+    {
+      "name" : "TELLABOUTgoodthing",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["tellAboutGoodThing"]
+    },
+    {
+      "name" : "tellAboutGoodThing",
+      "displayName" : "Tell About Good Thing",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "initiator",
+        "second": "responder",
+        "operator" : "+",
+        "value" : 1
+      }]
+    },
+    {
+      "name" : "TELLABOUTbadthing",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["tellAboutBadThing"]
+    },
+    {
+      "name" : "tellAboutBadThing",
+      "displayName" : "Tell About Bad Thing",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "initiator",
+        "second": "responder",
+        "operator" : "+",
+        "value" : 1
+      }]
+    },
+    {
+      "name" : "TELLABOUTexcitingthing",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["tellAboutExcitingThing"]
+    },
+    {
+      "name" : "tellAboutExcitingThing",
+      "displayName" : "Tell About Exciting Thing",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "initiator",
+        "second": "responder",
+        "operator" : "+",
+        "value" : 1
+      }]
+    },
+    {
+      "name" : "TELLABOUTobject",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["tellAboutObject"]
+    },
+    {
+      "name" : "tellAboutObject",
+      "displayName" : "Tell About Object",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "initiator",
+        "second": "responder",
+        "operator" : "+",
+        "value" : 1
+      }]
+    },
+    {
+      "name" : "TELLABOUTperson",
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo": ["tellAboutPerson"]
+    },
+    {
+      "name" : "tellAboutPerson",
+      "displayName" : "Tell About Person",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [{
+        "category" : "RelationshipReciprocal",
+        "type" : "friendship",
+        "first" : "initiator",
+        "second": "responder",
+        "operator" : "+",
+        "value" : 1
+      }]
+    },
 
 
 
+
+    {
+      "name" : "OFFERADVICE",
+      "intent" : {
+          "category": "SocialRecord",
+          "type": "goodadvice",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["offeradvice_success", "offeradvice_fail"]
+    },
+    {
+      "name" : "offeradvice_success",
+      "displayName" : "Offer Advice <SUCCESS>",
+      "conditions" : [],
+      "influenceRules" : [
+        {
+          "name" : "People are less likely to accept if they don't respect them.",
+          "conditions" :[{
+            "category" : "RelationshipDirected",
+            "type": "respect",
+            "first" : "x",
+            "second" : "y",
+            "operator" : ">",
+            "value" : 4
+          }],
+          "weight" : -5
+        }
+      ],
+      "effects" : [{
+          "category" : "RelationshipReciprocal",
+          "type" : "friendship",
+          "first" : "initiator",
+          "second": "responder",
+          "operator" : "+",
+          "value" : 1
+        },
+        {
+          "category" : "SocialRecord",
+          "type" : "goodadvice",
+          "first" : "initiator",
+          "second": "responder",
+          "value" : true
+        }
+      ]
+    },
+    {
+      "name" : "offeradvice_fail",
+      "displayName" : "Offer Advice <FAIL>",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [{
+          "category" : "RelationshipReciprocal",
+          "type" : "friendship",
+          "first" : "initiator",
+          "second": "responder",
+          "operator" : "-",
+          "value" : 1
+        },
+        {
+          "category" : "SocialRecord",
+          "type" : "badadvice",
+          "first" : "initiator",
+          "second": "responder",
+          "value" : true
+        }
+      ]
+    },
+
+
+
+
+
+    {
+      "name" : "COMPLAIN",
+      "intent" : {
+          "category": "SocialRecord",
+          "type": "complainedto",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["complain"]
+    },
+    {
+      "name" : "complain",
+      "displayName" : "Complain",
+      "conditions" : [],
+      "influenceRules" : [],
+      "effects" : [
+        {
+          "category" : "SocialRecord",
+          "type" : "complainedto",
+          "first" : "initiator",
+          "second": "responder",
+          "value" : true
+        }
+      ]
+    }
   ]
 }
