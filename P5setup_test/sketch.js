@@ -10,10 +10,6 @@ function preload(){
   marko= loadImage("/images/marko.png");
   barextra= loadImage("/images/barextra.png");
 
-
-
-
-
 }
 
 
@@ -46,7 +42,7 @@ function doSomthing(){
 
 function draw(){
   image(tavern,0,0);
-  // rotate(PI / 180 * 45);
+   // rotate(PI / 180 * 45);
   image(marko,10,0);
   image(barextra,0,-10);
 }
@@ -66,12 +62,6 @@ function keyPressed() {
     print("user wentef", userInput);
     input.value('');
 
-
-  //
-  //   // const name = input.value();
-    // greeting.html('hello!');
-  //   // input.value('');
-  //
     for (let i = 0; i < 200; i++) {
       push();
 
