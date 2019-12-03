@@ -459,22 +459,22 @@ define('util',[], function() {
 			return false;
 		}
 	},
-	
+
 	/* Function: nl2br
 	Takes all newlines in a string and inserts breaklines instead.
 
 	Parameters:
 	str - string to convert
-	is_xhtml - boolean 
-	
+	is_xhtml - boolean
+
 	Returns:
 	string - new string with breaklines inserted.
 	*/
-	nl2br = function (str, is_xhtml) {   
-	    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+	nl2br = function (str, is_xhtml) {
+	    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
 	    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
 	},
-	
+
 	/* Function: has
 	Determines if the given object is in an array.
 
@@ -502,7 +502,7 @@ define('util',[], function() {
 	randomKey = function(obj) {
 		return oneOf(Object.keys(obj));
 	},
-	
+
 	/* Function: randomNumber
 	Returns a random integer from 1 to max. Return 1 if max <= 1 or not a number.
 
@@ -1222,7 +1222,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 	};
 
 	/**
-	 * @function getLengthAtTimeStep 
+	 * @function getLengthAtTimeStep
 	 * @description Given a timestep, returns the length of the array at the index represented by that timestep in the socialRecord.
 	 * @param  {[int]} timestep [The timestep to get the length of. Should be >= 0]
 	 * @return {[int]}          [the length of the array that resides at socialRecord[timestep]]
@@ -1248,7 +1248,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 	var getCurrentTimeStep = function(){
 		return currentTimeStep;
 	};
-	
+
 	/**
 	 * @method  dumpSocialRecord
 	 * @description A debugging function. Dumps the whole socialRecord object to the console, to enable reviewing of both the current state of the simulation, and its history.
@@ -1272,7 +1272,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 	 * @example var historyAtTimestepTwo = ensemble.getSocialRecordCopyAtTimestep(2);
 	 * @return {Object} A copy of an socialRecord timeslice, an array of predicate objects.
 	 *
-	 * 
+	 *
 	 */
 	var getSocialRecordCopyAtTimestep = function(timeStep) {
 		if (timeStep === undefined) {
@@ -1288,7 +1288,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 	var getSocialRecordCopy = function() {
 		return util.clone(socialRecord);
 	}
-	
+
 	var registerMaxValue = function (predicate) {
 		maxValues[predicate.category] = predicate.maxValue !== undefined ? predicate.maxValue : 100;
 	};
@@ -1298,8 +1298,8 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 			console.log("Error: this predicate had no category.", predicate);
 		}
 		return maxValues[predicate.category];
-	};	
-	
+	};
+
 	var registerMinValue = function (predicate) {
 		minValues[predicate.category] = predicate.minValue !== undefined ? predicate.minValue : 0;
 	};
@@ -1355,7 +1355,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 *
 * @method setUpNextTimeStep
 * @memberof ensemble
-* @return {int} The current timestep. 
+* @return {int} The current timestep.
 * @example ensemble.setupNextTimeStep(10); // sets the current timestep of the social history to 10.
 * @example ensemble.setupNextTimeStep(); // increments the current timestep by one.
 * @param {Number} timeStep The timeStep to catch up the socialRecord to. If omitted, assumes the currentTimeStep + 1.
@@ -1364,7 +1364,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 		if (currentTimeStep === -1) {
 			currentTimeStep += 1;
 		}
-		
+
 		if (timeStep === undefined) {
 			timeStep = currentTimeStep + 1;
 		}
@@ -1523,14 +1523,14 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 		matchedResults = [];		//predicate results to return
 		matchedResultsStrings = {};	//dictionary of predicates already stored.
 
-		
+
 		if (searchValue === undefined && useDefaultValue) {
 			if (isBooleanPred) {
 				// If the client fails to specify a boolean value, we assume we are searching for the opposite of the default state. For instance, if the default value of a flag is false, and we omit a value in get(), the implication is that we're searching for a non-default case (true).
 				searchValue = true;
 			}
 		}
-		
+
 
 		//In the case where we have a numeric predicate with a value, but no operator specified,
 		//assume that the operator is '='
@@ -1561,7 +1561,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 				for (var j = 0 ; j < socialRecord[i].length ; j += 1) {
 					var socialRecordPredicate = socialRecord[i][j];
 
-					// Skip any predicates that don't match the search predicate's specification. 
+					// Skip any predicates that don't match the search predicate's specification.
 					if (socialRecordPredicate.isActive === false) {
 						continue;
 					}
@@ -1608,7 +1608,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 	};
 
 	/**
-	 * @method addHistory 
+	 * @method addHistory
 	 * @description  Load backstory/starting history into Ensemble. This function takes a history definition object (such as that which is returned from a call to loadFile) and uses it to initializing the starting state of the social record.
 	 * @public
 	 * @memberOf ensemble
@@ -1631,7 +1631,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 		} catch (e) {
 			throw new Error("JSON Error load social structure (history): " + e);
 		}
-		
+
 		var lastPos = -9999999999;
 		for (var i = 0; i < history.length; i++) {
 			// TODO add more error checking to look for out-of-order history steps, etc.
@@ -1743,7 +1743,7 @@ define('socialRecord',["underscore", "util"], function(_, util) {
 			socialRecordPredicate.id = util.iterator("socialRecords");
 		} else {
 			console.log("bad predicate: ", setPredicate);
-			throw new Error("Expected any pattern get to the socialRecord to return either an existing record or make a new one w/the default value and return that.")			
+			throw new Error("Expected any pattern get to the socialRecord to return either an existing record or make a new one w/the default value and return that.")
 		}
 
 		socialRecordPredicate.timeHappened = timeStep;
@@ -2165,7 +2165,7 @@ define('volition',["util", "underscore"], function(util, _) {
 	 * @param  {String} key    The identifier for a volition set.
 	 * @param  {String} from   Identifier for the "from" character.
 	 * @param  {String} to     Identifier for the "to" character.
-	 * 
+	 *
 	 * TODO: It would be nice to have functionality to get a specified intent (e.g. 'what is the volition for Simon to startDating Monica?')
 	 *
 	 * @return {Object}        A volition predicate, with keys "category", "network", "type", "intentType", and "weight". (Or undefined if there are no more volitions for this pair of characters.)
@@ -2194,13 +2194,13 @@ define('volition',["util", "underscore"], function(util, _) {
 	};
 
 	/** Given a set of pre-computed volitions, returns an object with a boolean and an array of reasons why (i.e. b/c their weight is >= 0).
-	 * 
+	 *
 	 * @method isAccepted
 	 * @memberof Volition
 	 * @param {String}	key 	The string that serves as an index to look up volitions in the volitionCache
 	 * @param {String}	initiator	The first person in the predicate attempted the intent predicate
 	 * @param {String}	responder	The second person in the predicate
-	 * @param {Object}	predicate	Predicate intent object to try to match from the predicate intents in the volitionCache 
+	 * @param {Object}	predicate	Predicate intent object to try to match from the predicate intents in the volitionCache
 	 * @return {Object}	returnObject	an object with the keys:
 	 * 									{Boolean} accepted - whether the intent is accepted
 	 * 									{Array} reasonsWhy - the array of volition predicates that are the reason(s) something was accepted
@@ -2208,11 +2208,11 @@ define('volition',["util", "underscore"], function(util, _) {
 	var isAccepted = function(key, initiator, responder, predicate) {
 		var acceptIfNoMatch = true; // If no matching rules affect the decision, should the character accept or reject the game?
 		var minimumWeightForAccept = 0;
-		
-		var returnObject = {};		
+
+		var returnObject = {};
 		returnObject.accepted = acceptIfNoMatch;
 		returnObject.reasonsWhy = [];
-			
+
 		var thisV = getFirstVolition(key, responder, initiator);
 		while (thisV !== undefined) {
 			if (thisV["category"] === predicate["category"] &&
@@ -2505,7 +2505,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 			var conditionsAreTrue = false;
 			if(atLeastOneGoodEffect){
 				conditionsAreTrue = evaluateConditions(boundConditions, rule, params);
-			} 
+			}
 
 			// All the conditions are true, so process all effects.
 			if (conditionsAreTrue === true){
@@ -2569,7 +2569,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 			}
 
 			// Put the ordered conditions in an ordered array
-			
+
 			if(condition.order !== undefined) {
 				var tempCondition = util.clone(condition);
 				if (tempCondition.order === -1){
@@ -2720,7 +2720,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 
 
 			if(searchCondition.order === undefined){
-				//Normal Evaluation. 
+				//Normal Evaluation.
 				results = socialRecord.get(searchCondition, smallerRelTime, largerRelTime, true, params);	//zeros signify currentTimeStep
 				// If no match was found, this condition is false; so this
 				// whole predicate must be false..
@@ -2731,7 +2731,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 			}
 			else{
 				//Ordered Evaluation.
-				
+
 				//Check to see if we've entered a new order group (e.g. previously order was 0, now order is 1)
 				if(searchCondition.order > orderCounter){
 					//we are in a new order group! -- might have to do a special check here for the 'first' time we get here.
@@ -2903,7 +2903,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 	 * @description When running trigger rules or calculating volitions, there is a chance that
 	 * it might involve characters that are offstage, eliminated, or that should otherwise be ignored.
 	 * This function does one final check to make sure that the effect in question doesn't include
-	 * any such characters. 
+	 * any such characters.
 	 * @param  {[Object]} effect             [The effect. By this point, it should be bound with character names]
 	 * @param  {[Array]} charactersToIgnore [A list of characters that have been deemed to be ignored.]
 	 * @return {[Bool]}                    [Returns true if the effect is 'safe' to be set or used for volition. False otherwise.]
@@ -2913,7 +2913,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 			if(effect.first !== undefined){
 				if(effect.first === charactersToIgnore[i]){
 					return false;
-				} 
+				}
 			}
 			if(effect.second !== undefined){
 				if(effect.second === charactersToIgnore[i]){
@@ -2932,7 +2932,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
  * @param {Array} cast An array of the cast of characters to calculate volition for.
   @param {Object} params A means of passing down additional debugging information, as well as alter the default behavior of calculating volition. The key/value pairs for params are: <BR>
   <b>timestep (Number):</b> This tells ensemble to consider the number assigned to the 'timestep' attribute as the "current turn" for the purposes of volition calculation.
- * @example var storedVolitions = ensemble.calculateVolition(cast); 
+ * @example var storedVolitions = ensemble.calculateVolition(cast);
  *@return {Object} A dictionary containing the cast and their volitions
  */
 	var calculateVolition = function (cast, params) {
@@ -2975,7 +2975,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 		// "intentType": true or false, for a desire to adjust this network up
 		// or down. (or to make true or false, for booleans).
 		var adjustWeight = function (effect, condition, rule) {
-			
+
 			var result = util.clone(effect);
 			var skipToNextPredicate = false;
 			delete result.weight;
@@ -3000,7 +3000,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 			//Because we've parsed the blueprints, we know all of the potential types of intents there are. wouldn't
 			//it be faster to simply dynamically construct all of the potential keys in the array ahead of time,
 			//and then directly update/adjust the value at that spot in the array.
-			
+
 			//TODO: currently, adjustWeight cannot handle a situation where there is no second person in the effect. We might want to handle this.
 			var direction = socialRecord.getRegisteredDirection(effect);
 			//console.log(direction);
@@ -3072,8 +3072,8 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 				}
 			}
 		};
-		//var params = {}; // TODO: Remove params from runRules entirely? 
-		
+		//var params = {}; // TODO: Remove params from runRules entirely?
+
 
 		runRules("volitionRules", cast, adjustWeight, params, charactersToSkipVolitionCalculation);
 
@@ -3098,10 +3098,10 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 		}
 		for(var i = 0; i < set.length; i++){
 			if(isRuleAlreadyInRuleSet(key, set[i])){
-				console.log("Warning! You are adding the rule '" + 
+				console.log("Warning! You are adding the rule '" +
 					set[i].id + "' (" + predicateToEnglish(set[i]).text + "), from " + set[i].origin + ", but that rule is identical to one already loaded.", set[i]);
 			}
-			addRule(key, set[i]); 
+			addRule(key, set[i]);
 
 			// Set up a cross-reference so we can look up rules by ID.
 			var rule = set[i];
@@ -3274,14 +3274,14 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 	 *@method ruleToEnglish
 	 *@memberof ensemble
 	 *@public
-	 * 
-	 * @description Given a rule, return a string that is a rough english description of what the rule is by converting each of its 
+	 *
+	 * @description Given a rule, return a string that is a rough english description of what the rule is by converting each of its
 	 component predicates to english.
 	 *
 	 * @param {Object} rule An ensemble rule (likely either a volition rule or a trigger rule) that you would like to be roughly converted into english.
      * @example var englishRule = ensemble.ruleToEnglish(myRule);
 	 *@return {String}      A string with an english description of the contents of the rule.
-	 * 
+	 *
 	 */
 	var ruleToEnglish = function(rule){
 		var returnString = "If: ";
@@ -3308,14 +3308,14 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 	 *@method predicatetoEnglish
 	 *@memberof ensemble
 	 *@public
-	 * 
+	 *
 	 * @description Given a predicate (such as you might find in the conditions or effects of a rule)
 	 * return an english description of it.
 	 *
 	 * @param {Object} pred An ensemble predicate that you would like to be roughly converted into english.
      * @example var englishPredicate = ensemble.predicateToEnglish(myPredicate);
 	 *@return {String}      A string with an english description of the contents of the predicate.
-	 * 
+	 *
 	 */
 	var predicateToEnglish = function(pred) {
 		var result = [];
@@ -3565,7 +3565,7 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 			delete ind[label];
 			ind[finalRuleId] = posOfDyingRule;
 
-			return true;			
+			return true;
 		} else {
 			// Set
 			ruleLibrary[ruleSet][pos] = util.clone(rule);
@@ -3577,11 +3577,11 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 	 * @method getRuleById
 	 * @memberof RuleLibrary
 	 * @private
-	 * 
+	 *
 	 * @description When given an ID in the format "ruleSetName_number", returns the rule with the corresponding ID. Rules are automatically be given a unique ID in this format when added via normal channels. Return false if no such rule can be found.
 	 *
 	 * 	@param {String} label  The ID, such as "triggerRules_14"
-	 * 	 
+	 *
 	 * @return {Object}	a copy of the requested rule, or false if no such rule could be found.
 	 */
 	var getRuleById = function(label) {
@@ -3592,12 +3592,12 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 	 * @method setRuleById
 	 * @memberof RuleLibrary
 	 * @private
-	 * 
+	 *
 	 * @description When given an ID in the format "ruleSetName_number", and a rule object, updates the rule with this ID in ensemble's internal store of loaded rules. NOTE: This is not a public-facing function, since it does no validation on the rule to be added. Instead use ensemble.setRuleById.
 	 *
 	 * 	@param {String} label  The ID, such as "triggerRules_14"
 	 * 	@param {Object} rule  An object representing a valid rule for the given rule set.
-	 *  
+	 *
 	 * @return {Boolean}	true if the rule was successfully updated, false otherwise.
 	 */
 	var setRuleById = function(label, rule) {
@@ -3608,11 +3608,11 @@ define('ruleLibrary',["socialRecord", "volition", "underscore", "util"], functio
 	 * @method deleteRuleById
 	 * @memberof RuleLibrary
 	 * @private
-	 * 
+	 *
 	 * @description When given an ID in the format "ruleSetName_number", deletes the rule with the corresponding ID. Rules are automatically be given a unique ID in this format when added via normal channels. Return false if no such rule can be found.
 	 *
 	 * 	@param {String} label  The ID, such as "triggerRules_14"
-	 * 	 
+	 *
 	 * @return {Object}	true if the operation is successful, false otherwise.
 	 */
 	var deleteRuleById = function(label) {
@@ -3724,7 +3724,7 @@ function(util, _, socialRecord) {
 	 * @param  {String} preamble Optional string explaining the context of this predicate, i.e. the specific unit test it's part of, so the error thrown for an invalid predicate can contain this information.
 	 *
 	 * @return {Object}          The same predicate reference passed in, if valid.
-	 */	
+	 */
 	var volitionCondition = function(pred, preamble) {
 		checkPredicate(pred, "condition", "volition", preamble);
 		return pred;
@@ -3796,10 +3796,10 @@ function(util, _, socialRecord) {
 	 * @method action
 	 * @memberOf Validate
 	 * @description Checks that an action is structured properly, throwing an error if it is not, and returning the predicate reference back if it is.
-	 * 
+	 *
 	 * @param  {[Object]} pred     [An action predicate object.]
 	 * @param  {[String]} preamble [Optional string explaining the context of this predicate, i.e. the specific unit test it's part of, so the error thrown for an invaid predicate can contain this information.]
-	 * 
+	 *
 	 * @return {[Object]}          [The same predicate reference passed in, if valid.]
 	 */
 	var action = function(pred, preamble) {
@@ -3890,7 +3890,7 @@ function(util, _, socialRecord) {
 				return "mismatch between blueprint isBoolean '" + pred.isBoolean + "' and type of defaultValue '" + pred.defaultValue + "' (" + typeof pred.defaultValue + ")";
 			}
 			delete pred.defaultValue;
-			
+
 			if (pred.isBoolean === true && ((pred.minValue !== undefined) || (pred.maxValue !== undefined))) {
 				return "blueprint specifies this is a boolean type but provides a min ('" + pred.minValue + "') or max ('" + pred.maxValue + "') value: this is not allowed.";
 			}
@@ -3898,7 +3898,7 @@ function(util, _, socialRecord) {
 				return "mismatch between blueprint and type of minValue '" + pred.minValue + "' (" + typeof pred.minValue + "); expected a number.";
 			}
 			delete pred.minValue;
-			
+
 			if (pred.maxValue !== undefined && typeof pred.maxValue !== "number") {
 				return "mismatch between blueprint and type of maxValue '" + pred.maxValue + "' (" + typeof pred.maxValue + "); expected a number.";
 			}
@@ -4084,7 +4084,7 @@ function(util, _, validate, volition, ruleLibrary) {
 
 
 	/**
-	 * @method getAllActions 
+	 * @method getAllActions
 	 * @private
 	 * @description returns an array containing every action (terminal or otherwise) available in the social world.
 	 * @return {Array} [An array containing every single action defined in the social world.]
@@ -4110,7 +4110,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	}
 
 	/**
-	 * @method getStartSymbols 
+	 * @method getStartSymbols
 	 * @private
 	 * @description Returns an array containing every 'start action.' Conceived to return all actions specifically tied to an intent.
 	 * @return {Array} [An array containing every 'root' acton (every action tied to an intent) in the social world]
@@ -4120,7 +4120,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	};
 
 	/**
-	 * @method getNonTerminals 
+	 * @method getNonTerminals
 	 * @private
 	 * @description Returns an array containing every 'non terminal' This will include both root and non-root actions, but exclude terminal actions.
 	 * @return {[type]} [An array containing every 'non terminal' action.]
@@ -4130,7 +4130,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	};
 
 	/**
-	 * @method getTerminalActions 
+	 * @method getTerminalActions
 	 * @description Returns an array containing every terminal action.
 	 * @return {[type]} [An array containing every terminal action]
 	 */
@@ -4139,7 +4139,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	};
 
 	/**
-	 * @methodclearActionLibrary 
+	 * @methodclearActionLibrary
 	 * @description Completely empties out the the action library by zero-ing out the arrays of actions, startSymbols, nonTerminals, and terminalActions. Used mainly for testing purposes.
 	 */
 	var clearActionLibrary = function(){
@@ -4152,7 +4152,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	/**
 	 * @method addActions
 	 * @public
-	 * @memberOf ensemble 
+	 * @memberOf ensemble
 	 * @description Takes in either a JSON file or a JSON string representing the definition of an action or actions and stores it in the action library. This effect is cumulative; calling this function on multiple files will lead to the actions from both files being stored in the action library.
 	 * @param  {JSON} data - Either a JSON string or a JSON file defining an action or actions. This will typically be the output of the result of a call to loadFile().
 	 * @example var rawActions = ensemble.loadFile("data/actions.json"); <BR> ensemble.addActions(rawActions);
@@ -4201,7 +4201,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	};
 
 	/**
-	 * @method actionAlreadyExists 
+	 * @method actionAlreadyExists
 	 * @private
 	 * @description a simple helper function to see if a newly parsed in action hasn't already been defined -- this is done by looking at the name of the action. This means that even if two actions are quite different, if they share the same name an error will be printed to the console.]
 	 * @param  {Object} potentialNewAction [The action that has just been read in, and is to be checked against the actions already in the action library.]
@@ -4220,11 +4220,11 @@ function(util, _, validate, volition, ruleLibrary) {
 	//been categorized as a start symbol. Returns true if it does (i.e. it is a duplicate),
 	//false otherwise.
 	var startSymbolAlreadyExists = function(potentialNewAction){
-		
+
 		//One thing that we'll do is double check that there aren't two identical start symbols.
 		if(potentialNewAction.intent !== undefined){
 			var newStartSymbolIntent = potentialNewAction.intent;
-			//alright, we're dealing with a 'start symbol' apparantly! Let's make sure it isn't a duplicate of 
+			//alright, we're dealing with a 'start symbol' apparantly! Let's make sure it isn't a duplicate of
 			//any other start symbols that already exist!
 			for(var i = 0; i < startSymbols.length; i += 1){
 				var existingStartSymbol = startSymbols[i].intent;
@@ -4296,7 +4296,7 @@ function(util, _, validate, volition, ruleLibrary) {
 
 
 	/**
-	 * @method sortActionsByVolitionScore 
+	 * @method sortActionsByVolitionScore
 	 * @private
 	 * @description Sorts an array of actions based on their weights in descending order.. Specifically, each action has a list of actions that it 'leads to' -- and it is THIS list of actions that is being sorted. Uses recursion to get to the end of the chain. Also sorts the GoodBindings of each weight as well.
 	 * @param  {Array} actions [An array of actions to be sorted]
@@ -4326,10 +4326,10 @@ function(util, _, validate, volition, ruleLibrary) {
 
 	/**
 	 * @method getActionHierarchyFromVolition
-	 * @description This method takes the names of the initiator and responder of an action and a registered volition 
-	 * between them, and will go through the entire grammar for the intnet specified in the volition and return all 
+	 * @description This method takes the names of the initiator and responder of an action and a registered volition
+	 * between them, and will go through the entire grammar for the intnet specified in the volition and return all
 	 * terminal actions that are appropriate (are of the correct accept/reject polarity, have all conditions met, etc.)
-	 * The number of actions returned per action group is determined by numActionsPerGroup. 
+	 * The number of actions returned per action group is determined by numActionsPerGroup.
 	 * Cast indicates the characters to use for role binding.
 	 * @param  {[String]} initiator          [The name of the initiator of the action.]
 	 * @param  {[String]} responder          [The name of the responder of the action.]
@@ -4375,12 +4375,12 @@ function(util, _, validate, volition, ruleLibrary) {
 
 	//terminalFoundInRecursiveSearch is meant to be called only when we enter the
 	//"terminal found" branch of getActionHierarchyFromNonTerminal. It grabs the
-	//relavant terminal information, including checking for new role bindings, 
+	//relavant terminal information, including checking for new role bindings,
 	//and returns it for use by getActionHierarchyFromNonTerminal.
 	var terminalFoundInRecursiveSearch = function(terminalAction, nonTerminal, uniqueBindings, cast, isAccepted, terminalActionParentObject){
 		terminalsAtThisLevel = true;
 		terminalAction.goodBindings = util.clone(nonTerminal.goodBindings);
-		
+
 		//Store this terminal's lineage so we know how to 'reach it'.
 		if(nonTerminal.lineage === undefined){
 			terminalAction.lineage = nonTerminal.name;
@@ -4416,7 +4416,7 @@ function(util, _, validate, volition, ruleLibrary) {
 			var returnObject = {};
 			returnObject.terminalsAtThisLevel = true;
 			returnObject.boundTerminal = undefined;
-			return returnObject;		
+			return returnObject;
 		}
 
 		if(terminalAction.salience === undefined ){
@@ -4454,7 +4454,7 @@ function(util, _, validate, volition, ruleLibrary) {
 		else{
 			nonTerminalAction.lineage = nonTerminal.lineage + "-" + nonTerminal.name;
 		}
-		
+
 		//Get the unique bindings that still work.
 		currentUniqueBindings = getUniqueActionBindings(nonTerminalAction, uniqueBindings);
 		if(!actionIsAppropriate(nonTerminalAction, isAccepted, currentUniqueBindings)){
@@ -4468,7 +4468,7 @@ function(util, _, validate, volition, ruleLibrary) {
 		if(diggingDeeperActions === undefined || diggingDeeperActions.length <= 0){
 			return; // oops! This 'leads to' led to something that had no valid bindings! Better move on!
 		}
-		
+
 		//Store the actions we found by 'digging deeper'
 		nonTerminalAction.actions = [];
 		for(var ddActionIndex = 0; ddActionIndex < diggingDeeperActions.length; ddActionIndex += 1){
@@ -4482,7 +4482,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	}
 
 	/**
-	 * 
+	 *
 	 * @method getActionHierarchyFromNonTerminal
 	 * @description Returns an array that represents an 'action hierarchy' i.e. each element in the array will either be a terminal, or will be a non-terminal with fully fleshed out "leads to" information that will ultimately lead to a terminal (with potentally many non terminals 'in the way' with their own leads to information.)
 	 * @param  {[Object]} nonTerminal [A 'non-terminal object that theoretically has a "leadsTo" field defined. This leadsTo field may lead to terminals or nonTerminals. If nonTerminals, this function is called recursively until terminals are reached.']
@@ -4504,7 +4504,7 @@ function(util, _, validate, volition, ruleLibrary) {
 		currentUniqueBindings = getUniqueActionBindings(nonTerminal, uniqueBindings);
 		var nonTerminalWorkingBindingCombinations = getWorkingBindingCombinations(nonTerminal, util.clone(uniqueBindings), util.clone(cast), util.clone(nonTerminal.goodBindings), cast);
 		if(nonTerminalWorkingBindingCombinations.length <= 0){
-			//Oops, there is no possible combination of cast members that make this work! 
+			//Oops, there is no possible combination of cast members that make this work!
 			//So no point in going down this path anymore!
 			return;
 		}
@@ -4519,7 +4519,7 @@ function(util, _, validate, volition, ruleLibrary) {
 		//oh, wait, it has it already I think, because we don't have any children yet. OK.
 		computeInfluenceRuleWeight(nonTerminal);
 
-		//Used to help us have a nice 'wrapper' action object, for keeping track of the 
+		//Used to help us have a nice 'wrapper' action object, for keeping track of the
 		//heritage of an action as we ultimately drill down to find the terminals.
 		var terminalActionParentObject = {};
 		terminalActionParentObject.name = nonTerminal.name;
@@ -4527,8 +4527,8 @@ function(util, _, validate, volition, ruleLibrary) {
 		terminalActionParentObject.goodBindings = nonTerminal.goodBindings;
 		terminalActionParentObject.actions = [];
 		var potentialActionsToReturn = [];
-		
-		//The big for-loop! We'll loop through each action in the 'leads to' list, and do 
+
+		//The big for-loop! We'll loop through each action in the 'leads to' list, and do
 		//something different depending on if it is a terminal action or a non terminal actions.
 		for(var i = 0; i < nonTerminal.leadsTo.length; i += 1){
 			var actionName = nonTerminal.leadsTo[i];
@@ -4543,9 +4543,9 @@ function(util, _, validate, volition, ruleLibrary) {
 				var response = terminalFoundInRecursiveSearch(terminalAction, nonTerminal, uniqueBindings, cast, isAccepted, terminalActionParentObject);
 				terminalsAtThisLevel = response.terminalsAtThisLevel;
 				var foundTerminal = response.boundTerminal;
-				
+
 				//Now, just because we found a terminal doesn't mean that it is a 'good' terminal
-				//for example, we may have found an 'accept' terminal but we are looking for a 
+				//for example, we may have found an 'accept' terminal but we are looking for a
 				//reject terminal.
 				if(foundTerminal !== undefined){
 					//Alright, this is, in fact, a terminal that we are planning on keeping (at least for now!)
@@ -4558,7 +4558,7 @@ function(util, _, validate, volition, ruleLibrary) {
 					var sortedActionsBySalienceAscending = _.sortBy(terminalActionParentObject.actions, "salience");
 					var sortedActionsBySalienceDescending = sortedActionsBySalienceAscending.reverse();
 					terminalActionParentObject.actions = sortedActionsBySalienceDescending;
-		
+
 					//The user may have selected a finite amount of actions per 'action group'
 					//This is where that cut off happens. Cut off the least salient actions if we have
 					//more actions than the actionsPerGroup allows.
@@ -4568,7 +4568,7 @@ function(util, _, validate, volition, ruleLibrary) {
 				}
 			}
 			else{ // Ah, we must be dealing with another non-terminal! let's DIG DEEPER!
-				
+
 				//We know that we're looking at a non-terminal. It will probably lead to other actions.
 				//We'll ultimately use the poewr of recursion to help us get there!
 				var nonTerminalWithNewRoles = nonTerminalFoundInRecursiveSearch(actionName, nonTerminal, uniqueBindings, isAccepted, actionsPerGroup, cast);
@@ -4579,7 +4579,7 @@ function(util, _, validate, volition, ruleLibrary) {
 
 		}
 
-		//Because there might be non-terminals and terminals at the same level, do a check 
+		//Because there might be non-terminals and terminals at the same level, do a check
 		//to see if we need to add anything in at this level in the tree.
 		if(terminalsAtThisLevel === true){
 			for(var terminalsToPushUpIndex = 0; terminalsToPushUpIndex < terminalActionParentObject.actions.length; terminalsToPushUpIndex += 1){
@@ -4619,7 +4619,7 @@ function(util, _, validate, volition, ruleLibrary) {
 	//Going to change all instances of 'nonTerminal' to 'action', because I think any action can actually
 	//be passed through this now.
 	/**
-	 * @method computeInfluenceRuleWeight 
+	 * @method computeInfluenceRuleWeight
 	 * @private
 	 * @description Takes in an action, goes through all of its valid bindings, and evaluates the influence rule for each set of bindings. Stores the weight with each binding and, for the best weight (i.e. the best binding) stores it at the level of the action.
 	 * @param  {Object} action [The action to compute the weight for. Should have at least one 'goodBinding' attached to it]
@@ -4648,7 +4648,7 @@ function(util, _, validate, volition, ruleLibrary) {
 			}
 
 			action.goodBindings[goodBindingIndex].weight$$ = candidateWeight;
-			
+
 		}
 	};
 
@@ -4661,11 +4661,11 @@ function(util, _, validate, volition, ruleLibrary) {
 	 * @return {[Boolean]}                 [Returns true if the action is still appropriate, false otherwise. Returning false here halts continuation down the action tree, as this being false means all subsequent actions will also be false.]
 	 */
 	var actionIsAppropriate = function(action, isAccepted, uniqueBindings){
-		
+
 		if(action.isActive === false) {
 			return false;
 		}
-		
+
 		if(action.isAccept !== undefined){
 			if(isAccepted !== action.isAccept){
 				return false; // oops, looking for one truth value but found another!
@@ -4683,7 +4683,7 @@ function(util, _, validate, volition, ruleLibrary) {
 
 
 		//If we get to this point, and the action has no "goodBindings" associated with it,
-		//that means that there is no combination of characters that exists that satisfies all 
+		//that means that there is no combination of characters that exists that satisfies all
 		//of the conditions that have been specified by this point in the "action tree." Therefore,
 		//there is no point in going further.
 		if(action.goodBindings.length <= 0){
@@ -4768,8 +4768,8 @@ function(util, _, validate, volition, ruleLibrary) {
  * @method getWorkingBindingCombinations
  * @description This method figures out potential combinations of characters that will satisfy all of the conditions
  * that have been specified by this point in the action tree. Actions passed into the function through the 'action' parameter
- * are assumed to have a field called "goodBindings" that represent working combinations of characters to roles found through 
- * previous calls to this function. These good bindings will be updated in this function as new roles are discovered (e.g a new role 
+ * are assumed to have a field called "goodBindings" that represent working combinations of characters to roles found through
+ * previous calls to this function. These good bindings will be updated in this function as new roles are discovered (e.g a new role
  * that appeared later on down the action tree). Additionally, as new conditions are found, old combinations of bindings that
  * used to work may no longer work; this function will accomadate that as well. This method uses recursion.
  * @param  {[Object]} action               [The action we are finding valid combinations of bindings for. Assumes it has both a conditions array and a goodBindings array.]
@@ -4784,16 +4784,16 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 
 
 		//We want to do the following for each of our existing 'good' Combinations.
-		//NOTE: This should only be > 1 when called from the outside. When called recursively, combinationsToUse should only consist of a single combination.	
+		//NOTE: This should only be > 1 when called from the outside. When called recursively, combinationsToUse should only consist of a single combination.
 		for(var workingCombinationIndex = 0; workingCombinationIndex < combinationsToUse.length; workingCombinationIndex += 1){
-		
+
 			newCombinationsToUse = []; // kinda weird, but we want to zero it out each time, because we only ever want it to have one entry.
 			newCombinationsToUse.push(util.clone(combinationsToUse[workingCombinationIndex]));
 			availableCastMembers = util.clone(allCastMembers);
 
-			//I feel like we need to do something here to re-populate availableCastMembers with 
+			//I feel like we need to do something here to re-populate availableCastMembers with
 			//the people previously spliced out from the previous uniqueBindings?
-			
+
 			//We want to start off by filling in the roles stored in 'uniqueBindings' with the roles
 			//that we've found that work from the previous combinations discovered.
 			for (var role in combinationsToUse[workingCombinationIndex]){
@@ -4855,7 +4855,7 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 					var updatedCastMembers = util.clone(availableCastMembers);
 					updatedCastMembers.splice(i, 1);	// the updated cast has the currently assigned member removed for the recursion
 					var potentialCombinations = getWorkingBindingCombinations(action, uniqueBindings, updatedCastMembers, newCombinationsToUse, allCastMembers);
-					
+
 					//Depending on where we are in the recursion chain, there's a chance that potentialCombinations
 					//might have a length > 1. At least I think that's the case. If not, better safe than sorry, yeah?
 					for(var k = 0; k < potentialCombinations.length; k += 1){
@@ -4871,7 +4871,7 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 	};
 
 	/**
-	 * @method bindActionCondition 
+	 * @method bindActionCondition
 	 * @description Takes in an array of conditions and a specific binding to use, and replaces all 'generic roles' in the conditions (e.g., "x", "y", "cheater", etc.) with actual character names.
 	 * @param  {Array} conditions   [An Array of conditions filled with generic roles (such a initiator, x, or cheater)]
 	 * @param  {[Object]} bindingToUse [A dictionary of sorts mapping which charactes should be used to fill in which roles]
@@ -4888,12 +4888,12 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 		}
 		return conditions;
 	};
-	
+
 
 	//Given a binding, goes througha all of the influence rules of an action
 	//and keeps a running sum of their effects. Then returns that sum.
 	/**
-	 * @method evaluateActionInfluenceRules 
+	 * @method evaluateActionInfluenceRules
 	 * @description Given a binding, goes through all of the influence rules of an action and keeps a rnning sum of their effects, then returns that sum.
 	 * @param  {[Object]} action       [An action, with specified influence rules]
 	 * @param  {[Object]} bindingToUse [A specfication of the characters to use to fill in each role in the action's influence rules]
@@ -4917,10 +4917,10 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 	//Returns the 'best' terminal based on an actionList (where an actionList is presumambly)
 	//a list of potential actions that has been computed given a certain cast. Everything should
 	//already be sorted already, so it's just an easy matter of finding the 'first' thing in every
-	//action list until we find one with no other actions -- then that means that we're at the 
+	//action list until we find one with no other actions -- then that means that we're at the
 	//best terminal!
 	/**
-	 * @method getBestTerminalFromActionList 
+	 * @method getBestTerminalFromActionList
 	 * @description Returns the 'best' terminal from an actionList, where best is defined to be the terminal with the highest weight. This function assumes the actionList has already been sorted.
 	 * @param  {[Array]} actionList [An array of actions. Each of these actions itself contains another array of actions. All of these arrays within arrays, however, should be sorted already before calling this function.]
 	 * @return {[Object]}            [The best (highest weighted) terminal action, with it's roles filled in with the best binding of characters]
@@ -4962,7 +4962,7 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 	//Given a volition object, returns the single 'best' action for that volition,
 	//using the best binding. if multiple best bindings exist, just picks one at random.
 	/**
-	 * @method getAction 
+	 * @method getAction
 	 * @memberOf ensemble
 	 * @public
 	 * @description ensemble Interface function. Given a volition object, returns the single 'best' action for that volition using the best binding. If multiple best bindings exist, it will pick one at random.
@@ -4995,7 +4995,7 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 	};
 
 	/**
-	 * @method getActions 
+	 * @method getActions
 	 * @memberOf ensemble
 	 * @public
 	 * @description Similar to getAction, but allows the user to specify the number of intents to draw from, and the number of actions that shold come from each intent.
@@ -5073,7 +5073,7 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 	};
 
 	/**
-	 * @method setActionById 
+	 * @method setActionById
 	 * @memberOf ensemble
 	 * @private
 	 * @description Meant to be used by the authoring tool, if ever actions need to be stored by a special id.
@@ -5087,11 +5087,11 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 				return true;
 			}
 		}
-		return false;	
+		return false;
 	}
 
 	//for each action in the action list, go through and find how many total terminal actions we have.
-	var getNumberOfTerminalsReachablebyAnActionList = function(actionList){	
+	var getNumberOfTerminalsReachablebyAnActionList = function(actionList){
 		var sum = 0;
 		for(var i = 0; i < actionList.length; i += 1){
 			sum += getNumberOfTerminalsReachablebyAnAction(actionList[i]);
@@ -5169,7 +5169,7 @@ var getWorkingBindingCombinations = function(action, uniqueBindings, availableCa
 	};
 
 	/**
-	 * @method getBestBindingFromTerminal 
+	 * @method getBestBindingFromTerminal
 	 * @description Given a terminal action, looks at it's list of good bindings and finds the one that matches the score of the action itself. If multiple ones do, picks one at random.
 	 * @param  {[Object]} terminal [An Action]
 	 * @return {[Object]}          [An object representing which bindings are the best ones to use for this action]
@@ -5243,11 +5243,11 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @method loadBaseBlueprints
 	 * @memberof ensemble
 	 * @private
-	 * 
+	 *
 	 * @description Loads a stock set of blueprints useful for testing. (relationship, networks, etc.)
 	 *
 	 * @param {Object} bp - a blueprint object.
-	 * 
+	 *
 	 * @return {Object} An object with an interface to the loaded factories.
 	 */
 	var loadBaseBlueprints = function(bp) {
@@ -5260,13 +5260,13 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @method loadFile
 	 * @memberof ensemble
 	 * @public
-	 * 
+	 *
 	 * @description Will load in a JSON file that represents one of the following aspects of your social world: Volition Rules, Trigger Rules, Characters, Schema, Actions, History. This function needs to be called once for each file. It returns a JSON object representing the parsed contents of the file referenced via the passed in filename.
 	 *
 	 * @param {String} filename - The relative path to the data file.
 	 *
 	 * @example var rawSchema = ensemble.loadFile(data/schema.json) // Assuming that, relative to the file this function is being called from, there is a data directory with the file schema.json, the schema will be loaded into Ensemble, and rawSchema will have the contents of the json file.
-	 * 
+	 *
 	 * @return {Object} A JSON object representing the parsed contents of the filename.
 	 */
 	var loadFile = function(filename) {
@@ -5386,7 +5386,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 *
 	 * @param	{Object}	categoryBlueprint	The blueprint object to load
 	 * @param	{Number}	When loading multiple blueprints, can pass an ID number to be printed if necessary for diagnostics.
-	 * 
+	 *
 	 */
 	var loadBlueprint = function(categoryBlueprint, num) {
 
@@ -5436,9 +5436,9 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @method getSocialStructure
 	 * @memberOf ensemble
 	 * @public
-	 * @description Returns an object reference describing the social structure loaded into ensemble. 
+	 * @description Returns an object reference describing the social structure loaded into ensemble.
 	 * @example ensemble.getSocialStructure();
-	 * @return {Object} A dictionary with top level keys will be each of the social "categories" (a la "relationship", "network", etc.). Each of these contains a dictionary of its subtypes. 
+	 * @return {Object} A dictionary with top level keys will be each of the social "categories" (a la "relationship", "network", etc.). Each of these contains a dictionary of its subtypes.
 	 */
 	var getSocialStructure = function() {
 		return socialStructure;
@@ -5448,7 +5448,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @method getSchema
 	 * @memberOf ensemble
 	 * @public
-	 * @description Returns an object describing the active social structure in the same format as the original file: 
+	 * @description Returns an object describing the active social structure in the same format as the original file:
 	 * @return {Array} An array of objects, one for each category, with a field "types" with all the type name for that category, etc. (see format for loadSocialStructure)
 	 */
 	var getSchema = function() {
@@ -5461,7 +5461,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 			item = getCategoryDescriptors(catKey);
 			item.category = catKey;
 			item.types = Object.keys(socialStructure[catKey]);
-			
+
 			// TODO: Standardize field names between external files and internal representation, so the below isn't necessary.
 			item.defaultValue = item.defaultVal;
 			delete item.defaultVal;
@@ -5484,7 +5484,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 *
 	 * @param  {String} categoryName The social category to get information about.
 	 * @example var categoryDescriptors = ensemble.getCategoryDescriptors("traits");
-	 * @return {Object} A dictionary with keys for each piece of metadata about the social category: "directionType" will be directed, undirected, or reciprocal; "isBoolean" will be true or false (false = numeric). 
+	 * @return {Object} A dictionary with keys for each piece of metadata about the social category: "directionType" will be directed, undirected, or reciprocal; "isBoolean" will be true or false (false = numeric).
 	 */
 	var getCategoryDescriptors = function(categoryName) {
 		var descriptors = {};
@@ -5516,11 +5516,11 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	//@method getCategoryFromType
 	//@memberOf ensemble
 	//@public
-	//@description Returns the category name associated with a particular type. 
+	//@description Returns the category name associated with a particular type.
 	//
 	// @param  {String} type A type from a social scheme (i.e. "friends").
 	//
-	// @return {String} The name of the social category to which that type belongs (i.e. "relationships"), or false if none was found. 
+	// @return {String} The name of the social category to which that type belongs (i.e. "relationships"), or false if none was found.
 	//
 	var getCategoryFromType = function(type) {
 		for (var categoryName in socialStructure) {
@@ -5580,10 +5580,10 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @method addCharacters
 	 * @public
 	 * @memberOf ensemble
-	 * 
-	 * @description Load from file the characters 
 	 *
-@example var rawCast = ensemble.loadFile("data/cast.json"); 
+	 * @description Load from file the characters
+	 *
+@example var rawCast = ensemble.loadFile("data/cast.json");
  var cast = ensemble.addCharacters(rawCast);
 
 	 * @param {Object} data A file defining the characters in this story. Should contain a single top-level key, "cast", which holds a dictionary of character identifiers, each containing an object with character metadata. If the object contains a key "name" with the printed name of the character, the getCharName function can be used to quickly return this.
@@ -5668,7 +5668,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @param {String} fileName Identifying info about the source of these rules, useful if we need to print error messages.
 	 * @param {Object} rues An array of rule objects, each of which should specify a human-readable "name" key.
 	 *
-	 * @return {Array}      An array of strings, unique IDs for each rule added, in the form type_num (i.e. triggerRules_14). 
+	 * @return {Array}      An array of strings, unique IDs for each rule added, in the form type_num (i.e. triggerRules_14).
 	 */
 	var addProcessedRules = function(ruleType, fileName, rules) {
 
@@ -5707,7 +5707,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 					condRef = standardizePredicate(condRef);
 
 					conditionValFunc(condRef, "Examining " + ruleType + " rule #" + i + ": '" + rule.name + "' Validating condition at position " + j);
-					
+
 				}
 			}
 
@@ -5720,7 +5720,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 
 					effectValFunc(effectRef, "Examining " + ruleType + " rule #" + i + ": '" + rule.name + "' Validating effect at position " + j);
 				}
-			}			
+			}
 		}
 
 		if (rules.length > 0) {
@@ -5731,7 +5731,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		}
 	};
 
-	
+
 	//standardize a predicate (called before validation).
 	var standardizePredicate = function(pred){
 
@@ -5756,7 +5756,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 			else if(intentType.toLowerCase() === "increase"){
 				//isBoolean better be false!
 				if(categoryDescriptors.isBoolean){
-					//user specified a numeric specific intent type but the predicate is a boolean! 
+					//user specified a numeric specific intent type but the predicate is a boolean!
 					console.log("problem predicate: " , pred);
 					throw new Error("Error loading in predicate -- it has a numeric-only intentType (" + intentType + ") but is a boolean!");
 				}
@@ -5799,26 +5799,26 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		return pred;
 	}
 
-	
+
 
 	//TODO: To fully support custom rulesets, we will need to add another function to RuleLibrary: getRulesByKey(key) that takes in a key, and returns the ruleset specified by that key.
 	/**
 	 *@method addRules
 	 *@memberof ensemble
 	 *@public
-	 * 
+	 *
 	 * @description Takes raw rules data, parses out metadata and verifies the data is structured correctly, then calls the private function addProcessedRules to validate and register these rules into ensemble. This function should be the only one used to add rules. It should be called for each separate rule file that needs to be loaded in. You should expect to call this function at least twice: once for volition rules, and once for trigger rules.
-	 * 
+	 *
 	 *
 	 @example var rawTriggerRules = ensemble.loadFile("data/triggerRules.json");
  var triggerRules = ensemble.addRules(rawTriggerRules);
-			
+
  var rawVolitionRules = ensemble.loadFile("data/volitionRules.json");
  var volitionRules = ensemble.addRules(rawVolitionRules);
 	 * @param {Object} data Stringified JSON or Object which should define top level keys "fileName", "ruleType", and "rules".
 	 *
-	 * @return {Array}      An array of strings, unique IDs for each rule added, in the form type_num (i.e. triggerRules_14). 
-	 * 
+	 * @return {Array}      An array of strings, unique IDs for each rule added, in the form type_num (i.e. triggerRules_14).
+	 *
 	 */
 	var addRules = function(data){
 		var parsedData;
@@ -5860,19 +5860,19 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 *@method getRules
 	 *@memberof ensemble
 	 *@public
-	 * 
+	 *
 	 * @description Given a string representation of a rule set (either "trigger" or "volition"), returns
-	 * all of the rules that are registered to that rule set. At present there is no functionalit for 
+	 * all of the rules that are registered to that rule set. At present there is no functionalit for
 	 * rules outside of these two rulesets. This function is intended for reviewing what rules have been
-	 * registered to ensemble. 
-	 * 
+	 * registered to ensemble.
+	 *
 	 *
 	 * @example var triggerRules = ensemble.getRules("trigger");
 	 * @example var volitionRules = ensemble.getRules("volition");
 	 * @param {String} The ruleset you wish to collect all of the rules from. "trigger" or "volition" are the only accepted answers.
 	 *
 	 * @return {Object} A collection of rules registered to the specified rule set.
-	 * 
+	 *
 	 */
 	var getRules = function(ruleSet) {
 		if (ruleSet === "trigger") {
@@ -5889,18 +5889,18 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 *@method filterRules
 	 *@memberof ensemble
 	 *@public
-	 * 
+	 *
 	 * @description When given a ruleset and an object specifying search criteria, return only the rules from the ruleset that match. The object passed in is the same as a search object you'd use with ensemble.get() i.e., { category: "traits" }. All rules having any conditions or effects that match the request are returned.
 	 *
 	 * @param {String} ruleSet The ruleset to search (probably "trigger" or "volition").
 	 *
 	 * @param {Object} criteria Currently supports a single key-value pair matching one aspect of a predicate.
-	 * 
+	 *
 	 * @example var ruleSet = "volition";
  var criterea = {"type":"kind"};
  var filteredRules = ensemble.filterRules(ruleSet, criterea);
-	 * @return {Array}      An array of matching rules. 
-	 * 
+	 * @return {Array}      An array of matching rules.
+	 *
 	 */
 	var filterRules = function(ruleSet, criteria) {
 		var itemsToFilter = getRules(ruleSet);
@@ -5912,14 +5912,14 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 *@method filterActions
 	 *@memberof ensemble
 	 *@public
-	 * 
+	 *
 	 * @description When given an object specifying search criteria, return only the actions that match the given terms. The object passed in is the same as a search object you'd use with ensemble.get() e.g., { "category": "traits" }. All actions having any conditions, effects, or influenceRules that match the request are returned.
 	 *
 	 * @param {Object} criteria Currently supports a single key-value pair matching one aspect of a predicate.
-	 * @example var criteria = {"type": "kind"}; 
+	 * @example var criteria = {"type": "kind"};
  var filteredActions = ensemble.filterActions(criteria)
-	 *@return {Array}      An array of matching actions. 
-	 * 
+	 *@return {Array}      An array of matching actions.
+	 *
 	 */
 	var filterActions = function(criteria) {
 		var itemsToFilter = actionLibrary.getAllActions();
@@ -6001,7 +6001,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	* @param {String} type the specific type of the specified category that we are interested in learning the value of.
 	* @param {Int} mostRecentTime establishes the upper bound of the window into the history to look. 0 (or undefined) means the current timestep.
 	* @param {Int} lessRecentTime establishes the lower bound of the window into the history to look. undefined will simply only look at the current timestep.
-	@example var predicateValue = ensemble.getValue("bob", "carol", "relationship", "dating", 0, 0); 
+	@example var predicateValue = ensemble.getValue("bob", "carol", "relationship", "dating", 0, 0);
 	*@return {Number or Boolean} the value of the specified type between the specified characters. Could either be a number of boolean, as the value might be referring to a boolean type or a numeric one.
 	*/
 	var getValue = function(first, second, category, type, mostRecentTime, lessRecentTime){
@@ -6018,9 +6018,9 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 
 	// Public-facing function to access the socialRecord. Does verification on input. Internal functions should use socialRecord.get instead.
 	/**
-	* @description  Search the socialRecord for a desired searchPredicate within a provided time period. 
-	If mostRecentTime and leastRecentTime exist but are formatted improperly 
-	(i.e., mostRecentTime is a higher number than lessRecentTime), 
+	* @description  Search the socialRecord for a desired searchPredicate within a provided time period.
+	If mostRecentTime and leastRecentTime exist but are formatted improperly
+	(i.e., mostRecentTime is a higher number than lessRecentTime),
 	then the function will automatically swap the vaues between the two. If msotRecentTime and lessRecentTime
 	are not provided, the system will only look at the current timestep.
 	*
@@ -6063,8 +6063,8 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		return socialRecord.get(searchPredicate, mostRecentTime, lessRecentTime);
 	};
 
-	
-	
+
+
 	/**
 	 * @method setCharacterOffstage
 	 * @public
@@ -6097,7 +6097,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 * @memberOf ensemble
 	 * @description public facing function to place a character onstage.
 	 * @param characterName the name of the character to place on stage.
-	  Characters are considered "on stage" by default; this function should 
+	  Characters are considered "on stage" by default; this function should
 	  only need to be called if a character had been manually placed off stage,
 	   but now needs return to it.
 	 * @example  ensemble.setCharacterOnstage("bob");
@@ -6121,7 +6121,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		return (!characterOffstage);
 	};
 
-	
+
 	/**
 	 * @method getIsCharacterOnStage
 	 * @public
@@ -6164,14 +6164,14 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	var doAction = function(actionName, initiator, responder, registeredVolitions){
 		actionLibrary.doAction(actionName, initiator, responder, registeredVolitions);
 	};
-	
+
 
 	/**
 	 * @method reset
 	 * @public
 	 * @memberOf ensemble
-	 * @description Clear out the history and the rules currently loaded into Ensemble. 
-	 CAUTION: once you call this, you will have to reload in more rules/history, 
+	 * @description Clear out the history and the rules currently loaded into Ensemble.
+	 CAUTION: once you call this, you will have to reload in more rules/history,
 	 or else calculating volition or running trigger rules will do nothing!
 	 * @example ensemble.reset();
 	 */
@@ -6205,7 +6205,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 	 *
 	 */
 	var init = function() {
-		socialRecord.init();		
+		socialRecord.init();
 		return "Ok";
 	};
 
@@ -6232,12 +6232,12 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		runTriggerRules			: ruleLibrary.runTriggerRules,
 		ruleToEnglish			: ruleLibrary.ruleToEnglish,
 		predicateToEnglish		: ruleLibrary.predicateToEnglish,
-		
+
 		dumpSocialRecord		: socialRecord.dumpSocialRecord,
 		dumpActionLibrary		: actionLibrary.dumpActions,
 		set						: socialRecord.set,
 		get						: getSocialRecord,
-		getValue				: getValue, 
+		getValue				: getValue,
 		setPredicates			: setPredicates,
 		setCharacterOffstage	: setCharacterOffstage,
 		getIsCharacterOffstage	: getIsCharacterOffstage,
@@ -6256,7 +6256,7 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		getSocialRecordCopyAtTimestep	: socialRecord.getSocialRecordCopyAtTimestep,
 		getSocialRecordCopy		: socialRecord.getSocialRecordCopy,
 		getCurrentTimeStep		: socialRecord.getCurrentTimeStep,
-		
+
 		addRules				: addRules,
 		getRules				: getRules,
 		filterRules				: filterRules,
@@ -6268,13 +6268,13 @@ function(util, _, ruleLibrary, actionLibrary, socialRecord, validate) {
 		setActionById			: actionLibrary.setActionById,
 		doAction				: doAction,
 		setSocialRecordById		: socialRecord.setById,
-		
+
 
 		reset					: reset
 
 
 
-	
+
 	};
 
 	/* test-code */
