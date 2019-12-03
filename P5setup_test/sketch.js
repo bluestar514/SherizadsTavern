@@ -41,14 +41,6 @@ function setup(){
   input.position(0, 0);
 }
 
-function doSomthing(){
-  //
-  // DEBUG:
-  print("npc replies here")
-  //reply herenew p5.Element(elt,pInst)
-  // reset button text - maybe save it as a varible
-}
-
 function draw(){
   image(tavern,0,0);
    // rotate(PI / 180 * 45);
@@ -57,35 +49,27 @@ function draw(){
 }
 
 function keyPressed() {
-
   if (keyCode === RETURN) {
-    // value = greet();
     value = chat();
-
+    input.value('');
   }
 }
-  function greet(){
-    print ("hello world!");
-    let userInput= input.value();
-    //do checks on imput.valuenew p5.Element(
-    print("user wentef", userInput);
-    input.value('');
-
-
-    }
 
 //bot functions
 
 function chat() {
    // What did the user say?
-   let userInput = input.value();
+   var userInput = input.value();
    // What does the bot say?
    var reply = bot.reply("local-user", userInput);
    //TODO an modify reply and user input here 0000 priot to sending
    //TODO if its not listed here have it go to one of the dge cases
 
    // show the reply
-   print(reply.promiseValue);
+   print(reply);
+   reply.then(function(value){
+     console.log(value);
+   })
    // output.html(reply);
  }
 
@@ -97,7 +81,7 @@ function botNotReady(err){
    // print("An error has occurred", err);
    print("An error has occurred",err);
 
-    }
+}
 
 FILE_DIR = "barDomain3";
 FILES = {"actions" : FILE_DIR + "/actions.json",
@@ -184,4 +168,35 @@ function getAllActions(){
 		allActions[cast[i]] = getAllActionsFor(cast[i])
 	}
 	return allActions
+}
+
+function simplifyActionOptions(actionsList){
+  var simpleDictionary = {}
+
+  for (var action in actionsList) {
+    console.log(action)
+    let actionName = actionsList[action]["name"]
+    let actionWeight = actionsList[action]["weight"]
+    if( actionName in simpleDictionary){
+      simpleDictionary[actionName] += actionWeight
+    }else{
+      simpleDictionary[actionName] = actionWeight
+    }
+  }
+
+  return simpleDictionary
+}
+
+function getBestActionBetween(initiator, responder){
+  var allActions = simplifyActionOptions(getAllActionsFor(initiator)[responder]);
+
+  var bestAction = 0;
+
+  for (var action in allActions) {
+    if (allActions[bestAction] < allActions[action]) {
+      bestAction = action
+    }
+  }
+
+  return allActions[bestAction]
 }
