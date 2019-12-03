@@ -83,6 +83,9 @@ function chat() {
    let userInput = input.value();
    // What does the bot say?
    var reply = bot.reply("local-user", userInput);
+   //TODO an modify reply and user input here 0000 priot to sending
+   //TODO if its not listed here have it go to one of the dge cases
+
    // show the reply
    print(reply);
    // output.html(reply);
