@@ -16,6 +16,34 @@
         "value" : -5
       },
       {
+        "category" : "RelationshipDirected",
+        "type" : "respect",
+        "first" : "Barkeep",
+        "second" : "Marco",
+        "value" : 3
+      },
+      {
+        "category" : "RelationshipReciprocal",
+        "type" : "respect",
+        "first" : "Barkeep",
+        "second" : "Jasper",
+        "value" : -3
+      },
+      {
+        "category" : "RelationshipDirected",
+        "type" : "respect",
+        "first" : "Marco",
+        "second" : "Barkeep",
+        "value" : 2
+      },
+      {
+        "category" : "RelationshipReciprocal",
+        "type" : "respect",
+        "first" : "Jasper",
+        "second" : "Barkeep",
+        "value" : 3
+      },
+      {
         "category" : "Traits",
         "type" :"anyone",
         "first" : "Barkeep",
@@ -30,6 +58,18 @@
       {
         "category" : "Traits",
         "type" :"anyone",
+        "first" : "Jasper",
+        "value": true
+      },
+      {
+        "category" : "PersonalRecord",
+        "type" :"hasproblem",
+        "first" : "Marco",
+        "value": true
+      },
+      {
+        "category" : "PersonalRecord",
+        "type" :"hasproblem",
         "first" : "Jasper",
         "value": true
       }

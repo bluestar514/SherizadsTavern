@@ -20,7 +20,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 2,
 					"intentType": true
 				}
 			],
@@ -45,7 +45,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 3,
 					"intentType": true
 				}
 			],
@@ -129,7 +129,7 @@
 			"type": "volition"
 		},
 		{
-			"name": "People do respect those that give good advice",
+			"name": "People respect those that give good advice",
 			"conditions": [
 				{
 					"category": "SocialRecord",
@@ -141,8 +141,8 @@
 			],
 			"effects": [
 				{
-					"category": "SocialRecord",
-					"type": "goodadvice",
+					"category": "RelationshipDirected",
+					"type": "respect",
 					"first": "someone",
 					"second": "other",
 					"weight": 5,
@@ -242,6 +242,113 @@
 			],
 			"origin": "volitions",
 			"id": "volitionRules_13",
+			"type": "volition"
+		},
+		{
+			"name": "Everyone is a gossip [[TESTING]]",
+			"conditions": [
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "InternalValues",
+					"type": "gossip",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_14",
+			"type": "volition"
+		},
+		{
+			"name": "People try to offer advice to their friends",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 4,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_15",
+			"type": "volition"
+		},
+		{
+			"name": "People complain to those they don't hate",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": -4,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_16",
+			"type": "volition"
+		},
+		{
+			"name": "People Try to give advice to those who complain",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "other",
+					"second": "someone",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_17",
 			"type": "volition"
 		}
 	]

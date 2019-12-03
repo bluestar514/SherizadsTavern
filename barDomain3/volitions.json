@@ -20,7 +20,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 2,
 					"intentType": true
 				}
 			],
@@ -45,7 +45,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 3,
 					"intentType": true
 				}
 			],
@@ -129,7 +129,7 @@
 			"type": "volition"
 		},
 		{
-			"name": "People do respect those that give good advice",
+			"name": "People respect those that give good advice",
 			"conditions": [
 				{
 					"category": "SocialRecord",
@@ -141,8 +141,8 @@
 			],
 			"effects": [
 				{
-					"category": "SocialRecord",
-					"type": "goodadvice",
+					"category": "RelationshipDirected",
+					"type": "respect",
 					"first": "someone",
 					"second": "other",
 					"weight": 5,
@@ -236,7 +236,7 @@
 					"type": "complimented",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 3,
 					"intentType": true
 				}
 			],
@@ -266,7 +266,7 @@
 					"type": "gossip",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 2,
 					"intentType": true
 				}
 			],
@@ -292,7 +292,7 @@
 					"type": "goodadvice",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 2,
 					"intentType": true
 				}
 			],
@@ -308,7 +308,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"value": -4,
+					"value": 0,
 					"operator": ">"
 				}
 			],
@@ -318,7 +318,7 @@
 					"type": "complainedto",
 					"first": "someone",
 					"second": "other",
-					"weight": 5,
+					"weight": 2,
 					"intentType": true
 				}
 			],
@@ -341,6 +341,36 @@
 				{
 					"category": "SocialRecord",
 					"type": "goodadvice",
+					"first": "other",
+					"second": "someone",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_17",
+			"type": "volition"
+		},
+		{
+			"name": "People with problems complain",
+			"conditions": [
+				{
+					"category": "PersonalRecord",
+					"type": "hasproblem",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
 					"first": "someone",
 					"second": "other",
 					"weight": 5,
@@ -348,7 +378,33 @@
 				}
 			],
 			"origin": "volitions",
-			"id": "volitionRules_17",
+			"id": "volitionRules_18",
+			"type": "volition"
+		},
+		{
+			"name": "People don't complain to those they hate",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": -3,
+					"operator": "<"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"weight": -5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_19",
 			"type": "volition"
 		}
 	]

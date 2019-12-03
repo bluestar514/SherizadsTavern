@@ -11,7 +11,7 @@
         },
       "conditions" : [],
       "influenceRules" : [],
-      "leadsTo" : ["GREET", "ASKABOUT"]
+      "leadsTo" : ["GREET", "ASKABOUT", "compliment"]
     },
     {
 			"name" : "GREET",
@@ -56,7 +56,19 @@
 
 
 
-
+    {
+      "name" : "DECREASEFRIENDSHIP",
+      "intent" : {
+          "category": "RelationshipReciprocal",
+          "type": "friendship",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": false
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["insult"]
+    },
     {
       "name" : "INSULTOTHERS",
       "intent" : {
@@ -88,7 +100,7 @@
        "first" : "initiator",
         "second": "responder",
        "operator" : "-",
-       "value" : 1}]
+       "value" : 2}]
     },
 
 
@@ -177,7 +189,20 @@
     {
       "name" : "ASKABOUTfamily",
       "conditions" : [],
-      "influenceRules" : [],
+      "influenceRules" : [
+        {
+          "name" : "People are more likely to ask about the families of their friends.",
+          "conditions" :[{
+            "category" : "RelationshipReciprocal",
+            "type": "friendship",
+            "first" : "x",
+            "second" : "y",
+            "operator" : ">",
+            "value" : 3
+          }],
+          "weight" : 2
+        }
+      ],
       "leadsTo": ["askaboutfamily"]
     },
     {
@@ -185,19 +210,42 @@
 			"displayName" : "Ask About Family",
 			"conditions" : [],
 			"influenceRules" : [],
-			"effects" : [{
-				"category" : "RelationshipReciprocal",
-				"type" : "friendship",
-				"first" : "initiator",
-        "second": "responder",
-				"operator" : "+",
-				"value" : 1
-			}]
+			"effects" : [
+        {
+  				"category" : "RelationshipReciprocal",
+  				"type" : "friendship",
+  				"first" : "initiator",
+          "second": "responder",
+  				"operator" : "+",
+  				"value" : 1
+  			},
+        {
+  				"category" : "RelationshipDirected",
+  				"type" : "respect",
+  				"first" : "responder",
+          "second": "initiator",
+  				"operator" : "+",
+  				"value" : 1
+  			}
+      ]
 		},
     {
       "name" : "ASKABOUTbusiness",
       "conditions" : [],
-      "influenceRules" : [],
+      "influenceRules" : [
+        {
+          "name" : "People are more likely to ask about the business of people they don't hate.",
+          "conditions" :[{
+            "category" : "RelationshipReciprocal",
+            "type": "friendship",
+            "first" : "x",
+            "second" : "y",
+            "operator" : ">",
+            "value" : -4
+          }],
+          "weight" : 2
+        }
+      ],
       "leadsTo": ["askaboutbusiness"]
     },
     {
@@ -205,14 +253,24 @@
 			"displayName" : "Ask About Business",
 			"conditions" : [],
 			"influenceRules" : [],
-			"effects" : [{
-				"category" : "RelationshipReciprocal",
-				"type" : "friendship",
-				"first" : "initiator",
-        "second": "responder",
-				"operator" : "+",
-				"value" : 1
-			}]
+			"effects" : [
+        {
+          "category" : "RelationshipReciprocal",
+          "type" : "friendship",
+          "first" : "initiator",
+          "second": "responder",
+          "operator" : "+",
+          "value" : 1
+        },
+        {
+          "category" : "RelationshipDirected",
+          "type" : "respect",
+          "first" : "responder",
+          "second": "initiator",
+          "operator" : "+",
+          "value" : 1
+        }
+      ]
 		},
 
     {
@@ -342,6 +400,7 @@
       "name" : "offeradvice_success",
       "displayName" : "Offer Advice <SUCCESS>",
       "conditions" : [],
+      "isAccept": true,
       "influenceRules" : [
         {
           "name" : "People are less likely to accept if they don't respect them.",
@@ -351,12 +410,34 @@
             "first" : "x",
             "second" : "y",
             "operator" : ">",
-            "value" : 4
+            "value" : 3
           }],
           "weight" : -5
+        },
+        {
+          "name" : "People are less likely to accept advice if they don't have a problem.",
+          "conditions" :[{
+            "category" : "PersonalRecord",
+            "type": "hasproblem",
+            "first" : "x",
+            "value" : false
+          }],
+          "weight" : -2
+        },
+        {
+          "name" : "People are more likely to accept advice if they have complained about a problem.",
+          "conditions" :[{
+            "category" : "SocialRecord",
+            "type": "complainedto",
+            "first" : "x",
+            "second" : "y",
+            "value" : true
+          }],
+          "weight" : 5
         }
       ],
-      "effects" : [{
+      "effects" : [
+        {
           "category" : "RelationshipReciprocal",
           "type" : "friendship",
           "first" : "initiator",
@@ -378,7 +459,9 @@
       "displayName" : "Offer Advice <FAIL>",
       "conditions" : [],
       "influenceRules" : [],
-      "effects" : [{
+      "isAccept": false,
+      "effects" : [
+        {
           "category" : "RelationshipReciprocal",
           "type" : "friendship",
           "first" : "initiator",
@@ -427,6 +510,23 @@
           "value" : true
         }
       ]
+    },
+
+
+
+
+    {
+      "name": "INCREASERESPECT",
+      "intent" : {
+          "category": "RelationshipDirected",
+          "type": "respect",
+          "first": "initiator",
+          "second": "responder",
+          "intentType": true
+        },
+      "conditions" : [],
+      "influenceRules" : [],
+      "leadsTo" : ["ASKABOUT"]
     }
   ]
 }

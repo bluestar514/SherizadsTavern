@@ -90,6 +90,17 @@
 				"complainedto"
 			],
 			"defaultValue": false
+		},
+		{
+			"actionable": false,
+			"directionType": "undirected",
+			"isBoolean": true,
+			"cloneEachTimeStep": true,
+			"category": "PersonalRecord",
+			"types": [
+				"hasproblem"
+			],
+			"defaultValue": false
 		}
 	]
 }

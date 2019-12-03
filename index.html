@@ -3,7 +3,7 @@
 <script>
 console.log("Test");
 
-FILE_DIR = "BarDomain2";
+FILE_DIR = "BarDomain3";
 FILES = {"actions" : FILE_DIR + "/actions.json",
 		"cast" : FILE_DIR + "/cast.json",
 		"history" : FILE_DIR + "/history.json",
@@ -23,7 +23,7 @@ function main() {
 
 	for (const [key, value] of Object.entries(FILES)) {
 	  raw[key] = ensemble.loadFile(value)
-	  
+
 	}
 
 	console.log(raw)
