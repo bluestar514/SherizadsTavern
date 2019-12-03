@@ -6,7 +6,7 @@ let bar;
 let bot = new RiveScript();
 
 const brains = [
-   '/images/brain.rive'
+   '/brains/MarcoBrain.rive'
 // './another-category-sample.rive
 ];
 bot.loadFile(brains).then(botReady).catch(botNotReady);
