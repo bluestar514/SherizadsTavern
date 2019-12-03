@@ -21,3 +21,12 @@
 - I am afraid that i can not understand you
 - I did not get it
 - Sorry can you please elaborate that for me
+
+// copied but will change to match our game
+
++ [*] (hi|hello|helo |howdy|hey|hi!|hello there|) [*]
+- hi!
+- hey there barkeep
+- tavernkeeper *nods*
+- *nods*
+- *glances your direction and blinks*
