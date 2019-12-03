@@ -1,0 +1,86 @@
++ greetsuccess
+- hey there :), can i have some mead please
+- nice to see you! can i have some mead please
+- hello , a drink please
+- *nods while smiling*,  your finest mead
+- hello friend, a bottle of your finest mead please!
+- keep'
+
++ greetfail
+- *marco stares blankly*, give me a bottle of mead  {weight}
+- *marco looks your way but says nothing, after a few minutes he speaks up* give me a bottle of your mead {weight=10}
+- *marco looks away as you greet him and requests a drink*
+- mmm, a bottle of mead.
+
+
++ insult
+- how dare you
+- you are being quite rude you know
+- no wonder this place is a dump {weight=10}
+- Some tavernkeeper...
+- Some goblin's wax you are... {weight=15}
+- a fat innkeeper who only remembers your own name because people shout it at you all day." {weight=20}
+- my professional opinion is sadly, nothing to be done here.... you are stuck with that face
+
+
++ compliment
+- you are one hell of a barkeep! {weight=10}
+- my, you are indeed so graceful with those highball glasses
+- you always make one heck of a drink
+- others keepers lack in skill but you... you are something else keep'{weight=105}
+
++ askaboutday
+- day has been good!
+- can't complain
+- my daughter, alicia, took over my clinic
+- i have been painting in the morning by the river, so it has been good :)
+- i nap in my afternoons now, it's been great :)
+
++ askaboutfamily
+- i do not know if i mentioned this, but my daughter, alicia, took over my clinic
+- i am so proud of my daughter, with her carrying on the family legacy and all!
+- my daughter took over the clinic, i am so proud~
+
++ askaboutbusiness
+- i do not know if i mentioned this, but my daughter took over the clinic, i am so proud~
+- i do not know if i mentioned this, but i am so proud of my daughter, with her carrying on the family legacy and all!
+- i do not know if i mentioned this, but my daughter took over the clinic, i have so much free time now, most of it dedicated to sleep!
+
+
++ tellaboutgoodthing
+- coming soon!!!!
+
++ tellaboutbadthing
+- coming soon!!!!
+
++ tellaboutexcitingthing
+- coming soon!!!!
+
++ tellaboutobject
+- coming soon!!!!
+
++ tellaboutperson
+- coming soon!!!!
+
++ tellaboutobject
+- coming soon!!!!
+
++ offeradvicesuccess
+- thanks, i will think about that!
+- thanks for the advise
+- sounds good, i will think it over
+
++ offeradvicefail
+- yeah, right ( snarky)
+- sure....
+- marko seems unsure of your advice
+- marko questions your advice, he seems unsure
+
++ complain
+- i do worry about alicia
+- i think alicia needs help at the clinic, i am worried about her
+
++ hi
+- hellooooooooooooo test 
++ *
+- test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn

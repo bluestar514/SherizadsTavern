@@ -1,12 +1,14 @@
 let tavern;
 let marko;
 let bar;
-
+let tempFlag = false; //to display the text box or not ( when user enters sets to true)
+let replyString = ''; //it's global cz its set inside another method ( rive stuff) and needs to be in draw to actually render the text
+let timer = 14; //text stays on screen for this amount of time
 //from a tutorial below
 let bot = new RiveScript();
 
 const brains = [
-   '/brains/MarcoBrain.rive'
+   '/brains/MarcoBrains.rive'
 // './another-category-sample.rive
 ];
 bot.loadFile(brains).then(botReady).catch(botNotReady);
@@ -38,7 +40,7 @@ function setup(){
   // option1.mousePressed(doSomthing);
 
   input = createInput();
-  input.position(0, 0);
+  input.position(0, 700).size(500,40);
 }
 
 function draw(){
@@ -46,6 +48,29 @@ function draw(){
    // rotate(PI / 180 * 45);
   image(marko,10,0);
   image(barextra,0,-10);
+
+  if(tempFlag== true){
+
+    triangle(405, 250, 600, 320, 600, 375);
+
+    let c = color(255,255,255); // Define color 'c'
+    fill(c); // Use color variable 'c' as fill color
+    strokeWeight(4);
+    stroke(51);
+    rect(600, 10, 400, 450); // Draw rectangle
+
+    textSize(15);
+    fill(255);
+    text(replyString, 600, 10, 400, 450); // Text wraps within text box
+
+    if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    timer --;
+  }
+  if (timer <= 0) {
+    tempFlag = false;
+    timer = 16;
+  }
+  }
 }
 
 function keyPressed() {
@@ -68,7 +93,10 @@ function chat() {
    // show the reply
    print(reply);
    reply.then(function(value){
-     console.log(value);
+      replyString = value;
+      tempFlag = true;
+     // fill(1000);
+     // text(value, 0, 0, 600, 600); // Text wraps within text box
    })
    // output.html(reply);
  }

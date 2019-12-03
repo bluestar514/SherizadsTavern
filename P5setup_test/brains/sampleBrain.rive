@@ -24,9 +24,5 @@
 
 // copied but will change to match our game
 
-+ [*] (hi|hello|helo |howdy|hey|hi!|hello there|) [*]
-- hi!
-- hey there barkeep
-- tavernkeeper *nods*
-- *nods*
-- *glances your direction and blinks*
++ i (will|will not) *
+- It doesn't matter to me whether you <star2> or not.
