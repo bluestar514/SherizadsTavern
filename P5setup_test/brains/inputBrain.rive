@@ -1,0 +1,78 @@
+// Substitutions
+! sub i'm     = i am
+! sub i'd     = i would
+! sub i've    = i have
+! sub i'll    = i will
+! sub don't   = do not
+! sub isn't   = is not
+! sub you'd   = you would
+! sub you're  = you are
+! sub you've  = you have
+! sub you'll  = you will
+! sub what's  = what is
+! sub whats   = what is
+! sub what're = what are
+! sub what've = what have
+! sub what'll = what will
+! sub who's   = who is
+! sub how's   = how is
+
+// greet
++ [*]hello[*]
+@ hi
+
++ [*]hi[*]
+@ hi
+
++ [*]hey there[*]
+@ hi
+
++ [*]how is it going[*]
+
++ hi
+- greet
+
+// everything else
++ [*](fat|smelly|rude|gross|disgusting|bad|worst)[*]
+- insult
+
++ [*](nice|lovely|great|tasty|best)[*]
+- compliment
+
+// Ask About
++ [*]how[*]day
+@ how was your day
+
++ how was your day
+- askaboutday
+
++ [*]how[*]family
+@ how is the family
+
++ how is the family
+- askaboutfamily
+
++ [*]how[*]business[*]
+@ how is business going
+
++ how is business going
+- askaboutbusiness
+
+// Tell About
+// Not currently supported
+
+// Offer Advice
++ have you tried
+- offeradvice
++ [*]have[*]tried[*]
+@ offeradvice
++ [*]think[*]
+@ offeradvice
++ [*]you should[*]
+@ offeradvice
+
+// Complain
++ i hate *
+- complain
++ [*](hate|sucks)[*]
+@ i hate *
