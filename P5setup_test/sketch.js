@@ -2,6 +2,15 @@ let tavern;
 let marko;
 let bar;
 
+//from a tutorial below
+let bot = new RiveScript();
+
+const brains = [
+   '/images/brain.rive'
+// './another-category-sample.rive
+];
+bot.loadFile(brains).then(botReady).catch(botNotReady);
+
 let input, button, greeting;
 let option1,option2,option3,option4;
 
@@ -50,23 +59,53 @@ function draw(){
 function keyPressed() {
 
   if (keyCode === RETURN) {
-    value = greet();
+    // value = greet();
+    value = chat();
+
   }
 }
 
   function greet(){
     print ("hello world!");
     let userInput= input.value();
-
     //do checks on imput.valuenew p5.Element(
     print("user wentef", userInput);
     input.value('');
 
-    for (let i = 0; i < 200; i++) {
-      push();
 
-      text("test", 0, 0);
-      pop();
     }
 
+
+//bot functions
+
+function chat() {
+   // What did the user say?
+   let userInput = input.value();
+   // What does the bot say?
+   var reply = bot.reply("local-user", userInput);
+   // show the reply
+   print(reply);
+   // output.html(reply);
+ }
+// function selfReply(message){
+//  // message_container.innerHTML += `<div class=”self”>${message}</div>`;
+//  // location.href = ‘#edge’;
+//  print(message);
+//  bot.reply(message).then(function(reply) {
+//  botReply(reply);
+//  });
+// }
+//
+// function botReply(message){
+//   print(message);
+//
+// }
+function botReady(){
+   bot.sortReplies();
+   print('does this happen? does the bot reply');//yes this *used to*  works
   }
+function botNotReady(err){
+   // print("An error has occurred", err);
+   print("An error has occurred",err);
+
+    }
