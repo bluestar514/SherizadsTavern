@@ -242,3 +242,10 @@ function getBestActionBetween(initiator, responder){
 
   return allActions[bestAction]
 }
+
+function doAction(action){
+  var effects = action.effects; // where action came from ensemble.getAction(..) or getActions(..)
+  for(var i = 0; i < effects.length; i += 1){
+    ensemble.set(effects[i]);
+  }
+}
