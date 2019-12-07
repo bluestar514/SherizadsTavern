@@ -90,12 +90,12 @@ function simplifyActionOptions(actionsList){
 }
 
 function getBestActionBetween(initiator, responder){
-  var allActions = simplifyActionOptions(getAllActionsFor(initiator)[responder]);
-
+  // var allActions = simplifyActionOptions(getAllActionsFor(initiator)[responder]);
+	var allActions = getAllActionsFor(initiator)[responder];
   var bestAction = 0;
 
   for (var action in allActions) {
-    if (allActions[bestAction] < allActions[action]) {
+    if (allActions[bestAction].salience < allActions[action].salience) {
       bestAction = action;
     }
   }
@@ -109,6 +109,7 @@ function doAction(action){
 	for(var i = 0; i < effects.length; i += 1){
 		ensemble.set(effects[i]);
 	}
+
 }
 
 function matchAction(actionName, initiator, responder){
@@ -145,4 +146,4 @@ function makeAction(actionName, initiator, responder){
 			return action;
 		}
 	}
-}
+}//end of makeaction

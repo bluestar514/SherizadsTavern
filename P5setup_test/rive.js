@@ -33,19 +33,32 @@ function botNotReady(err){
 //bot functions
 function chat(userInput, displayFunction) {
    //var userInput = input.value();
-   var reply = inputbot.reply("local-user", userInput);
+   var initalPlayerInput = inputbot.reply("local-user", userInput);
 
    // show the reply
    //console.log(reply);
-   reply.then(function(value){
-        console.log("looking for action which starts with: "+value)
-        doAction(matchAction(value, "Barkeep", "Marco"))
+   initalPlayerInput.then(function(ininitalRiveTranlation){
+        console.log("looking for action which starts with: "+ ininitalRiveTranlation)
+        doAction(matchAction(ininitalRiveTranlation, "Barkeep", "Marco")) //for the player actions
 
-        console.log(value)
-        var reply2 = bot.reply("local-user", value)
-        
-        reply2.then(function(value2){
-            displayFunction(value2)
+        var townieResponce = bot.reply("local-user", ininitalRiveTranlation)
+
+        townieResponce.then(function(townieResponceTranslation){
+          let currentAction = getBestActionBetween("Marco", "Barkeep");
+          displayFunction(townieResponceTranslation);
+
+          doAction(currentAction);
+          setTimeout(function () {
+            var townieAction = bot.reply("local-user", currentAction["name"]);
+
+            townieAction.then(function(towniActionTranslation){
+
+              displayFunction(towniActionTranslation);
+            })
+          }, 14000)
+
+
+
         })
    })
    // output.html(reply);
