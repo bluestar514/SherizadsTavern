@@ -9,9 +9,9 @@ const inputBrains = [
 ];
 
 function startRive(){
-	bot.loadFile(marcoBrains).then(botReady).catch(botNotReady);
+    bot.loadFile(marcoBrains).then(botReady).catch(botNotReady);
 
-	inputbot.loadFile(inputBrains).then(inputbotReady).catch(botNotReady);
+    inputbot.loadFile(inputBrains).then(inputbotReady).catch(botNotReady);
 }
 
 
@@ -23,7 +23,7 @@ function botReady(){
 function inputbotReady(){
    inputbot.sortReplies();
    console.log('Input Bot Ready');//yes this *used to*  works
-  }
+}
 function botNotReady(err){
    // console.log("An error has occurred", err);
    console.log("Bot Not Ready",err);
@@ -32,19 +32,21 @@ function botNotReady(err){
 
 //bot functions
 function chat(userInput, displayFunction) {
-
    //var userInput = input.value();
-
    var reply = inputbot.reply("local-user", userInput);
-   
+
    // show the reply
    //console.log(reply);
    reply.then(function(value){
-      var reply2 = bot.reply("local-user", value)
-      console.log(value)
-      reply2.then(function(value2){
-        displayFunction(value2)
-      })
+        console.log("looking for action which starts with: "+value)
+        doAction(matchAction(value, "Barkeep", "Marco"))
+
+        console.log(value)
+        var reply2 = bot.reply("local-user", value)
+        
+        reply2.then(function(value2){
+            displayFunction(value2)
+        })
    })
    // output.html(reply);
  }

@@ -5,13 +5,14 @@
 let tavern;
 let marko;
 let barextra;
-//
+
+// Timer stuff for speach bubble
 let tempFlag = false; //to display the text box or not ( when user enters sets to true)
 let replyString = ''; //it's global cz its set inside another method ( rive stuff) and needs to be in draw to actually render the text
 let initialTimer = 14
 let timer = initialTimer; //text stays on screen for this amount of time
-//from a tutorial below
 
+// User text box input
 let input;
 
 

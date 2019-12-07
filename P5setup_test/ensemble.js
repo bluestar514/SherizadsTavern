@@ -2988,12 +2988,13 @@ var getAllActions = function(){
  * @memberOf ensemble
  */
 var dumpActions = function(){
-	console.log("***DUMPING ACTIONS***");
-	console.log("There are " + actions.length + " actions.");
-	for(var i = 0; i < actions.length; i += 1){
-		console.log(i + ".) " ,  actions[i]);
-	}
-	console.log("***END DUMPING ACTIONS***");
+	// console.log("***DUMPING ACTIONS***");
+	// console.log("There are " + actions.length + " actions.");
+	// for(var i = 0; i < actions.length; i += 1){
+	// 	console.log(i + ".) " ,  actions[i]);
+	// }
+	// console.log("***END DUMPING ACTIONS***");
+	return JSON.parse(JSON.stringify(actions));
 }
 
 /**
