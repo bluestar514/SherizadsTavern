@@ -1,14 +1,24 @@
 // Substitutions
 ! sub i'm     = i am
+! sub im      = i am
 ! sub i'd     = i would
+! sub id     = i would
 ! sub i've    = i have
+! sub ive    = i have
 ! sub i'll    = i will
+! sub ill    = i will //would not work as ill is a word
 ! sub don't   = do not
+! sub dont   = do not
 ! sub isn't   = is not
+! sub isnt   = is not
 ! sub you'd   = you would
+! sub youd   = you would
 ! sub you're  = you are
+! sub youre  = you are
 ! sub you've  = you have
+! sub youve  = you have
 ! sub you'll  = you will
+! sub youll  = you will
 ! sub what's  = what is
 ! sub whats   = what is
 ! sub what're = what are
@@ -16,6 +26,7 @@
 ! sub what'll = what will
 ! sub who's   = who is
 ! sub how's   = how is
+! sub hows   = how is
 
 // greet
 + [*]hello[*]
@@ -33,7 +44,7 @@
 - greet
 
 // everything else
-+ [*](fat|smelly|rude|gross|disgusting|bad|worst)[*]
++ [*](fat|smelly|rude|gross|disgusting|bad|worst|jerk)[*]
 - insult
 
 + [*](nice|lovely|great|tasty|best)[*]

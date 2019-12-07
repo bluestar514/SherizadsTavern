@@ -1,3 +1,6 @@
++ greet
+@ greetsuccess
+
 + greetsuccess
 - hey there :), can i have some mead please
 - nice to see you! can i have some mead please
@@ -65,6 +68,9 @@
 + tellaboutobject
 - coming soon!!!!
 
++ offeradvice
+@ offeradvicefail
+
 + offeradvicesuccess
 - thanks, i will think about that!
 - thanks for the advise
@@ -80,7 +86,5 @@
 - i do worry about alicia
 - i think alicia needs help at the clinic, i am worried about her
 
-+ hi
-- hellooooooooooooo test 
 + *
-- test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn test does this print on screen nnnnnnnnnnn
+- One more time?

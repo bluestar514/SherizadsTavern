@@ -6,12 +6,18 @@ let replyString = ''; //it's global cz its set inside another method ( rive stuf
 let timer = 14; //text stays on screen for this amount of time
 //from a tutorial below
 let bot = new RiveScript();
-
-const brains = [
+let inputbot = new RiveScript();
+const marcoBrains = [
    '/brains/MarcoBrains.rive'
 // './another-category-sample.rive
 ];
-bot.loadFile(brains).then(botReady).catch(botNotReady);
+const inputBrains = [
+   '/brains/inputBrain.rive'
+// './another-category-sample.rive
+];
+bot.loadFile(marcoBrains).then(botReady).catch(botNotReady);
+
+inputbot.loadFile(inputBrains).then(inputbotReady).catch(botNotReady);
 
 let input, button, greeting;
 let option1,option2,option3,option4;
@@ -86,23 +92,31 @@ function chat() {
    // What did the user say?
    var userInput = input.value();
    // What does the bot say?
-   var reply = bot.reply("local-user", userInput);
+   var reply = inputbot.reply("local-user", userInput);
    //TODO an modify reply and user input here 0000 priot to sending
    //TODO if its not listed here have it go to one of the dge cases
 
    // show the reply
    print(reply);
    reply.then(function(value){
-      replyString = value;
-      tempFlag = true;
-     // fill(1000);
-     // text(value, 0, 0, 600, 600); // Text wraps within text box
+      var reply2 = bot.reply("local-user", value)
+      console.log(value)
+      reply2.then(function(value2){
+
+        replyString = value2;
+        tempFlag = true;
+      })
    })
    // output.html(reply);
  }
 
 function botReady(){
    bot.sortReplies();
+   print('does this happen? does the bot reply');//yes this *used to*  works
+  }
+
+function inputbotReady(){
+   inputbot.sortReplies();
    print('does this happen? does the bot reply');//yes this *used to*  works
   }
 function botNotReady(err){
