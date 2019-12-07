@@ -104,6 +104,11 @@ function getBestActionBetween(initiator, responder){
 }
 
 function doAction(action){
+	if(action == null){
+		console.log("Unrecognized Action Name");
+		return;
+	} 
+
 	console.log("Doing "+action["name"])
 	var effects = action.effects; // where action came from ensemble.getAction(..) or getActions(..)
 	for(var i = 0; i < effects.length; i += 1){
