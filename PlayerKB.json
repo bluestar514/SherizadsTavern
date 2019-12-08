@@ -1,0 +1,214 @@
+[
+	{
+		"subject"	: "Jasper",
+		"action"	: "husstles",
+		"object"	: "patrions",
+		"opinion"	: -5,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "retired",
+		"object"	: "doctor",
+		"opinion"	: 12,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "took over",
+		"object"	: "Marco's business",
+		"opinion"	: 7,
+    "Knowledgable" : false
+	},
+	{
+		"subject"	: "Barkeep",
+		"action"	: "collects",
+		"location"	: "bottles",
+		"opinion"	: 4,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "paints",
+		"time"		: "afternoon",
+		"opinion"	: 4,
+    "Knowledgable" : false
+	},
+	{
+		"subject"	: "Alicia",
+		"state"		: "busy",
+		"opinion"	: -10
+	},
+	{
+		"subject"	: "the tavern",
+		"state"		: "Dive bar",
+		"opinion"	: 5,
+    "Knowledgable" : false
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "collecting",
+		"object"	: "herbs",
+		"opinion"	: 0,
+    "Knowledgable" : false
+	},
+	{
+		"subject"	: "barkeep",
+		"state"		: "member of ",
+		"object"	: "the brewer's club",
+		"opinion"	: 9
+	},
+	{
+		"subject"	: "Marco",
+    "faviorateDrink": "gin",
+		"opinion"	: 7,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "owns",
+		"object"	: "cat",
+		"opinion"	: 7,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Barkeep",
+		"action"	: "owns",
+		"object"	: "dog",
+		"opinion"	: 1,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Barkeep",
+		"object"	: "Book: how to be a better tavern owner: an introduction",
+		"opinion"	: 8,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "comes with",
+		"object"	: "Jasper",
+		"opinion"	: -7,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Jasper",
+		"state"		: "cheater",
+		"opinion"	: -3,
+    "Knowledgable" : false
+	},
+	{
+		"subject"	: "Jasper",
+		"action"	: "boyfriend of",
+		"object"	: "Alecia",
+		"opinion"	: 2,
+    "Knowledgable" : false
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "member of",
+		"object"	: "Doctor's guild",
+		"opinion"	: 9,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Jasper",
+		"action"	: "gave",
+		"object"	: "fake coins",
+		"opinion"	: -10,
+    "Knowledgable" : false
+	},
+  {
+    "subject"	: "Barkeep",
+    "action"	: "lights",
+    "object"	: "one candle at night",
+    "opinion"	: 8,
+    "Knowledgable" : true
+  },
+	{
+		"subject"	: "Barkeep",
+		"action"	: "owns",
+		"object"	: "Tavern",
+		"opinion"	: 8,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "wooden leg",
+		"state"		: "badge of honor",
+		"opinion"	: 7,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Marco",
+		"state"		: "regular patrion",
+		"opinion"	: 8,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Alecia",
+		"state"		: "patrion",
+		"opinion"	: 4,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Jasper",
+		"state"		: "regular patron",
+		"opinion"	: -2,
+    "Knowledgable" : true
+	}
+  ,
+	{
+		"subject"	: "Midna",
+		"state"		: "regular patron",
+		"opinion"	: 10,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Link",
+		"state"		: "aweful patron",
+		"opinion"	: -4,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "Zelda",
+		"state"		: "regular patron",
+		"opinion"	: -4,
+    "Knowledgable" : true
+	},
+  {
+		"subject"	: "Zelda",
+		"action"	: "owns",
+		"object"	: "Butchery",
+		"opinion"	: 15,
+    "Knowledgable" : true
+  	},
+    {
+		"subject"	: "Link",
+		"action"	: "runs",
+		"object"	: "herb shop",
+		"opinion"	: 10,
+    "Knowledgable" : true
+    },
+    {
+		"subject"	: "Midna",
+		"action"	: "runs",
+		"object"	: "dark magic shop",
+		"opinion"	: 10,
+    "Knowledgable" : true
+	 },
+   {
+   "subject"	: "Midna",
+   "action"	: "member of",
+   "object"	: "the dark art's guild",
+   "opinion"	: 10,
+   "Knowledgable" : true
+  },
+  {
+     "subject"	: "Midna",
+     "action"	: "member of",
+     "object"	: "the dark art's guild",
+     "opinion"	: 10,
+     "Knowledgable" : true
+    }
+
+]
