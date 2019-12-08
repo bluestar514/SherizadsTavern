@@ -21,14 +21,19 @@ function preload(){
   tavern = loadImage("/images/tavern.png");
   marko= loadImage("/images/marko.png");
   barextra= loadImage("/images/barextra.png");
+  speechBubble = loadImage("/images/speechBubble.png");
 
 }
 
 function setup(){
-  createCanvas(1230,800);
+  var canvas =  createCanvas(1230,800);
+  canvas.parent("sketch_canvas");
+  background(0, 0, 0);
+
 
   input = createInput();
   input.position(0, 700).size(500,40);
+  input.parent("sketch_input");
 }
 
 function draw(){
@@ -40,8 +45,7 @@ function draw(){
   if(tempFlag== true){
 
         drawSpeachBubble()
-        text(replyString, 600, 10, 400, 450); // Text wraps within text box
-
+        text(replyString, 760, 100, 280, 200);
     if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
     timer --;
   }
@@ -53,19 +57,23 @@ function draw(){
 }
 
 function drawSpeachBubble(){
-  triangle(405, 250, 600, 320, 600, 375);
-
-  let c = color(255,255,255); // Define color 'c'
-  fill(c); // Use color variable 'c' as fill color
-  strokeWeight(4);
-  stroke(51);
-  rect(600, 10, 400, 450); // Draw rectangle
-
-  textSize(15);
-  fill(255);
+  image(speechBubble,600,10);
+  formatRectangle();
+  formatText();
 
 }
+function formatRectangle(){
 
+  fill('rgba(0%,0%,0%,0.0)');//transparent tectangle
+  rect(760, 100, 280, 200); // Draw rectangle
+  noStroke();
+}
+
+function formatText(){
+  fill(0);//text filling color
+  textSize(15);
+  textAlign(CENTER, CENTER);
+}
 function keyPressed() {
   if (keyCode === RETURN) {
     value = chat(input.value(), displayDialogue);
@@ -77,7 +85,3 @@ function displayDialogue(dialogue){
   replyString = dialogue;
   tempFlag = true;
 }
-
-
-
-
