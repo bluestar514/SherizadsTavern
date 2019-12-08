@@ -33,33 +33,45 @@ function botNotReady(err){
 //bot functions
 function chat(userInput, displayFunction) {
    //var userInput = input.value();
+   console.log("player input: "+ userInput);
    var initalPlayerInput = inputbot.reply("local-user", userInput);
 
-   // show the reply
-   //console.log(reply);
    initalPlayerInput.then(function(ininitalRiveTranlation){
-        console.log("looking for action which starts with: "+ ininitalRiveTranlation)
-        doAction(matchAction(ininitalRiveTranlation, "Barkeep", "Marco")) //for the player actions
-
-        var townieResponce = bot.reply("local-user", ininitalRiveTranlation)
-
-        townieResponce.then(function(townieResponceTranslation){
-          let currentAction = getBestActionBetween("Marco", "Barkeep");
-          displayFunction(townieResponceTranslation);
-
-          doAction(currentAction);
-          setTimeout(function () {
-            var townieAction = bot.reply("local-user", currentAction["name"]);
-
-            townieAction.then(function(towniActionTranslation){
-
-              displayFunction(towniActionTranslation);
-            })
-          }, 14000)
-
-
-
-        })
+        enactPlayerAction(ininitalRiveTranlation, displayFunction);
    })
-   // output.html(reply);
  }
+
+function enactPlayerAction(ininitalRiveTranlation, displayFunction){
+  console.log("player input parsed to: "+ ininitalRiveTranlation)
+  doAction(matchAction(ininitalRiveTranlation, "Barkeep", "Marco")) //for the player actions
+
+  var townieResponce = bot.reply("local-user", ininitalRiveTranlation)
+
+  townieResponce.then(function(townieResponceTranslation){
+        verbalizeTownieResponse(townieResponceTranslation, displayFunction);
+   })
+}
+
+function verbalizeTownieResponse(townieResponceTranslation, displayFunction){
+  console.log("Townie responds with: "+ townieResponceTranslation);
+
+  let currentAction = getBestActionBetween("Marco", "Barkeep");
+  console.log("Townie tries to: "+ currentAction["name"]);
+  displayFunction(townieResponceTranslation);
+
+  doAction(currentAction);
+  setTimeout(function () {
+    verbalizeTownieAction(currentAction, displayFunction)
+  }, 14000)
+}
+
+function verbalizeTownieAction(currentAction, displayFunction){
+  var expandedAction = expandEnsembleActionWithSubject(currentAction["name"], marcoKB)
+  console.log("Townie action expanded to: "+expandedAction);
+  var townieAction = bot.reply("local-user", expandedAction);
+
+  townieAction.then(function(townieActionTranslation){
+
+    displayFunction(townieActionTranslation);
+  })
+}
