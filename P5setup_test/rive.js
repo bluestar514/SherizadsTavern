@@ -43,10 +43,15 @@ function chat(userInput, displayFunction) {
 
 function enactPlayerAction(ininitalRiveTranlation, displayFunction){
   console.log("player input parsed to: "+ ininitalRiveTranlation)
-  doAction(matchAction(ininitalRiveTranlation, "Barkeep", "Marco")) //for the player actions
 
-  var townieResponce = bot.reply("local-user", ininitalRiveTranlation)
+  var actionResult = matchAction(ininitalRiveTranlation, "Barkeep", "Marco");
+  doAction(actionResult) //for the player actions
 
+  console.log("ensemble expander looking for: "+actionResult["name"]+"response")
+  var townieActsOn = expandEnsembleActionWithSubject(actionResult["name"]+"response", marcoKB)
+
+  var townieResponce = bot.reply("local-user", townieActsOn)
+  console.log("rive looking for: "+ townieActsOn)
   townieResponce.then(function(townieResponceTranslation){
         verbalizeTownieResponse(townieResponceTranslation, displayFunction);
    })
