@@ -13,6 +13,9 @@ FILES = {"actions" : FILE_DIR + "/actions.json",
 // 	startEnsemble();
 // });
 
-startEnsemble()
-startRive()
+startEnsemble();
+startRive();
 
+var marcoKB = loadKB("MarcoKB.json");
+var marcoWorries = expandEnsembleActionWithSubject("complain", marcoKB);
+console.log(marcoWorries);
