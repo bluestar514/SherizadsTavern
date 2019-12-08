@@ -57,13 +57,13 @@
 + how was your day
 - askaboutday
 
-+ [*]how[*]family
++ [*]how[*](family|alicia)
 @ how is the family
 
 + how is the family
 - askaboutfamily
 
-+ [*]how[*]business[*]
++ [*]how[*](business|clinic)[*]
 @ how is business going
 
 + how is business going

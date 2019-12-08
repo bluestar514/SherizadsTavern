@@ -15,6 +15,10 @@ function loadKB(filename){ //shamelessly stolen from ensemble.js
 	return fileResults
 }
 
+function pickRandom(array){
+	return array[Math.floor(Math.random()*array.length)];
+}
+
 function getWorry(kb){
 	var worries = [];
 	for(var i=0; i< kb.length; i++){
@@ -35,7 +39,22 @@ function getGoodThing(kb){
  	return goodies;
 }
 
+function getAboutFamily(kb, familyList){
+	var aboutFamily = [];
+
+	for(var i=0; i<kb.length; i++){
+		//console.log(kb[i]);
+		if(familyList.includes(kb[i]["subject"]) || familyList.includes(kb[i]["object"])){
+			aboutFamily.push(kb[i])
+		}
+	}
+
+	console.log(aboutFamily)
+	return aboutFamily;
+}
+
 function simpleTextify(fact){
+	console.log(fact)
 	var text = [fact["subject"]];
 	if("action" in fact){
 		text.push(fact["action"])
@@ -55,13 +74,18 @@ function expandEnsembleActionWithSubject(action, kb){
 		case "complain":
 		case "tellAboutBadThing":
 			worries = getWorry(kb);
-			worry = worries[Math.floor(Math.random()*worries.length)];
+			worry = pickRandom(worries);
 			
 			return action+" about "+simpleTextify(worry);
 		case "tellAboutGoodThing":
 			goodies = getGoodThing(kb);
-			event = goodies[Math.floor(Math.random()*goodies.length)];
+			event = pickRandom(goodies);
 			
+			return action+" about "+simpleTextify(event);
+		case "askaboutfamilyresponse":
+			aboutFamily = getAboutFamily(kb, ["Alicia"]);
+			event = pickRandom(aboutFamily);
+
 			return action+" about "+simpleTextify(event);
 		default:
 			return action;
