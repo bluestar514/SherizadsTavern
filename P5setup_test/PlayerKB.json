@@ -202,13 +202,6 @@
    "object"	: "the dark art's guild",
    "opinion"	: 10,
    "Knowledgable" : true
-  },
-  {
-     "subject"	: "Midna",
-     "action"	: "member of",
-     "object"	: "the dark art's guild",
-     "opinion"	: 10,
-     "Knowledgable" : true
-    }
+  }
 
 ]

@@ -6,7 +6,7 @@ function loadKB(filename){ //shamelessly stolen from ensemble.js
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			fileResults = JSON.parse(xmlhttp.responseText);
-		} 
+		}
 	}
 
 	xmlhttp.open("GET", filename, false); // false = synchronously
@@ -43,7 +43,7 @@ function getAbout(kb, subjectList){
 	var about = [];
 
 	for(var i=0; i<kb.length; i++){
-		if(subjectList.includes(kb[i]["subject"].toLowerCase()) 
+		if(subjectList.includes(kb[i]["subject"].toLowerCase())
 			|| ("object" in kb[i] && subjectList.includes(kb[i]["object"].toLowerCase()))){
 			about.push(kb[i])
 		}
@@ -68,7 +68,6 @@ function simpleTextify(fact, name){
 		text.push("is");
 		text.push(fact["state"]);
 	}
-
 	return text.join(" ");
 }
 
@@ -78,12 +77,12 @@ function expandEnsembleActionWithSubject(action, kb){
 		case "tellAboutBadThing":
 			worries = getWorry(kb);
 			worry = pickRandom(worries);
-			
+
 			return action+" about "+simpleTextify(worry, "Marco");
 		case "tellAboutGoodThing":
 			goodies = getGoodThing(kb);
 			event = pickRandom(goodies);
-			
+
 			return action+" about "+simpleTextify(event, "Marco");
 		case "askaboutfamilyresponse":
 			aboutFamily = getAbout(kb, ["alicia"]);
