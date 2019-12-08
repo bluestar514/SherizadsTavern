@@ -39,23 +39,26 @@ function getGoodThing(kb){
  	return goodies;
 }
 
-function getAboutFamily(kb, familyList){
-	var aboutFamily = [];
+function getAbout(kb, subjectList){
+	var about = [];
 
 	for(var i=0; i<kb.length; i++){
-		//console.log(kb[i]);
-		if(familyList.includes(kb[i]["subject"]) || familyList.includes(kb[i]["object"])){
-			aboutFamily.push(kb[i])
+		if(subjectList.includes(kb[i]["subject"].toLowerCase()) 
+			|| ("object" in kb[i] && subjectList.includes(kb[i]["object"].toLowerCase()))){
+			about.push(kb[i])
 		}
 	}
-
-	console.log(aboutFamily)
-	return aboutFamily;
+	return about;
 }
 
-function simpleTextify(fact){
+function simpleTextify(fact, name){
 	console.log(fact)
-	var text = [fact["subject"]];
+	subject = fact["subject"]
+	if(subject == name){
+		subject = "I"
+	}
+
+	var text = [subject];
 	if("action" in fact){
 		text.push(fact["action"])
 		if("object" in fact){
@@ -76,17 +79,22 @@ function expandEnsembleActionWithSubject(action, kb){
 			worries = getWorry(kb);
 			worry = pickRandom(worries);
 			
-			return action+" about "+simpleTextify(worry);
+			return action+" about "+simpleTextify(worry, "Marco");
 		case "tellAboutGoodThing":
 			goodies = getGoodThing(kb);
 			event = pickRandom(goodies);
 			
-			return action+" about "+simpleTextify(event);
+			return action+" about "+simpleTextify(event, "Marco");
 		case "askaboutfamilyresponse":
-			aboutFamily = getAboutFamily(kb, ["Alicia"]);
+			aboutFamily = getAbout(kb, ["alicia"]);
 			event = pickRandom(aboutFamily);
 
-			return action+" about "+simpleTextify(event);
+			return action+" "+simpleTextify(event, "Marco");
+		case "askaboutbusinessresponse":
+			aboutBusiness = getAbout(kb, ["clinic", "doctor"]);
+			event = pickRandom(aboutBusiness);
+
+			return action+" "+simpleTextify(event, "Marco");
 		default:
 			return action;
 	}

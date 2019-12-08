@@ -7,7 +7,7 @@
 	},
 	{
 		"subject"	: "Marco",
-		"action"	: "retired",
+		"action"	: "retired as a",
 		"object"	: "doctor",
 		"opinion"	: 12
 	},
@@ -92,7 +92,7 @@
 	},
 	{
 		"subject"	: "Alicia",
-		"action"	: "friendsWith",
+		"action"	: "is friends with",
 		"object"	: "Hana",
 		"opinion"	: 3
 	},

@@ -49,15 +49,17 @@
 - How have you been?
 
 + askaboutfamilyresponse *
-- Have I told you yet, <star1>
+- Have I told you yet, about <star1>
 //- i do not know if i mentioned this, but my daughter, alicia, took over my clinic
 //- i am so proud of my daughter, with her carrying on the family legacy and all!
 //- my daughter took over the clinic, i am so proud~
 
-+ askaboutbusinessresponse
-- i do not know if i mentioned this, but my daughter took over the clinic, i am so proud~
-- i do not know if i mentioned this, but i am so proud of my daughter, with her carrying on the family legacy and all!
-- i do not know if i mentioned this, but my daughter took over the clinic, i have so much free time now, most of it dedicated to sleep!
++ askaboutbusinessresponse *
+- Can you believe that <star1>
+- <star1> the other day.
+//- i do not know if i mentioned this, but my daughter took over the clinic, i am so proud~
+//- i do not know if i mentioned this, but i am so proud of my daughter, with her carrying on the family legacy and all!
+//- i do not know if i mentioned this, but my daughter took over the clinic, i have so much free time now, most of it dedicated to sleep!
 
 
 + tellaboutgoodthing
