@@ -129,7 +129,7 @@ function formatRectangle(){
 }
 
 function openLog(){
-
+var factListLength = 0;
 if(addedStructure==false){
     for(var i = 0; i<=playerKB.length-1 ;i++){
       if("Knowledgable" in playerKB[i] && playerKB[i]["Knowledgable"]==true )
@@ -139,11 +139,25 @@ if(addedStructure==false){
     }
     addedStructure = true;
 }
+
+  //if the new length is diff update the text
+  if(factList.length > factListLength){
+
+  }
+
   fill(255);
   rect(1230, 0, 460, windowHeight); // Draw rectangle
   formatText(CENTER,200);
   logText = text(factList.join('\n'),1230, 20, 460, windowHeight-20 );
   // console.log(factList);
+}
+
+function addLogFact(text){
+//want to reverse textify and add it to jsonn
+//for now simply adding it to our fact list as a string
+factList.push("marco" + text);
+//update the text log - can be refactored lator
+
 }
 
 

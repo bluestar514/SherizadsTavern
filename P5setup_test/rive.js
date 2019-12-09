@@ -64,6 +64,8 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
 
   var townieResponce = bot.reply("local-user", townieActsOn)
   console.log("rive looking for: "+ townieActsOn)
+  addLogFact(townieActsOn);//adding whatever townie says to notes
+  
   townieResponce.then(function(townieResponceTranslation){
         verbalizeTownieResponse(townieResponceTranslation, displayFunction);
    })
@@ -86,6 +88,8 @@ function verbalizeTownieResponse(townieResponceTranslation, displayFunction){
 function verbalizeTownieAction(currentAction, displayFunction){
   var expandedAction = expandEnsembleActionWithSubject(currentAction["name"], marcoKB)
   console.log("Townie action expanded to: "+expandedAction);
+  //adding it to player KB (future to json)/ just logging for now
+  addLogFact(expandedAction);
   var townieAction = bot.reply("local-user", expandedAction);
 
   townieAction.then(function(townieActionTranslation){
