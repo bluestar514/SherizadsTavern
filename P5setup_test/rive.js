@@ -2,7 +2,7 @@ let bot = new RiveScript();
 let inputbot = new RiveScript();
 const marcoBrains = [
    '/brains/MarcoBrains.rive'
-    // './brains/MarcoBtwo.rive'
+  //'./brains/MarcoBtwo.rive'
 ];
 const inputBrains = [
    '/brains/inputBrain.rive'
@@ -35,7 +35,7 @@ function chat(userInput, displayFunction) {
    //var userInput = input.value();
    //iniital chat - user input
    //disable user input
-    disableInput();
+   disableInput();
    console.log("player input: "+ userInput);
 
    var initalPlayerInput = inputbot.reply("local-user", userInput);

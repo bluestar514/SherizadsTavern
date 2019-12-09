@@ -113,15 +113,10 @@ function runSpeachBubble(){
     if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
       timer --;
       // image(g_loadimg, 200, 50, 200, 200); //loads only first frame
-       g_createimg.position(50,100); //loads GIF correctly
-       
-      // if( timer % 2 == 0){
-      //   let b = image(bubble,200,0,150,150);
-      //   b.rotate(random(0,180))
-      // }
-
+      var img = g_createimg.position(460,50); //loads GIF correctly
   }
   if (timer <= 0) {
+    img.remove();
     tempFlag = false;
     timer = initialTimer;
   }

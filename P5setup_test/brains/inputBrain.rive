@@ -42,9 +42,10 @@
 @ hi
 
 + [*]how is it going[*]
+@ hi
 
 + how are [*]
-@hi
+@ hi
 
 
 
@@ -82,8 +83,8 @@
 + [*]how[*](family|alicia)
 @ how is the family
 
-+[*]married
-@how is the family
++ [*]married
+@ how is the family
 
 + how is the family
 - askaboutfamily
