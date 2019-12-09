@@ -47,8 +47,6 @@
 + how are [*]
 @ hi
 
-
-
 + hi
 - greet
 
@@ -77,10 +75,11 @@
 + how was your day
 - askaboutday
 
-
-
 //ask about family
 + [*]how[*](family|alicia)
+@ how is the family
+
++[*](family|alicia)[*]
 @ how is the family
 
 + [*]married
@@ -117,3 +116,6 @@
 - complain about
 + [*](hate|sucks)[*]
 @ i hate *
+
++ *
+- catch

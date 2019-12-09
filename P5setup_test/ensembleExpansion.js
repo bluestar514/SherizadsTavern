@@ -92,11 +92,15 @@ function simplifyActionOptions(actionsList){
 function getBestActionBetween(initiator, responder){
   // var allActions = simplifyActionOptions(getAllActionsFor(initiator)[responder]);
 	var allActions = getAllActionsFor(initiator)[responder];
-  var bestAction = 0;
+  var bestAction = -1;
+  var highestSalience = -10;
 
   for (var action in allActions) {
-    if (allActions[bestAction].salience < allActions[action].salience) {
+  	//console.log(allActions[action]);
+  	//!allActions[action].name.startsWith("ask") &&
+    if ( !allActions[action].name.startsWith("offeradvice") && highestSalience < allActions[action].salience) {
       bestAction = action;
+      highestSalience = allActions[bestAction].salience
     }
   }
 

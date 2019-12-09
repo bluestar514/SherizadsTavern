@@ -1,5 +1,7 @@
 let bot = new RiveScript();
 let inputbot = new RiveScript();
+let simpleBot = new RiveScript();
+
 const marcoBrains = [
    '/brains/MarcoBrains.rive'
   //'./brains/MarcoBtwo.rive'
@@ -7,27 +9,23 @@ const marcoBrains = [
 const inputBrains = [
    '/brains/inputBrain.rive'
 ];
+const simpleBrains = [
+  '/brains/MarcoBtwo.rive'
+]
 
 function startRive(){
-    bot.loadFile(marcoBrains).then(botReady).catch(botNotReady);
-
-    inputbot.loadFile(inputBrains).then(inputbotReady).catch(botNotReady);
+    bot.loadFile(marcoBrains).then(function(){botReady(bot, "marco")}).catch(botNotReady);
+    inputbot.loadFile(inputBrains).then(function(){botReady(inputbot, "input")}).catch(botNotReady);
+    simpleBot.loadFile(simpleBrains).then(function(){botReady(simpleBot, "quick")}).catch(botNotReady);
 }
 
-
-function botReady(){
-   bot.sortReplies();
-   console.log('Marco Bot Ready');//yes this *used to*  works
-  }
-
-function inputbotReady(){
-   inputbot.sortReplies();
-   console.log('Input Bot Ready');//yes this *used to*  works
+function botReady(botName, name){
+   botName.sortReplies();
+   console.log("Rive " + name + " ready!");
 }
+
 function botNotReady(err){
-   // console.log("An error has occurred", err);
    console.log("Bot Not Ready",err);
-
 }
 
 //bot functions
@@ -41,7 +39,12 @@ function chat(userInput, displayFunction) {
    var initalPlayerInput = inputbot.reply("local-user", userInput);
 
    initalPlayerInput.then(function(ininitalRiveTranlation){
+      if(ininitalRiveTranlation == "catch"){
+        console.log("catching a quick response")
+        quickResponse(userInput, displayFunction);
+      }else{
         enactPlayerAction(ininitalRiveTranlation, displayFunction);
+      }    
    })
  }
 
@@ -54,21 +57,33 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
   if(actionResult != null){
     doAction(actionResult) //for the player actions
     actionResult = actionResult["name"]+"response"
+
+    console.log("ensemble expander looking for: "+actionResult)
+    var townieActsOn = expandEnsembleActionWithSubject(actionResult, marcoKB)
+
+    var townieResponce = bot.reply("local-user", townieActsOn)
+    console.log("rive looking for: "+ townieActsOn)
+    addLogFact(townieActsOn);//adding whatever townie says to notes
+
+    townieResponce.then(function(townieResponceTranslation){
+          verbalizeTownieResponse(townieResponceTranslation, displayFunction);
+     })
   }else{
-    console.log("AHHHHH");
     actionResult = "nonunderstood statement"
+    
+    var townieAction = bot.reply("local-user", actionResult);
+
+    townieAction.then(function(townieActionTranslation){
+
+      displayFunction(townieActionTranslation);
+
+      enableInput(); //let the  user type again
+      //allow typing after responce (set time )
+      //grey out inbox
+      //add to player knoledge
+      // return player typinng back
+    })
   }
-
-  console.log("ensemble expander looking for: "+actionResult)
-  var townieActsOn = expandEnsembleActionWithSubject(actionResult, marcoKB)
-
-  var townieResponce = bot.reply("local-user", townieActsOn)
-  console.log("rive looking for: "+ townieActsOn)
-  addLogFact(townieActsOn);//adding whatever townie says to notes
-
-  townieResponce.then(function(townieResponceTranslation){
-        verbalizeTownieResponse(townieResponceTranslation, displayFunction);
-   })
 
 }
 
@@ -96,10 +111,17 @@ function verbalizeTownieAction(currentAction, displayFunction){
 
     displayFunction(townieActionTranslation);
 
-    enableInput(); //let the  user type again
-    //allow typing after responce (set time )
-    //grey out inbox
-    //add to player knoledge
-    // return player typinng back
+    enableInput();
+  })
+}
+
+function quickResponse(ininitalRiveTranlation, displayFunction){
+  console.log("trying " + ininitalRiveTranlation)
+  var townieAction = simpleBot.reply("local-user", ininitalRiveTranlation);
+
+  townieAction.then(function(townieActionTranslation){
+    console.log("quickResponse Result: "+ townieActionTranslation)
+    displayFunction(townieActionTranslation);
+    enableInput();
   })
 }

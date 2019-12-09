@@ -78,23 +78,40 @@ function expandEnsembleActionWithSubject(action, kb){
 			worries = getWorry(kb);
 			worry = pickRandom(worries);
 
+			//remove(kb, worry); //Not ideal but prevents him from saying the thing again
+
 			return action+" about "+simpleTextify(worry, "Marco");
 		case "tellAboutGoodThing":
 			goodies = getGoodThing(kb);
 			event = pickRandom(goodies);
+
+			//remove(kb, event);
 
 			return action+" about "+simpleTextify(event, "Marco");
 		case "askaboutfamilyresponse":
 			aboutFamily = getAbout(kb, ["alicia"]);
 			event = pickRandom(aboutFamily);
 
+			//remove(kb, event);
+
 			return action+" "+simpleTextify(event, "Marco");
 		case "askaboutbusinessresponse":
 			aboutBusiness = getAbout(kb, ["clinic", "doctor"]);
 			event = pickRandom(aboutBusiness);
 
+			//remove(kb, event);
+
 			return action+" "+simpleTextify(event, "Marco");
 		default:
 			return action;
+	}
+}
+
+function remove(array, value){
+	for (var i = 0; i < array.length; i++) {
+		if(array[i] === value){
+			array.splice(i,1);
+			return;
+		}
 	}
 }

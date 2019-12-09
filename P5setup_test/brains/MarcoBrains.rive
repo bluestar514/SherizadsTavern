@@ -35,7 +35,7 @@
 - you are one hell of a barkeep! {weight=10}
 - my, you are indeed so graceful with those highball glasses
 - you always make one heck of a drink
-- others keepers lack in skill but you... you are something else keep'{weight=105}
+- others barkeeps lack in skill but you... you are something else keep'{weight=105}
 
 + askaboutdayresponse
 - day has been good!
@@ -47,6 +47,10 @@
 + askaboutday
 - How's your day been?
 - How have you been?
+
++ askaboutfamily
+- How has your family been? 
+- What about your family? Same as always?
 
 + askaboutfamilyresponse *
 - Have I told you yet, about <star1>
@@ -98,8 +102,11 @@
 - i do worry about how <star1>
 //- i think alicia needs help at the clinic, i am worried about her
 
++ [*]clinic is mess
+- I just don't know what to do. The clinic is such a mess these days...
 
 + *
 - One more time?
 - Sorry, I didn't catch that.
 - I'm not sure I heard you right, can you rephrase that for me?
+- Mm
