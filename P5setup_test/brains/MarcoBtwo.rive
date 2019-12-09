@@ -27,15 +27,24 @@
 ! sub who's   = who is
 ! sub how's   = how is
 ! sub hows   = how is
-! brewer's   = brewers
+! sub brewer's   = brewers
 
 //family stuff
 
-+ [*] brother [*]
++ [*](brother|family)[*]
 - family can be tough to handle sometimes
 
 //jasper stuff
 
++ what [*] drink
+- gin, my favorite drink!
+- what everyone should order, only gin forever
+
++ [*](cool|nice|awesome|great)[*]
+- yeah...
+
++ who are you
+- you should know who i am, don't you keep a ledger or notes of some kind?
 + [*]like[*] jasper
 - he is a cheat
 - he isn't an honest guy, shady, I don't see what Alecia sees in him
@@ -46,6 +55,12 @@
 + [*] jasper
 + dating [*] jasper [*]
 -  I don't like them dating
+
++ [*]why[*]slacker[*]
+- you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
+
++ [*](patched hat|hat)[*]
+@ wife
 //zelda stuff
 
 + [*]midna[*]
@@ -86,7 +101,7 @@
 + what is your favorite drink [*]
 - gin and tonic!
 
-+ [*] favorite drink  [*]
++ [*]favorite drink[*]
 - gin, my favorite drink!
 - what everyone should order, only gin forever
 
@@ -104,6 +119,9 @@
 
 + [*] your wife [*]
 - she passed away sadly, I will always wear this hat as it is the last thing she gave me
+
++  wife
+- my wife passed away sadly, I will always wear this hat as it is the last thing she gave me
 
 + [*] badge [*]
 -  it symobolizes the Doctor Guild!

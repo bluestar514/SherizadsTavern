@@ -52,6 +52,7 @@
 		"opinion"	: 0,
     "Knowledgable" : false
 	},
+
 	{
 		"subject"	: "barkeep",
 		"state"		: "member of ",
@@ -63,6 +64,13 @@
 		"subject"	: "Marco",
 		"action"  : "faviorate drink is",
     "object": "gin",
+		"opinion"	: 7,
+    "Knowledgable" : true
+	},
+	{
+		"subject"	: "My",
+		"action"  : "only family is ",
+    "object": "brother",
 		"opinion"	: 7,
     "Knowledgable" : true
 	},
@@ -136,6 +144,13 @@
     "Knowledgable" : false
 	},
 	{
+		"subject"	: "Marco",
+		"action"	: "has",
+		"object"	: "patched hat and robes",
+		"opinion"	: 8,
+    "Knowledgable" : true
+	},
+	{
 		"subject"	: "wooden leg",
 		"state"		: "badge of honor",
 		"opinion"	: 7,
@@ -153,6 +168,7 @@
 		"opinion"	: 4,
     "Knowledgable" : true
 	},
+
 	{
 		"subject"	: "Jasper",
 		"state"		: "regular unliked patron",
