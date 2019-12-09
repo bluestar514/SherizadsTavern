@@ -10,7 +10,7 @@ let notes;
 // Timer stuff for speach bubble
 let tempFlag = false; //to display the text box or not ( when user enters sets to true)
 let replyString = ''; //it's global cz its set inside another method ( rive stuff) and needs to be in draw to actually render the text
-let initialTimer = 14
+let initialTimer = 10;
 let timer = initialTimer; //text stays on screen for this amount of time
 let logPressed = false;
 let logTimer = 14;
@@ -39,6 +39,7 @@ function setup(){
   //input text field  setup
   input = createInput();
   input.position(0, 700).size(500,40);
+  input.style("background-color","white");
   //log buttonn setup
   var button = createImg("/images/notes.png","notes button");
   button.position(1120,655).size(100,100);
@@ -49,6 +50,18 @@ function setup(){
 
 function logbuttonPressed(){
   logPressed = true
+}
+
+function disableInput(){
+  input.style("background-color","grey");
+  input.attribute('disabled', '');
+
+
+}
+function enableInput(){
+  input.style("background-color","white");
+  input.removeAttribute('disabled');
+
 }
 
 
@@ -84,6 +97,7 @@ function runLogChecks()
       logPressed = false;
       addedStructure = true; //to stop it from adding the same elements in a loop
       logTimer = initialTimer;
+      background(0,0,0,0)
   }
   }
 }

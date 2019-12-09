@@ -33,7 +33,11 @@ function botNotReady(err){
 //bot functions
 function chat(userInput, displayFunction) {
    //var userInput = input.value();
+   //iniital chat - user input
+   //disable user input
+    disableInput();
    console.log("player input: "+ userInput);
+
    var initalPlayerInput = inputbot.reply("local-user", userInput);
 
    initalPlayerInput.then(function(ininitalRiveTranlation){
@@ -87,5 +91,11 @@ function verbalizeTownieAction(currentAction, displayFunction){
   townieAction.then(function(townieActionTranslation){
 
     displayFunction(townieActionTranslation);
+
+    enableInput(); //let the  user type again
+    //allow typing after responce (set time )
+    //grey out inbox
+    //add to player knoledge
+    // return player typinng back
   })
 }
