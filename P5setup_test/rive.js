@@ -45,16 +45,25 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
   console.log("player input parsed to: "+ ininitalRiveTranlation)
 
   var actionResult = matchAction(ininitalRiveTranlation, "Barkeep", "Marco");
-  doAction(actionResult) //for the player actions
+  console.log(actionResult)
 
-  console.log("ensemble expander looking for: "+actionResult["name"]+"response")
-  var townieActsOn = expandEnsembleActionWithSubject(actionResult["name"]+"response", marcoKB)
+  if(actionResult != null){
+    doAction(actionResult) //for the player actions
+    actionResult = actionResult["name"]+"response"
+  }else{
+    console.log("AHHHHH");
+    actionResult = "nonunderstood statement"
+  }
+
+  console.log("ensemble expander looking for: "+actionResult)
+  var townieActsOn = expandEnsembleActionWithSubject(actionResult, marcoKB)
 
   var townieResponce = bot.reply("local-user", townieActsOn)
   console.log("rive looking for: "+ townieActsOn)
   townieResponce.then(function(townieResponceTranslation){
         verbalizeTownieResponse(townieResponceTranslation, displayFunction);
    })
+
 }
 
 function verbalizeTownieResponse(townieResponceTranslation, displayFunction){
