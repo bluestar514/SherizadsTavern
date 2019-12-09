@@ -2,7 +2,7 @@ let bot = new RiveScript();
 let inputbot = new RiveScript();
 const marcoBrains = [
    '/brains/MarcoBrains.rive'
-// './another-category-sample.rive
+    // './brains/MarcoBtwo.rive'
 ];
 const inputBrains = [
    '/brains/inputBrain.rive'
@@ -65,7 +65,7 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
   var townieResponce = bot.reply("local-user", townieActsOn)
   console.log("rive looking for: "+ townieActsOn)
   addLogFact(townieActsOn);//adding whatever townie says to notes
-  
+
   townieResponce.then(function(townieResponceTranslation){
         verbalizeTownieResponse(townieResponceTranslation, displayFunction);
    })

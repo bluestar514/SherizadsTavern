@@ -1,6 +1,5 @@
 // P5's drawing and animation file
 
-
 //Images:
 let tavern;
 let marko;

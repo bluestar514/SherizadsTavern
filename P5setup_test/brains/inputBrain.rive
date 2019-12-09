@@ -40,25 +40,47 @@
 
 + [*]how is it going[*]
 
++ how are [*]
+@hi
+
++
+
 + hi
 - greet
 
 // everything else
+//+ [*] clinic [*]
+//- the clinic is a mess, it could be better
+
+//+ [*](jasper|slacker)[*]
+//- he is a good cheat, has not worked an honest day in his life
+
 + [*](fat|smelly|rude|gross|disgusting|bad|worst|jerk)[*]
 - insult
 
 + [*](nice|lovely|great|tasty|best)[*]
 - compliment
 
-// Ask About
+// Ask About day
 + [*]how[*]day
 @ how was your day
++ [*] doing good
+@ how was your day
++ how have you been ?
+@ how was your day
+
 
 + how was your day
 - askaboutday
 
+
+
+//ask about family
 + [*]how[*](family|alicia)
 @ how is the family
+
++[*]married
+@how is the family
 
 + how is the family
 - askaboutfamily
@@ -72,6 +94,10 @@
 // Tell About
 // Not currently supported
 
++ [*] good news [*]
+- tellaboutgoodthing
+
+
 // Offer Advice
 + have you tried
 - offeradvice
@@ -82,8 +108,8 @@
 + [*]you should[*]
 @ offeradvice
 
-// Complain
+// Complain does not work 
 + i hate *
-- complain
+- complain about
 + [*](hate|sucks)[*]
 @ i hate *
