@@ -21,6 +21,9 @@ let addedStructure = false;
 let logText ;
 
 
+let bubbles ;
+
+
 
 function preload(){
   tavern = loadImage("/images/tavern.png");
@@ -28,6 +31,8 @@ function preload(){
   barextra= loadImage("/images/barextra.png");
   speechBubble = loadImage("/images/speechBubble.png");
   notes = loadImage("/images/notes.png");
+  g_loadimg = loadImage ("/images/test.gif");
+  g_createimg = createImg("/images/test.gif");
 
 }
 
@@ -103,10 +108,18 @@ function runLogChecks()
 
 function runSpeachBubble(){
   if(tempFlag== true){
-        drawSpeachBubble()
-        text(replyString, 760, 100, 280, 200);
+    drawSpeachBubble()
+    text(replyString, 760, 100, 280, 200);
     if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
-    timer --;
+      timer --;
+      // image(g_loadimg, 200, 50, 200, 200); //loads only first frame
+       g_createimg.position(50,100); //loads GIF correctly
+       
+      // if( timer % 2 == 0){
+      //   let b = image(bubble,200,0,150,150);
+      //   b.rotate(random(0,180))
+      // }
+
   }
   if (timer <= 0) {
     tempFlag = false;

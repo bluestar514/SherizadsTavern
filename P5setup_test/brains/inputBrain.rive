@@ -38,12 +38,15 @@
 + [*]hey there[*]
 @ hi
 
++ hey
+@ hi
+
 + [*]how is it going[*]
 
 + how are [*]
 @hi
 
-+
+
 
 + hi
 - greet
@@ -108,7 +111,7 @@
 + [*]you should[*]
 @ offeradvice
 
-// Complain does not work 
+// Complain does not work
 + i hate *
 - complain about
 + [*](hate|sucks)[*]
