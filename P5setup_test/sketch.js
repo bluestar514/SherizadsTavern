@@ -12,9 +12,14 @@ let tempFlag = false; //to display the text box or not ( when user enters sets t
 let replyString = ''; //it's global cz its set inside another method ( rive stuff) and needs to be in draw to actually render the text
 let initialTimer = 14
 let timer = initialTimer; //text stays on screen for this amount of time
-
+let logPressed = false;
+let logTimer = 14;
 // User text box input
 let input;
+
+let factList =[];
+let addedStructure = false;
+let logText ;
 
 
 
@@ -28,33 +33,62 @@ function preload(){
 }
 
 function setup(){
-  // windowWidth, windowHeight
   var canvas =  createCanvas(windowWidth, windowHeight);
   // var canvas =  createCanvas(1230,800);
   canvas.parent("sketch_canvas");
-  // background(0, 0, 0);
-
-
+  //input text field  setup
   input = createInput();
   input.position(0, 700).size(500,40);
-
+  //log buttonn setup
   var button = createImg("/images/notes.png","notes button");
   button.position(1120,655).size(100,100);
-  button.mousePressed(openLog);
-}
-
-function openLog(){
-drawLogRectangle();
+  // button.mousePressed(openLog);
+  button.mousePressed(logbuttonPressed);
 
 }
+
+function logbuttonPressed(){
+  logPressed = true
+}
+
+
 function closeLog(){
-
+//clearning this is just an attempt - tried dedrawing and clearing the array -- does not seem to work - stoppinng this for now ( weird sinnce speach bubbles are redrawn ok...)
+  console.log("closing log ", logPressed);
+  // factList =[];
+  console.log(factList);
+  // fill(255);
+  // rect(1230, 0, 0, 0); // Draw rectangle
+  // noStroke();
+ logText = text(factList.join('\n'),1230, 20, 460, windowHeight-20 );
 }
 function draw(){
   image(tavern,0,0);
   image(marko,10,0);
   image(barextra,0,-10);
 
+  runLogChecks();
+  runSpeachBubble();
+}
+
+//to open or close it has to be redrawn hence timers :/
+function runLogChecks()
+{
+  if(logPressed ==true){
+    openLog();
+    if (frameCount % 60 == 0 && logTimer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    logTimer --;
+  }
+    if (logTimer <= 0) {
+      closeLog();
+      logPressed = false;
+      addedStructure = true; //to stop it from adding the same elements in a loop
+      logTimer = initialTimer;
+  }
+  }
+}
+
+function runSpeachBubble(){
   if(tempFlag== true){
         drawSpeachBubble()
         text(replyString, 760, 100, 280, 200);
@@ -67,7 +101,6 @@ function draw(){
   }
   }
 }
-
 function drawSpeachBubble(){
   image(speechBubble,600,10);
   formatRectangle();
@@ -81,29 +114,24 @@ function formatRectangle(){
   noStroke();
 }
 
-function drawLogRectangle(){
-  console.log("drawing the log")
+function openLog(){
+
+if(addedStructure==false){
+    for(var i = 0; i<=playerKB.length-1 ;i++){
+      if("Knowledgable" in playerKB[i] && playerKB[i]["Knowledgable"]==true )
+        {
+          factList.push(simpleTextify(playerKB[i] ,"Barkeep"));
+        }
+    }
+    addedStructure = true;
+}
   fill(255);
   rect(1230, 0, 460, windowHeight); // Draw rectangle
-
-
-  var factList =[];
-  for(var i = 0; i<=playerKB.length-1 ;i++){
-    if("Knowledgable" in playerKB[i] && playerKB[i]["Knowledgable"]==true )
-      {
-        factList.push(simpleTextify(playerKB[i] ,"Barkeep"));
-      }
-  }
-    formatText(CENTER,200);
-    text(factList.join('\n'),1230, 20, 460, windowHeight-20 );
-
-
-console.log(factList);
+  formatText(CENTER,200);
+  logText = text(factList.join('\n'),1230, 20, 460, windowHeight-20 );
+  // console.log(factList);
 }
 
-// function check(){
-//    if("Knowledgable" in element && element["Knowledgable"]==true )
-// }
 
 
 function formatText(height,width){
