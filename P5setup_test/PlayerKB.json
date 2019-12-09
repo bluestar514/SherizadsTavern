@@ -23,7 +23,7 @@
 	{
 		"subject"	: "Barkeep",
 		"action"	: "collects",
-		"location"	: "bottles",
+		"object"	: "bottles",
 		"opinion"	: 4,
     "Knowledgable" : true
 	},
@@ -56,11 +56,13 @@
 		"subject"	: "barkeep",
 		"state"		: "member of ",
 		"object"	: "the brewer's club",
-		"opinion"	: 9
+		"opinion"	: 9,
+		"Knowledgable" : true
 	},
 	{
 		"subject"	: "Marco",
-    "faviorateDrink": "gin",
+		"action"  : "faviorate drink is",
+    "object": "gin",
 		"opinion"	: 7,
     "Knowledgable" : true
 	},
@@ -69,7 +71,7 @@
 		"action"	: "owns",
 		"object"	: "cat",
 		"opinion"	: 7,
-    "Knowledgable" : true
+    "Knowledgable" : false
 	},
 	{
 		"subject"	: "Barkeep",
@@ -79,7 +81,8 @@
     "Knowledgable" : true
 	},
 	{
-		"subject"	: "Barkeep",
+		"subject"	: "my",
+		"action" :"faviorate book",
 		"object"	: "Book: how to be a better tavern owner: an introduction",
 		"opinion"	: 8,
     "Knowledgable" : true
@@ -109,19 +112,19 @@
 		"action"	: "member of",
 		"object"	: "Doctor's guild",
 		"opinion"	: 9,
-    "Knowledgable" : true
+    "Knowledgable" : false
 	},
 	{
 		"subject"	: "Jasper",
 		"action"	: "gave",
 		"object"	: "fake coins",
 		"opinion"	: -10,
-    "Knowledgable" : false
+    "Knowledgable" : true
 	},
   {
     "subject"	: "Barkeep",
-    "action"	: "lights",
-    "object"	: "one candle at night",
+    "action"	: "have to",
+    "object"	: "light a candle at night",
     "opinion"	: 8,
     "Knowledgable" : true
   },
@@ -130,7 +133,7 @@
 		"action"	: "owns",
 		"object"	: "Tavern",
 		"opinion"	: 8,
-    "Knowledgable" : true
+    "Knowledgable" : false
 	},
 	{
 		"subject"	: "wooden leg",
@@ -152,7 +155,7 @@
 	},
 	{
 		"subject"	: "Jasper",
-		"state"		: "regular patron",
+		"state"		: "regular unliked patron",
 		"opinion"	: -2,
     "Knowledgable" : true
 	}
@@ -187,14 +190,14 @@
 		"action"	: "runs",
 		"object"	: "herb shop",
 		"opinion"	: 10,
-    "Knowledgable" : true
+    "Knowledgable" : false
     },
     {
 		"subject"	: "Midna",
 		"action"	: "runs",
 		"object"	: "dark magic shop",
 		"opinion"	: 10,
-    "Knowledgable" : true
+    "Knowledgable" : false
 	 },
    {
    "subject"	: "Midna",
