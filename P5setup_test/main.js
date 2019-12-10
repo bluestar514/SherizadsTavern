@@ -18,5 +18,3 @@ startRive();
 
 var marcoKB = loadKB("MarcoKB.json");
 var playerKB = loadKB("PlayerKB.json");
-var marcoWorries = expandEnsembleActionWithSubject("complain", marcoKB);
-console.log(marcoWorries);

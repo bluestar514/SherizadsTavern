@@ -2,18 +2,18 @@
 @ greetsuccess
 
 + greetsuccessresponse
-- hey there :), can i have some mead please
-- nice to see you! can i have some mead please
-- hello , a drink please
-- *nods while smiling*,  your finest mead
-- hello friend, a bottle of your finest mead please!
+- hey there :)
+- nice to see you!
+- hello
+- *nods while smiling*
+- hello friend
 - keep'
 
 + greetfailresponse
-- *marco stares blankly*, give me a bottle of mead  {weight}
-- *marco looks your way but says nothing, after a few minutes he speaks up* give me a bottle of your mead {weight=10}
-- *marco looks away as you greet him and requests a drink*
-- mmm, a bottle of mead.
+- *marco stares blankly* {weight}
+- *marco looks your way but says nothing, after a few minutes he speaks up*{weight=10}
+- *marco looks away as you greet him*
+- mmm
 
 
 + insultresponse

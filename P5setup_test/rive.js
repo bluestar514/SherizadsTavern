@@ -89,10 +89,10 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
 
 function verbalizeTownieResponse(townieResponceTranslation, displayFunction){
   console.log("Townie responds with: "+ townieResponceTranslation);
+  displayFunction(townieResponceTranslation);
 
   let currentAction = getBestActionBetween("Marco", "Barkeep");
   console.log("Townie tries to: "+ currentAction["name"]);
-  displayFunction(townieResponceTranslation);
 
   doAction(currentAction);
   setTimeout(function () {
@@ -122,6 +122,18 @@ function quickResponse(ininitalRiveTranlation, displayFunction){
   townieAction.then(function(townieActionTranslation){
     console.log("quickResponse Result: "+ townieActionTranslation)
     displayFunction(townieActionTranslation);
-    enableInput();
+
+    if(Math.random() > .25){
+      enableInput();
+    }else{
+      let currentAction = getBestActionBetween("Marco", "Barkeep");
+      console.log("Townie tries to: "+ currentAction["name"]);
+
+      doAction(currentAction);
+      setTimeout(function () {
+        verbalizeTownieAction(currentAction, displayFunction)
+      }, 14000)
+    }
+    
   })
 }

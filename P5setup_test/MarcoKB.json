@@ -91,12 +91,6 @@
 		"opinion"	: -3
 	},
 	{
-		"subject"	: "Alicia",
-		"action"	: "is friends with",
-		"object"	: "Hana",
-		"opinion"	: 3
-	},
-	{
 		"subject"	: "Marco",
 		"action"	: "owns",
 		"object"	: "patched hat",
