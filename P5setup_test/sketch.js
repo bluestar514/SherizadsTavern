@@ -30,9 +30,14 @@ function preload(){
   marko= loadImage("/images/marko.png");
   barextra= loadImage("/images/barextra.png");
   speechBubble = loadImage("/images/speechBubble.png");
+  emotionSHIMG = loadImage("/images/emotionSH.png");
+  emotionHIMG = loadImage("/images/emotionH.png");
+  emotionSIMG = loadImage("/images/emotionS.png");
+  emotionSSIMG = loadImage("/images/emotionSS.png");
   notes = loadImage("/images/notes.png");
   g_loadimg = loadImage ("/images/test.gif");
   g_createimg = createImg("/images/test.gif");
+
 
 }
 
@@ -108,6 +113,7 @@ function runLogChecks()
 
 function runSpeachBubble(){
   if(tempFlag== true){
+    drawEmotion()
     drawSpeachBubble()
     text(replyString, 760, 100, 280, 200);
     if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
@@ -122,17 +128,35 @@ function runSpeachBubble(){
   }
   }
 }
+
 function drawSpeachBubble(){
   image(speechBubble,600,10);
   formatRectangle();
   formatText(CENTER,CENTER);
 
 }
+
 function formatRectangle(){
 
   fill('rgba(0%,0%,0%,0.0)');//transparent tectangle
   rect(760, 100, 280, 200); // Draw rectangle
   noStroke();
+}
+
+function drawEmotion(){
+  console.log("current emotion is "+ getEmotion());
+  var emote = getEmotion();
+
+  if(emote=="superHappy"){
+    image(emotionSHIMG,500,10);
+  } else if (emote=="superSad")
+  { image(emotionSSIMG,500,10);
+  }else if (emote=="sad"){
+     image(emotionSIMG,500,10);
+  } else {
+    image(emotionHIMG,500,10);
+  }
+
 }
 
 function openLog(){

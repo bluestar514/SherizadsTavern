@@ -10,7 +10,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"value": 8,
+					"value": 3,
 					"operator": ">"
 				}
 			],
@@ -24,7 +24,7 @@
 				}
 			],
 			"origin": "triggers",
-			"id": "triggerRules_8",
+			"id": "triggerRules_1",
 			"type": "trigger"
 		},
 		{
@@ -35,7 +35,7 @@
 					"type": "friendship",
 					"first": "someone",
 					"second": "other",
-					"value": -8,
+					"value": -3,
 					"operator": "<"
 				}
 			],
@@ -49,7 +49,7 @@
 				}
 			],
 			"origin": "triggers",
-			"id": "triggerRules_9",
+			"id": "triggerRules_2",
 			"type": "trigger"
 		},
 		{
@@ -60,7 +60,7 @@
 					"type": "respect",
 					"first": "someone",
 					"second": "other",
-					"value": 8,
+					"value": 3,
 					"operator": ">"
 				}
 			],
@@ -74,7 +74,7 @@
 				}
 			],
 			"origin": "triggers",
-			"id": "triggerRules_10",
+			"id": "triggerRules_3",
 			"type": "trigger"
 		},
 		{
@@ -85,7 +85,7 @@
 					"type": "respect",
 					"first": "someone",
 					"second": "other",
-					"value": -8,
+					"value": -3,
 					"operator": "<"
 				}
 			],
@@ -99,7 +99,7 @@
 				}
 			],
 			"origin": "triggers",
-			"id": "triggerRules_11",
+			"id": "triggerRules_4",
 			"type": "trigger"
 		}
 	]

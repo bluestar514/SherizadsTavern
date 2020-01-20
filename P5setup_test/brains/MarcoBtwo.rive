@@ -45,33 +45,233 @@
 
 + who are you
 - you should know who i am, don't you keep a ledger or notes of some kind?
+
 + [*]like[*] jasper
+-  not really, i don't like him
 - he is a cheat
 - he isn't an honest guy, shady, I don't see what Alecia sees in him
 
 + [*]jasper[*]
--  you know how I feel... i don't like him, lets change the topic
+- this is now transfred to jasper topic {topic=jasper}
 
-+ [*] jasper
-+ dating [*] jasper [*]
--  I don't like them dating
+> topic jasper
 
-+ [*]why[*]slacker[*]
-- you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
+  + [*] jasper [*] slacker [*]
+  - yeah, he hustles poeple, have not worked an honest day in his life {topic=random}
+
+  + [*] misunderstood [*]
+  - I don't think so, he's just lazy
+
+  + [*]too hard [*]
+  - you think i am being to hard on him, come on you seen him around
+
+  + [*] dating [*]
+  - my daughter of all people {topic=dating}
+  //{topic=datinng} after above line
+
+  + why [*] jasper [*] slacker [*]
+  - well, you saw him swendle in this tavern, he even swindled you out of a drink last i recall
+
+  + how [*] meet [*]
+  - in this tavern... honestly sometimes i feel you lose it more than i do, perhaps you should retire
+
+  + what [*] jasper [*] do [*]
+  - he cheated me in my own clinic! refused payment
+
+  + why[*] hate [*] jasper
+  -  you think i am being to hard on him, don't you but  come on you seen him around
+
+  + what [*]jasper [*] (do|work) [*]
+  - heck if I know..
+
+  + dating [*] jasper [*]
+  -  I don't like them dating
+
+  + [*]why[*]slacker[*]
+  - you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
+
+  + *
+  - anyways, enough about jasper, and this mess lets chat bout something else {topic=random}
+
+< topic
+//-  you know how I feel... i don't like him, lets change the topic
+
 
 + [*](patched hat|hat)[*]
 @ wife
 //zelda stuff
 
-+ [*]midna[*]
-- i... I don't like to talk about her...
-- she scars me, please let's change the topic
-- you know rumors say she can hear you if you mention her name... eek change the topic please
 
-+ [*]midna
-- i... I don't like to talk about her...
-- she scars me, please let's change the topic
-- you know rumors say she can hear you if you mention her name... eek change the topic please
++ [*]midna[*]
+-  agh midna, a topic i do not like to talk about... this is now transfred to midna topic {topic=midna}
+
+> topic midna
+
+  + why not [*]
+  - she scares me, people say she dwells in magic
+
+  + what [*] magic [*]
+  - something dark, i fear
+  + [*] midna [*] magic [*]
+  - a lad in town vanished, some say she did it cause the lad saw her.
+
+  + what [*] see [*]
+  - @ lad
+
+  + [*] lad
+  - Bloody MAGIC, where are your ears
+
+  + [*](yell|rude)
+  - sorry about that, topic makes me scared now and again
+
+  + [*] sorry [*]
+  - don't sweat it
+
+  + [*] magic [*]
+  - i don't know what she does, but her magic is scary indeed
+
+  + [*] scary [*]
+  - She deals inn dark stuff is all I know.
+
+  + [*] misunderstood [*]
+  - I don't think so,
+
+  + [*]too hard [*]
+  - i'm just trying to project myself
+
+  + [*] dating [*]
+  - i don't know who she's dating {topic=dating} after above line
+
+  + why [*] midna [*] scary
+  - dark magic, some say she sacrificed something
+
+  + [*] sacrifices
+  - goats or something
+
+  + [*] sacrifice
+  - goats or something
+
+  + [*] type [*] magic [*]
+  - would not know, i am a doctor not a wizard
+
+  + [*] magic [*] good [*]
+  - that's your opinion, i beleve in science not witch craft
+
+  + why [*] scare [*]
+  - she deals with dark magic and things people should not talk about...
+  - I thought I told you it’s dark magic!, excuse my old self, memory fades sometimes
+
+  + how [*] dark [*]
+  - real dark, sacrifices and evrything
+
+  + what [*] dark magic [*]
+  - would not know, i am a doctor not a wizard
+
+  + *
+  - she scars me, better change the topic {topic=random}
+  - you know rumors say she can hear you if you mention her name... uhh let's  change the topic please {topic=random}
+
+< topic
+
+
+
++ [*] clinic [*]
+- sorry, can you repeat that - transfer to clinic {topic=clinic}
+
+> topic clinic
+
+  + why [*] mess
+  - I just handed the bussniess to my daughter, transtioning takes its toll i guess
+
+  + why [*] (daughter|alecia)
+  - the clinic was with family for ages, it just seems right that alecia takes over
+
+  + who [*] works [*] clinic [*]
+  - right now, it's just alecia and the nurse, babcock
+
+  + who [*] in charge [*]
+  -  alecia ofcourse!
+
+  + [*]babcock[*]
+  - Mrs. Babcock is actually my  late wife's cousin, she needed a job badly
+
+  + [*] wife
+  - lorna, is the love of my life
+
+  + are [*]anyone
+  - no, i am not
+
+  + what [*] help [*]
+  @ h
+  + need [*] help
+  @ h
+  + do [*] help
+  @ h
+
+  + h
+  - no thanks for askin' though
+
+  + how [*] alecia
+  - she's fine
+
+  + [*] alecia  [*] jasper [*]
+  -  alecia and jasper, I don't like them dating, the guy is a slacker {topic=jasper}
+
+  + [*] jasper  [*] alecia  [*]
+  -  alecia and jasper, I don't like them dating, the guy is a slacker {topic=jasper}
+
+
+  + what [*] clinic
+  - we help the villiagers as much as we can
+  - help  poeple of course
+
+  + where [*] located [*]
+  - are you ok, you know where, you used to come alot!
+
+  + when [*] open [*]
+  - it may as well be a 100 years old, it ran in my family... i don't know how long back
+
+  + *
+  - anyways that's enough clinic talk {topic=random}
+
+< topic
+
+
+> topic dating
+
+  + [*] meet [*]
+  - Alecia does not tell me anything, knowing him it's probably a sketchy place
+
+  + [*] like  [*] each other
+  - sigh, looks that away
+
+  + you [*] like it [*]
+  - of course i do not like it
+
+  + [*] jasper [*] misunderstood [*]
+  - I don't think so,
+
+  + [*]too hard [*] jasper [*]
+  - you think i am being to hard on him, come on you seen him around
+
+  + [*] dating [*]
+  - i don't like them dating
+
+  + [*] old [*] alecia
+  - 26, but she will always be my little girl
+
+  + [*] sacrifice
+  - goats or something
+
+  + *
+  - enough about the kid's love life eh, it bothers me to talk about it {topic=random}
+  - enough of date talk please {topic=random}
+
+< topic
+
+
++ [*] midna
+- i don't like her {topic=midna}
 
 + [*]zelda[*]
 - Zelda zelda zelda.... that's right! she's the town butcher! she has the finest meats around
@@ -126,6 +326,8 @@
 + [*] badge [*]
 -  it symobolizes the Doctor Guild!
 
++ [*] bring it up [*]
+- must be getting old, i could have sword i heard you
 + *
 - One more time?
 - Sorry, I didn't catch that.

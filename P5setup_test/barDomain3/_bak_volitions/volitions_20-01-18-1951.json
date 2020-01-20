@@ -1,0 +1,411 @@
+{
+	"fileName": "volitions",
+	"type": "volition",
+	"rules": [
+		{
+			"name": "People want to be better friends with their friends",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 2,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 2,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_5",
+			"type": "volition"
+		},
+		{
+			"name": "People want those they respect to like them",
+			"conditions": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"value": 3
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 3,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_6",
+			"type": "volition"
+		},
+		{
+			"name": "People don't want to be friendly with those that have insulted them",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "insulted",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": false
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_7",
+			"type": "volition"
+		},
+		{
+			"name": "People like those who compliment them",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "complimented",
+					"first": "Beth",
+					"second": "Rehaf",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "Beth",
+					"second": "Rehaf",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_8",
+			"type": "volition"
+		},
+		{
+			"name": "People don't respect those that give bad advice",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "badadvice",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": false
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_9",
+			"type": "volition"
+		},
+		{
+			"name": "People respect those that give good advice",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_10",
+			"type": "volition"
+		},
+		{
+			"name": "People enjoy gossip (But don't respect them)",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "gossipedabout",
+					"first": "someone",
+					"second": "target of gossip",
+					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "other",
+					"second": "someone",
+					"weight": 5,
+					"intentType": true
+				},
+				{
+					"category": "RelationshipDirected",
+					"type": "respect",
+					"first": "other",
+					"second": "someone",
+					"weight": 1,
+					"intentType": false
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_11",
+			"type": "volition"
+		},
+		{
+			"name": "People want to insult those they don't like",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": -3,
+					"operator": "<"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "insulted",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_12",
+			"type": "volition"
+		},
+		{
+			"name": "People want to compiment those they like ",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 3,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complimented",
+					"first": "someone",
+					"second": "other",
+					"weight": 3,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_13",
+			"type": "volition"
+		},
+		{
+			"name": "Everyone is a gossip [[TESTING]]",
+			"conditions": [
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "InternalValues",
+					"type": "gossip",
+					"first": "someone",
+					"second": "other",
+					"weight": 2,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_14",
+			"type": "volition"
+		},
+		{
+			"name": "People try to offer advice to their friends",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 4,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "someone",
+					"second": "other",
+					"weight": 2,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_15",
+			"type": "volition"
+		},
+		{
+			"name": "People complain to those they don't hate",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": 0,
+					"operator": ">"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"weight": 2,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_16",
+			"type": "volition"
+		},
+		{
+			"name": "People Try to give advice to those who complain",
+			"conditions": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "goodadvice",
+					"first": "other",
+					"second": "someone",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_17",
+			"type": "volition"
+		},
+		{
+			"name": "People with problems complain",
+			"conditions": [
+				{
+					"category": "PersonalRecord",
+					"type": "hasproblem",
+					"first": "someone",
+					"value": true
+				},
+				{
+					"category": "Traits",
+					"type": "anyone",
+					"first": "other",
+					"value": true
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"weight": 5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_18",
+			"type": "volition"
+		},
+		{
+			"name": "People don't complain to those they hate",
+			"conditions": [
+				{
+					"category": "RelationshipReciprocal",
+					"type": "friendship",
+					"first": "someone",
+					"second": "other",
+					"value": -3,
+					"operator": "<"
+				}
+			],
+			"effects": [
+				{
+					"category": "SocialRecord",
+					"type": "complainedto",
+					"first": "someone",
+					"second": "other",
+					"weight": -5,
+					"intentType": true
+				}
+			],
+			"origin": "volitions",
+			"id": "volitionRules_19",
+			"type": "volition"
+		}
+	]
+}

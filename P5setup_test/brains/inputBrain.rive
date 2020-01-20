@@ -57,7 +57,7 @@
 //+ [*](jasper|slacker)[*]
 //- he is a good cheat, has not worked an honest day in his life
 
-+ [*](fat|smelly|rude|gross|disgusting|bad|worst|jerk)[*]
++ [*](fat|smelly|rude|gross|disgusting|bad|worst|jerk|fuck|fucker|fat|wimp)[*]
 - insult
 
 + [*](nice|lovely|great|tasty|best)[*]
@@ -68,7 +68,7 @@
 @ how was your day
 + [*] doing good
 @ how was your day
-+ how have you been 
++ how have you been
 @ how was your day
 + [*]how[*]you
 @ how was your day
@@ -91,6 +91,24 @@
 
 + [*]how[*](business|clinic)[*]
 @ how is business going
+
++ what [*] business
+@ how is business going
+
++ [*] jasper
+- tellAboutPerson
+
+//+ [*] clinic [*] mess
+//- tellAboutPerson
+
+//change person to tellAboutObject ince refinmebnts are done
+
++ [*] midna
+- tellAboutPerson
+
++ [*] alicia
+- tellAboutPerson
+
 
 + how is business going
 - askaboutbusiness

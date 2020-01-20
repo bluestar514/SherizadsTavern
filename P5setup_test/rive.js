@@ -39,12 +39,39 @@ function chat(userInput, displayFunction) {
    var initalPlayerInput = inputbot.reply("local-user", userInput);
 
    initalPlayerInput.then(function(ininitalRiveTranlation){
-      if(ininitalRiveTranlation == "catch"){
+      if(ininitalRiveTranlation == "catch"){ //TODO check where catch is set and maybe add cond
         console.log("catching a quick response")
         quickResponse(userInput, displayFunction);
-      }else{
+      } else if (ininitalRiveTranlation == "tellAboutPerson"){
+        testingAskAbout(userInput, displayFunction);
+      }
+      else{
         enactPlayerAction(ininitalRiveTranlation, displayFunction);
-      }    
+      }
+   })
+ }
+//weird doesn't do an action / idela but missebehaving - copied this for now // have it not do an action if it is that tipic 
+ function testingAskAbout(ininitalRiveTranlation, displayFunction){
+   console.log("BOO-- trying from asking about somone ---  " + ininitalRiveTranlation)
+   var townieAction = simpleBot.reply("local-user", ininitalRiveTranlation);
+
+   // console.log("townieActionTranslation"+ townieActionTranslation);
+   townieAction.then(function(townieActionTranslation){
+     console.log("asked about someone -- "+ townieActionTranslation)
+     displayFunction(townieActionTranslation);
+
+     if(Math.random() > .25){
+       enableInput();
+     }else{
+       let currentAction = getBestActionBetween("Marco", "Barkeep");
+       console.log("Townie tries to: "+ currentAction["name"]);
+
+       doAction(currentAction);
+       setTimeout(function () {
+         verbalizeTownieAction(currentAction, displayFunction)
+       }, 14000)
+     }
+
    })
  }
 
@@ -58,11 +85,11 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
     doAction(actionResult) //for the player actions
     actionResult = actionResult["name"]+"response"
 
-    console.log("ensemble expander looking for: "+actionResult)
+    console.log("ensemble expander looking for: "+actionResult)//TODO this one
     var townieActsOn = expandEnsembleActionWithSubject(actionResult, marcoKB)
 
     var townieResponce = bot.reply("local-user", townieActsOn)
-    console.log("rive looking for: "+ townieActsOn)
+    console.log("rive looking for: "+ townieActsOn)//todo fiom here to line 91
     addLogFact(townieActsOn);//adding whatever townie says to notes
 
     townieResponce.then(function(townieResponceTranslation){
@@ -70,7 +97,7 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
      })
   }else{
     actionResult = "nonunderstood statement"
-    
+
     var townieAction = bot.reply("local-user", actionResult);
 
     townieAction.then(function(townieActionTranslation){
@@ -91,6 +118,7 @@ function verbalizeTownieResponse(townieResponceTranslation, displayFunction){
   console.log("Townie responds with: "+ townieResponceTranslation);
   displayFunction(townieResponceTranslation);
 
+  //TODO here add something to stay in that inner loop or exit  out maybe based in nrandom
   let currentAction = getBestActionBetween("Marco", "Barkeep");
   console.log("Townie tries to: "+ currentAction["name"]);
 
@@ -101,6 +129,7 @@ function verbalizeTownieResponse(townieResponceTranslation, displayFunction){
 }
 
 function verbalizeTownieAction(currentAction, displayFunction){
+  //let it finish if it is in inner loop - hpw do we check if in topic in rive
   var expandedAction = expandEnsembleActionWithSubject(currentAction["name"], marcoKB)
   console.log("Townie action expanded to: "+expandedAction);
   //adding it to player KB (future to json)/ just logging for now
@@ -134,6 +163,6 @@ function quickResponse(ininitalRiveTranlation, displayFunction){
         verbalizeTownieAction(currentAction, displayFunction)
       }, 14000)
     }
-    
+
   })
 }

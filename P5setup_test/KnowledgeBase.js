@@ -1,3 +1,4 @@
+var emotion ="happy";
 
 function loadKB(filename){ //shamelessly stolen from ensemble.js
 	var fileResults;
@@ -52,7 +53,8 @@ function getAbout(kb, subjectList){
 }
 
 function simpleTextify(fact, name){
-	console.log(fact)
+	console.log(fact);
+	setEmotion(fact["opinion"]);
 	subject = fact["subject"]
 	if(subject == name){
 		subject = "I"
@@ -69,6 +71,24 @@ function simpleTextify(fact, name){
 		text.push(fact["state"]);
 	}
 	return text.join(" ");
+}
+
+function setEmotion(opinionValue){
+	emotion ="happy";
+	if(opinionValue >= 12 ){
+		emotion ="superHappy";
+	} else if(opinionValue <15 && opinionValue >=1 ){
+		emotion ="Happy";
+	} else if(opinionValue <=0 && opinionValue >= -5)
+		emotion ="sad";
+		else {
+		emotion ="superSad"	;
+		}
+	console.log("the emotion of char is " + emotion);
+}
+
+function getEmotion(){
+	return emotion;
 }
 
 function expandEnsembleActionWithSubject(action, kb){

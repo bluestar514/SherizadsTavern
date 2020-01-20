@@ -1,13 +1,18 @@
 + greet
 @ greetsuccess
 
+
+//add something along the lines of ask about someoenn resoince ( jasper
+//midna ...ect)
+
+
+
 + greetsuccessresponse
 - hey there :)
 - nice to see you!
 - hello
-- *nods while smiling*
 - hello friend
-- keep'
+- hi keep'
 
 + greetfailresponse
 - *marco stares blankly* {weight}
@@ -49,7 +54,7 @@
 - How have you been?
 
 + askaboutfamily
-- How has your family been? 
+- How has your family been?
 - What about your family? Same as always?
 
 + askaboutfamilyresponse *
@@ -75,11 +80,12 @@
 + tellaboutexcitingthing
 - coming soon!!!!
 
-+ tellaboutobject
++ tellaboutobjectresponse
 - coming soon!!!!
+//TODO updatye this
 
-+ tellaboutperson
-- coming soon!!!!
++ tellaboutpersonresponse
+- jasper, is this ever called?
 
 + tellaboutobject
 - coming soon!!!!
@@ -109,4 +115,3 @@
 - One more time?
 - Sorry, I didn't catch that.
 - I'm not sure I heard you right, can you rephrase that for me?
-- Mm
