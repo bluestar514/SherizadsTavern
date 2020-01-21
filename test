@@ -1,0 +1,93 @@
+
+
+
+
+
+
+
++ [*]alicia[*]
+- alicia, ah my looovley daughter!  sorry i trailed off, what was your question again  {topic=alicia}
+
+
+> topic alicia
+  + random
+  - {topic=random}
+
+  + what [*] her [*] hobbies [*]
+  - she does not care much for hobbies except for gardening and  the clinic
+
+  + why [*] (worried|worry)
+  - she's taking too much work
+
+  + why [*] (worried|worry) [*]
+  - she's taking too much work
+
+  + [*] alicia [*] busy [*]
+  - yeah, she works too much, never rests
+
+  + [*] misunderstood [*]
+  - probably
+
+  + [*] too hard [*]
+  - you think i am being to hard on her, come on you seen her do amazing things
+
+  + how [*] meet [*]
+  - that's a silly question
+
+
+  + how [*] old [*]
+  - 27 this year i believe
+
+
+  + [*] dating [*]
+  - my daughter of all people, dating him!. I suppose you have questions about this? {topic=dating}
+
+  + who [*] alicia [*]
+  - my daughter and a fine  patron of your's o'crse
+
+  + why [*] busy [*]
+  - she just took over the clinic, bet it's a lot of work
+
+  + [*] clinic [*]
+  - sorry what was that about the clinic {topic=clinic}
+
+  + [*] sorry [*] busy [*]
+  - yeah, me too
+
+  + what [*] jasper [*]
+  - dating my daughter, robbed my clinic, swindled you and you ask
+
+  + why [*] alicia [*] busy [*]
+  - well, i think I mentioned this to you but she rook over the clinic!
+
+  + why [*] jasper [*] slacker [*]
+  - well, you saw him swindle in this tavern, he even swindled you out of a drink last i recall
+
+  + [*] (coins| fake coins) [*]
+  - yeah, I got some fake coins from him and I assume so did you
+
+  + what [*] jasper [*] do [*]
+  - he cheated me in my own clinic! refused payment
+
+  + why[*] hate [*] jasper
+  -  you think i am being to hard on him, don't you but  come on you seen him around
+
+  + what [*] book
+  -  i donno ask her when she comes in.
+
+  + what [*] alicia [*] (do|work) [*]
+  - took over the family, so proud of her!
+
+  + (yeah|yes)
+  - yeah...
+
+  + [*] (dating|date) [*] jasper [*]
+  -  I don't like them dating
+
+  + [*]why[*]slacker[*]
+  - you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
+
+  + *
+  - anyways, enough about this, i'm missing my daughter too much! {topic=random}
+
+< topic

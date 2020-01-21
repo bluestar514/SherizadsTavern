@@ -1,4 +1,4 @@
-// Substitutions
+// substitutions
 ! sub i'm     = i am
 ! sub im      = i am
 ! sub i'd     = i would
@@ -29,162 +29,189 @@
 ! sub hows   = how is
 ! sub brewer's   = brewers
 
+
 //family stuff
 
-+ [*](brother|family)[*]
-- family can be tough to handle sometimes
 
-//jasper stuff
 
-+ what [*] drink
++ [*] (coins| fake coins) [*]
+- yeah, I got some fake coins from jasper and I assume so did too...
+
++ why [*] (worried|worry) [*]
+- such is life, if we have no worries we are not humans
+
++ what [*] drink [*]
 - gin, my favorite drink!
 - what everyone should order, only gin forever
 
 + [*](cool|nice|awesome|great)[*]
 - yeah...
 
-+ who are you
++ who are you [*]
 - you should know who i am, don't you keep a ledger or notes of some kind?
 
 + [*]like[*] jasper
--  not really, i don't like him
-- he is a cheat
+- not really, i don't like him
+- he is a cheat, what else can I say
 - he isn't an honest guy, shady, I don't see what Alecia sees in him
-
-+ [*]jasper[*]
-- this is now transfred to jasper topic {topic=jasper}
 
 + random
 - {topic=random}
 
-> topic jasper
-  + random
-  - {topic=random}
 
-  + [*] jasper [*] slacker [*]
-  - yeah, he hustles poeple, have not worked an honest day in his life {topic=random}
++ [*] dark arts guild [*]
+- they are a shady bunch, i think midna is a member .
 
-  + [*] misunderstood [*]
-  - I don't think so, he's just lazy
++ [*] candle [*]
+- i don't know, you are the one who lights it
 
-  + [*]too hard [*]
-  - you think i am being to hard on him, come on you seen him around
++ why [*] candle [*]
+- i don't know, you are the one who lights it
 
-  + [*] dating [*]
-  - my daughter of all people {topic=dating}
-  //{topic=datinng} after above line
++ what [*] doctor [*]
+- a healer, what do you mean what kind. there only is one people get hurt we help em.
 
-  + why [*] jasper [*] slacker [*]
-  - well, you saw him swendle in this tavern, he even swindled you out of a drink last i recall
++ [*] retired [*]
+- yeah, fully retied and I am happy
 
-  + how [*] meet [*]
-  - in this tavern... honestly sometimes i feel you lose it more than i do, perhaps you should retire
-
-  + what [*] jasper [*] do [*]
-  - he cheated me in my own clinic! refused payment
-
-  + why[*] hate [*] jasper
-  -  you think i am being to hard on him, don't you but  come on you seen him around
-
-  + what [*]jasper [*] (do|work) [*]
-  - heck if I know..
-
-  + dating [*] jasper [*]
-  -  I don't like them dating
-
-  + [*]why[*]slacker[*]
-  - you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
-
-  + *
-  - anyways, enough about jasper, and this mess lets chat bout something else {topic=random}
-
-< topic
-//-  you know how I feel... i don't like him, lets change the topic
-
++ [*] (bottles| bottle caps) [*]
+- I know you collect them, but I don't have any on me
 
 + [*](patched hat|hat)[*]
 @ wife
 //zelda stuff
 
++ [*] wife [*]
+- lorna, is the love of my life
 
-+ [*]midna[*]
--  agh midna, a topic i do not like to talk about... this is now transfred to midna topic {topic=midna}
++ [*] lorna [*]
+- it pains me to talk about her...
 
-> topic midna
++ who [*] patrons [*]
+- no clue, you have your ledger there
+
++ [*] midna
+- i don't like her, but perhaps you have questions {topic=midna}
+
+
++ [*]zelda[*]
+- Zelda zelda.. that's right! she's the town butcher! she has the finest meats around,  don't know much else about her i'm a'fraid
+
++ [*] zelda
+- Zelda ... that's right! she's the town butcher! she has the finest meats around don't know much else about her i'm a'frai
+
+
+//link stuff
++ [*]link[*]
+- I don't like that kid, he runs an herb shop but is super clumsy...\n
+^ smashes into everything, don't know much else about him
+
++ [*]link
+- I don't like that kid, he runs an herb shop but is super clumsy...\n
+^ smashes into everything, don't know much else about him
+
++ [*]brewers club[*]
+- I might apply there, given how many times i visit this tavern
+- might be interestd in joining myself
+- I know you are a member keep, don't rub it in
+
++[*](gin|gin and tonic)[*]
+- gin, my favorite drink!
+- what everyone should order, only gin forever
+
++ would [*] drink [*]
+- Gin!
+
++ what is your favorite drink [*]
+- gin and tonic!
+
++ [*]favorite drink[*]
+- gin, my favorite drink!
+- what everyone should order, only gin forever
+
++ [*](cat|kitty)[*]
+- any mention of a cat reminds me of my little fluffekins, the most adorable kitty
+- I want to go home to fluffekins
+- too bad your dog is there, or fluffekins would not leave my side
+
++ [*](dog)[*]
+- you should just get a kitty instead
+- dogs are too loud, get a kitty
+
++ [*]favorite book[*]
+- fruit baskets... don't judge
+
++ [*] your wife [*]
+- she passed away sadly, I will always wear this hat as it is the last thing she gave me
+
++  wife
+- my wife passed away sadly, I will always wear this hat as it is the last thing she gave me
+
++ [*] badge [*]
+-  it symobolizes the Doctor Guild!
+
++ [*] bring it up [*]
+- must be getting old, i could have sword i heard you
+
+
++ [*] dating [*]
+- i don't like them dating, any questions {topic=dating}
+
+> topic dating
 
   + random
   - {topic=random}
 
-  + why not [*]
-  - she scares me, people say she dwells in magic
+  + [*] meet [*]
+  - Alecia does not tell me anything, knowing him it's probably a sketchy place
 
-  + what [*] magic [*]
-  - something dark, i fear
-  + [*] midna [*] magic [*]
-  - a lad in town vanished, some say she did it cause the lad saw her.
+  + [*] like  [*] each other
+  - sigh, looks that away
 
-  + what [*] see [*]
-  - @ lad
+  + [*] like  [*]
+  - sigh, looks like they like each other
 
-  + [*] lad
-  - Bloody MAGIC, where are your ears
+  + [*] good thing [*]
+  - maybe, maybe not but my heart says no!
 
-  + [*](yell|rude)
-  - sorry about that, topic makes me scared now and again
+  + [*] yes [*]
+  - well, make it brief please
 
-  + [*] sorry [*]
-  - don't sweat it
+  + you [*] like it [*]
+  - of course i do not like it
 
-  + [*] magic [*]
-  - i don't know what she does, but her magic is scary indeed
-
-  + [*] scary [*]
-  - She deals inn dark stuff is all I know.
-
-  + [*] misunderstood [*]
+  + [*] jasper [*] misunderstood [*]
   - I don't think so,
 
-  + [*]too hard [*]
-  - i'm just trying to project myself
+  + [*]too hard [*] jasper [*]
+  - you think i am being to hard on him, come on you seen him around
 
   + [*] dating [*]
-  - i don't know who she's dating {topic=dating} after above line
+  - i don't like them dating
 
-  + why [*] midna [*] scary
-  - dark magic, some say she sacrificed something
+  + [*] old [*] alicia [*]
+  - 26, but she will always be my little girl
 
-  + [*] sacrifices
-  - goats or something
+  + [*] sacrifice [*]
+  -  sacrifice?
 
-  + [*] sacrifice
-  - goats or something
-
-  + [*] type [*] magic [*]
-  - would not know, i am a doctor not a wizard
-
-  + [*] magic [*] good [*]
-  - that's your opinion, i beleve in science not witch craft
-
-  + why [*] scare [*]
-  - she deals with dark magic and things people should not talk about...
-  - I thought I told you it’s dark magic!, excuse my old self, memory fades sometimes
-
-  + how [*] dark [*]
-  - real dark, sacrifices and evrything
-
-  + what [*] dark magic [*]
-  - would not know, i am a doctor not a wizard
+  + why [*]
+  - not suitable for eachother!
 
   + *
-  - she scars me, better change the topic {topic=random}
-  - you know rumors say she can hear you if you mention her name... uhh let's  change the topic please {topic=random}
+  - enough about the kid's love life eh, it bothers me to talk about it {topic=random}
+  - enough of date talk please {topic=random}
 
 < topic
 
 
 
+
+
+
+
 + [*] clinic [*]
-- sorry, can you repeat that - transfer to clinic {topic=clinic}
+- sorry, something about clinic, can you repeat that please  {topic=clinic}
 
 > topic clinic
 
@@ -192,13 +219,16 @@
   - {topic=random}
 
   + why [*] mess
-  - I just handed the business to my daughter, transtioning takes its toll i guess
+  - I just handed the business to my daughter, transitioning takes its toll i guess
 
-  + why [*] (daughter|alecia)
-  - the clinic was with family for ages, it just seems right that alecia takes over
+  + why [*] mess [*]
+  - I just handed the business to my daughter, transitioning takes its toll i guess
+
+  + why [*] (daughter|alicia)
+  - the clinic was with family for ages, it just seems right that alicia takes over
 
   + who [*] works [*] clinic [*]
-  - right now, it's just alecia and the nurse, babcock
+  - right now, it's just alicia and the nurse, babcock
 
   + who [*] in charge [*]
   -  alecia ofcourse!
@@ -206,8 +236,11 @@
   + [*]babcock[*]
   - Mrs. Babcock is actually my  late wife's cousin, she needed a job badly
 
-  + [*] wife
+  + [*] wife [*]
   - lorna, is the love of my life
+
+  + [*] lorna [*]
+  - it pains me to talk about her...
 
   + are [*]anyone
   - no, i am not
@@ -226,13 +259,18 @@
   - she's fine
 
   + [*] alicia  [*] jasper [*]
-  -  alecia and jasper, I don't like them dating, the guy is a slacker {topic=jasper}
+  -  alecia and jasper, I don't like them dating, the guy is a slacker
+  // {topic=jasper}
 
   + [*] jasper  [*] alicia  [*]
   -  alecia and jasper, I don't like them dating, the guy is a slacker {topic=jasper}
 
 
   + what [*] clinic
+  - we help the villiagers as much as we can
+  - help  poeple of course
+
+  + what [*] clinic [*]
   - we help the villiagers as much as we can
   - help  poeple of course
 
@@ -248,100 +286,383 @@
 < topic
 
 
-> topic dating
+
+
+
+
++ [*]midna[*]
+-  agh midna, a topic i do not like to talk about... what did you say again? {topic=midna}
+
+> topic midna
 
   + random
   - {topic=random}
 
-  + [*] meet [*]
-  - Alecia does not tell me anything, knowing him it's probably a sketchy place
+  + who [*]
+  - a witch, and a member of the dark art's guild I believe
 
-  + [*] like  [*] each other
-  - sigh, looks that away
+  + [*] dark arts guild [*]
+  - they are shady, you hear screams when they gather.
+  - an establishment for witches and the dark arts and magic
 
-  + you [*] like it [*]
-  - of course i do not like it
+  + where [*] gather [*]
+  - in brookback cave
 
-  + [*] jasper [*] misunderstood [*]
+  + [*] brookback[*]
+  - don't even think about going there.
+
+  + where [*] meet [*]
+  - I never met her, just saw her in town one day and went the other direction
+
+  + [*] rumors [*]
+  - i believe them rumors, she is just to scary
+
+  + what [*] rumors [*]
+  - i believe them rumors, sacrifices and all
+
+  + why not [*]
+  - she scares me, people say she dwells in magic
+
+  + what [*] magic [*]
+  - something dark, i fear
+
+  + [*] midna [*] magic [*]
+  - a lad in town vanished, some say she did it cause the lad saw her.
+
+  + what [*] see [*]
+  -  a lad in town vanished, didn't I say this already?.
+
+  + what [*]
+  - perhaps you would like to rephrase that, sorry didn't get you there
+
+  + [*] lad [*]
+  - Bloody MAGIC, where are your ears, he vanished I say vanished!
+
+  + [*] vanished [*]
+  - scary stuff I tell you...
+
+  + [*](yell|rude) [*]
+  - sorry about that, topic makes me scared now and again
+
+  + [*] sorry [*]
+  - don't sweat it
+
+  + [*] magic [*]
+  - i don't know what she does, but her magic is scary indeed
+
+  + [*] scary [*]
+  - She deals inn dark stuff is all I know, I thought you kept a candle at night to keep the monsters at bay
+
+  + what [*] monsters [*]
+  -  I don't know, you believe in monsters not me
+
+  + [*] monsters [*]
+  -  I don't know if they are real, you believe in monsters not me
+
+  + [*] misunderstood [*]
   - I don't think so,
 
-  + [*]too hard [*] jasper [*]
-  - you think i am being to hard on him, come on you seen him around
+  + [*] too hard [*]
+  - i'm just trying to project myself
 
   + [*] dating [*]
-  - i don't like them dating
+  - i don't know who she's dating, why would I
 
-  + [*] old [*] alicia
-  - 26, but she will always be my little girl
+  + why [*] midna [*] scary [*]
+  - dark magic, some say she sacrificed something
 
-  + [*] sacrifice
+  + [*] sacrifices [*]
   - goats or something
 
+  + what [*] (sacrifice|sacrificed)
+  - goats or something
+
+  + what [*] (sacrifice|sacrificed)[*]
+  - goats or something
+
+  +  [*] (sacrifice|sacrificed) [*]
+  - goats or something
+
+  + [*] type [*] magic [*]
+  - would not know, i am a doctor not a wizard
+
+  + [*] magic [*] good [*]
+  - that's your opinion, i believe in science not witch craft
+
+  + [*] science [*]
+  - medical science is the best, witch craft not so much
+
+  + why [*] scare [*]
+  - she deals with dark magic and things people should not talk about...
+  - I thought I told you it’s dark magic!, excuse my old self, memory fades sometimes
+
+  + how [*] dark [*]
+  - real dark, sacrifices and everything
+
+  + [*] dark arts [*]
+  - would not know, i am a doctor not a wizard
+
+  + what [*] dark magic [*]
+  - would not know, i am a doctor not a wizard
+
   + *
-  - enough about the kid's love life eh, it bothers me to talk about it {topic=random}
-  - enough of date talk please {topic=random}
+  - she scars me, better change the topic {topic=random}
+  - you know rumors say she can hear you if you mention her name... uhh let's  change the topic please {topic=random}
 
 < topic
 
 
-+ [*] midna
-- i don't like her {topic=midna}
 
-+ [*]zelda[*]
-- Zelda zelda zelda.... that's right! she's the town butcher! she has the finest meats around
++ [*](brother|family)[*]
+- he's ok nothing much to say about him, we lost touch a while ago {topic=brother}
+- family can be tough to handle sometimes
 
-+ [*]zelda
-- Zelda zelda zelda.... that's right! she's the town butcher! she has the finest meats around
+> topic brother
+  + random
+  - {topic=random}
+
+  + why [*] touch [*]
+  - we just drifted apart, topic is too hard to talk about.. {topic=random}
+
+  + [*] fix [*] relationship
+  -  yeah, i should but I have not seen him in years, I don't even know where he lives
+
+  + who [*] brother [*]
+  - little tony, refused to take the clinic seriously and went on the road. mumbling about being an adventurer.
+
+  + why [*] adventurer
+  - he will get him self killed, if he didn't already.. topic is too hard to talk about, lets change it please {topic=random}
+
+  + [*] adventurer[*]
+  - he will get him self killed, if he didn't already.. topic is too hard to talk about, lets change it please {topic=random}
+
+  + what is [*] name[*]
+  - little tony, refused to take the clinic seriously and went on the road. mumbling about being an adventurer.
+
+  + [*] hate  [*] him [*]
+  - I don't hate him... just disappointed
+
+  + do [*] hate  [*] him
+  - I don't hate him... just disappointed
+
+  + where [*] he [*]
+  - merlyin only knows...
+
+  + what [*] do [*]
+  -  mumbled about being an adventurer and took off...
+
+  + what [*] (brother|tony) [*] do [*]
+  - little tony, refused to take the clinic seriously and went on the road. mumbling about being an adventurer.
+  - left the family
+
+  + *
+  - anyways, enough about my brother and his ways, brings nothing but heart ache {topic=random}
+
+< topic
 
 
-//link stuff
-+ [*]link[*]
-- I don't like that kid, he runs an herb shop but is super clumsy...\n
-^ smashes into everything
 
-+ [*]link
-- I don't like that kid, he runs an herb shop but is super clumsy...\n
-^ smashes into everything
 
-+ [*]brewers club[*]
-- I might apply there, given how many times i visit this tavern
-- might be interestd in joining myself
-- I know you are a member keep, don't rub it in
 
-+[*](gin|gin and tonic)[*]
-- gin, my favorite drink!
-- what everyone should order, only gin forever
 
-+ what is your favorite drink [*]
-- gin and tonic!
 
-+ [*]favorite drink[*]
-- gin, my favorite drink!
-- what everyone should order, only gin forever
 
-+ [*]cat[*]
-- any mention of a cat reminds me of my little fluffekins, the most adorable kitty
-- I want to go home to fluffekins
-- too bad your dog is there, or fluffekins would not leave my side
++ [*]jasper[*]
+- jasper, jasper jasper, sorry what was your question again  {topic=jasper}
 
-+ [*]dog[*]
-- you should just get a kitty instead
-- dogs are too loud
 
-+ [*]favorite book[*]
-- fruit baskets... don't judge
+> topic jasper
+  + random
+  - {topic=random}
 
-+ [*] your wife [*]
-- she passed away sadly, I will always wear this hat as it is the last thing she gave me
+  + what [*] his [*] hobbies [*]
+  - why are you asking me
 
-+  wife
-- my wife passed away sadly, I will always wear this hat as it is the last thing she gave me
+  + why [*] (worried|worry)
+  - he's a cheat and is dating my daughter
 
-+ [*] badge [*]
--  it symobolizes the Doctor Guild!
+  + why [*] (worried|worry) [*]
+  - he's a cheat and is dating my daughter
 
-+ [*] bring it up [*]
-- must be getting old, i could have sword i heard you
+  + [*] jasper [*] slacker [*]
+  - yeah, he hustles people, have not worked an honest day in his life {topic=random}
+
+  + [*] misunderstood [*]
+  - I don't think so, he's just lazy
+
+  + [*]too hard [*]
+  - you think i am being to hard on him, come on you seen him around
+
+  + how [*] meet [*]
+  - at my clinic sadly...
+
+  + when [*] meet [*]
+  - at my clinic a few years ago sadly... you have the pleasure of knowing him too you know
+
+  + how [*] old [*]
+  - don't ask me, heck if i know
+
+  + what [*] he
+  - a bloody human, what else? if he was an elf i'd love it
+
+  + how [*] old [*]
+  - don't ask me, heck if i know
+
+  + what [*] he [*]
+  - a bloody human, what else? if he was an elf i'd love it
+
+  + [*] dating [*]
+  - my daughter of all people, dating him. I suppose you have questions about this? {topic=dating}
+
+  + who [*] he [*]
+  - a patron of your's a no good cheat is what he is
+
+  + who [*] jasper [*]
+  - a patron of your's a no good cheat is what he is
+
+  + why [*] cheat
+  - well, you saw him swindle in this tavern, he even swindled you out of a drink last i recall
+
+  + [*] cheat
+  - well, you saw him swindle in this tavern, he even swindled you out of a drink last i recall
+
+  + [*] cheat [*]
+  - well, you saw him swindle in this tavern, he even swindled you out of a drink last i recall
+
+  + what [*] jasper [*]
+  - dating my daughter, robbed my clinic, swindled you and you ask
+
+  + why [*] jasper [*] slacker [*]
+  - well, you saw him swindle in this tavern, he even swindled you out of a drink last i recall
+
+  + [*] (coins| fake coins) [*]
+  - yeah, I got some fake coins from him and I assume so did you
+
+  + how [*] meet [*]
+  - in this tavern... honestly sometimes i feel you lose it more than i do, perhaps you should retire
+
+  + what [*] jasper [*] do [*]
+  - he cheated me in my own clinic! refused payment
+
+  + why[*] hate [*] jasper
+  -  you think i am being to hard on him, don't you but  come on you seen him around
+
+  + what [*] book
+  - Jasper's ? i donno ask him when he comes in
+
+  + what [*]jasper [*] (do|work) [*]
+  - heck if I know..
+
+  + (yeah|yes)
+  - yeah...
+
+  + [*] (dating|date) [*] jasper [*]
+  -  I don't like them dating
+
+  + [*]why[*]slacker[*]
+  - you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
+
+  + *
+  - anyways, enough about jasper, and this mess lets chat bout something else {topic=random}
+
+< topic
+
+
+
++ [*]alicia[*]
+- alicia, ah my looovley daughter!  sorry i trailed off, what was your question again  {topic=alicia}
+
+
+> topic alicia
+  + random
+  - {topic=random}
+
+  + what [*] her [*] hobbies [*]
+  - she does not care much for hobbies except for gardening and  the clinic
+
+  + why [*] (worried|worry)
+  - she's taking too much work
+
+  + why [*] (worried|worry) [*]
+  - she's taking too much work
+
+  + [*] alicia [*] busy [*]
+  - yeah, she works too much, never rests
+
+  + [*] misunderstood [*]
+  - probably
+
+  + [*] too hard [*]
+  - you think i am being to hard on her, come on you seen her do amazing things
+
+  + how [*] meet [*]
+  - that's a silly question
+
+
+  + how [*] old [*]
+  - 27 this year i believe
+
+
+  + [*] dating [*]
+  - my daughter of all people, dating him!. I suppose you have questions about this? {topic=dating}
+
+  + who [*] alicia [*]
+  - my daughter and a fine  patron of your's o'crse
+
+  + why [*] busy [*]
+  - she just took over the clinic, bet it's a lot of work
+
+  + [*] clinic [*]
+  - sorry what was that about the clinic {topic=clinic}
+
+  + [*] sorry [*] busy [*]
+  - yeah, me too
+
+  + what [*] jasper [*]
+  - dating my daughter, robbed my clinic, swindled you and you ask
+
+  + why [*] alicia [*] busy [*]
+  - well, i think I mentioned this to you but she rook over the clinic!
+
+  + why [*] jasper [*] slacker [*]
+  - well, you saw him swindle in this tavern, he even swindled you out of a drink last i recall
+
+  + [*] (coins| fake coins) [*]
+  - yeah, I got some fake coins from him and I assume so did you
+
+  + what [*] jasper [*] do [*]
+  - he cheated me in my own clinic! refused payment
+
+  + why[*] hate [*] jasper
+  -  you think i am being to hard on him, don't you but  come on you seen him around
+
+  + what [*] book
+  -  i donno ask her when she comes in.
+
+  + what [*] alicia [*] (do|work) [*]
+  - took over the family, so proud of her!
+
+  + (yeah|yes)
+  - yeah...
+
+  + [*] (dating|date) [*] jasper [*]
+  -  I don't like them dating
+
+  + [*]why[*]slacker[*]
+  - you see him hustling people at your tavern and never works an honest day in his life and you ask that question!!
+
+  + *
+  - anyways, enough about this, i'm missing my daughter too much! {topic=random}
+
+< topic
+
+
+
+
+
+
+
+
 + *
 - One more time?
 - Sorry, I didn't catch that.

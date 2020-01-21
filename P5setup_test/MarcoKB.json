@@ -11,6 +11,114 @@
 		"object"	: "doctor",
 		"opinion"	: -12
 	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "took over",
+		"object"	: "family business",
+		"opinion"	: 7
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "naps",
+		"location"	: "river",
+		"opinion"	: 3
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "paints",
+		"time"		: "afternoon",
+		"opinion"	: 4
+	},
+	{
+		"subject"	: "Alicia",
+		"state"		: "busy",
+		"opinion"	: -10
+	},
+	{
+		"subject"	: "Clinic",
+		"state"		: "mess",
+		"opinion"	: -4
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "collecting",
+		"object"	: "herbs",
+		"opinion"	: 0
+	},
+	{
+		"subject"	: "Marco",
+		"state"		: "in guild",
+		"object"	: "Doctor's Guild",
+		"opinion"	: 4
+	},
+	{
+		"subject"	: "Marco",
+		"object"	: "gin",
+		"opinion"	: 7
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "owns",
+		"object"	: "cat",
+		"opinion"	: 7
+	},
+	{
+		"subject"	: "Barkeep",
+		"action"	: "owns",
+		"object"	: "dog",
+		"opinion"	: 1
+	},
+	{
+		"subject"	: "Marco",
+		"object"	: "Book: Fruits Basket",
+		"opinion"	: 8
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "dating",
+		"object"	: "Jasper",
+		"opinion"	: -7
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "hates ",
+		"object"	: "dogs",
+		"opinion"	: -7
+	},
+	{
+		"subject"	: "Jasper",
+		"state"		: "slacker",
+		"opinion"	: -3
+	},
+	{
+		"subject"	: "midna",
+		"state"		: "scary",
+		"opinion"	: -3
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "owns",
+		"object"	: "patched hat",
+		"opinion"	: 10
+	},
+	{
+		"subject"	: "Wife",
+		"action"	: "gave",
+		"object"	: "patched hat",
+		"opinion"	: 15
+	},
+	{
+		"subject"	: "Marco",
+		"action"	: "owns",
+		"object"	: "cross badge",
+		"opinion"	: 4
+	},
+	{
+		"subject"	: "Alicia",
+		"action"	: "took over",
+		"object"	: "clinic",
+		"opinion"	: 7
+	},
 
 	{
 		"subject"	: "cross badge",

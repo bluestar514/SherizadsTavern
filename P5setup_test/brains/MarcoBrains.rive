@@ -2,11 +2,6 @@
 @ greetsuccess
 
 
-//add something along the lines of ask about someoenn resoince ( jasper
-//midna ...ect)
-
-
-
 + greetsuccessresponse
 - hey there :)
 - nice to see you!
@@ -85,7 +80,7 @@
 //TODO updatye this
 
 + tellaboutpersonresponse
-- jasper, is this ever called?
+- jasper ?
 
 + tellaboutobject
 - coming soon!!!!
@@ -115,6 +110,6 @@
 - I don't have anything else to say about that.
 
 + *
-- One more time?
+- one more time?
 - Sorry, I didn't catch that.
 - I'm not sure I heard you right, can you rephrase that for me?
