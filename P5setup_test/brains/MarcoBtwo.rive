@@ -32,7 +32,20 @@
 
 //family stuff
 
++ why [*] sad [*]
+- dealing with the clinic, jasper. i guess it's just a lot right now
 
++ [*] happy [*]
+- i am happy,  i should focus on being happier right now and forget about bothersome topics
+
++ what [*] relax [*]
+-  I like to paint
+
++ what [*] paint [*]
+- mostly landscapes
+
++ [*] (relaxing|relax) [*]
+-   I like to paint
 
 + [*] (coins| fake coins) [*]
 - yeah, I got some fake coins from jasper and I assume so did too...
@@ -47,6 +60,9 @@
 + [*](cool|nice|awesome|great)[*]
 - yeah...
 
++ [*] (coins| fake coins) [*]
+- yeah, I got some fake coins from him and I assume so did you
+
 + who are you [*]
 - you should know who i am, don't you keep a ledger or notes of some kind?
 
@@ -54,6 +70,9 @@
 - not really, i don't like him
 - he is a cheat, what else can I say
 - he isn't an honest guy, shady, I don't see what Alecia sees in him
+
++ [*] (love|like) [*] (dog|dogs) [*]
+- I hate em, my kitty is far better than any dog
 
 + random
 - {topic=random}
@@ -102,7 +121,7 @@
 
 
 //link stuff
-+ [*]link[*]
++ [*]link [*]
 - I don't like that kid, he runs an herb shop but is super clumsy...\n
 ^ smashes into everything, don't know much else about him
 
@@ -111,8 +130,8 @@
 ^ smashes into everything, don't know much else about him
 
 + [*]brewers club[*]
-- I might apply there, given how many times i visit this tavern
-- might be interestd in joining myself
+- I might apply there, given how many times i visit this tavern, you would know more about that though 
+- might be interestd in joining myself, you would know more about that though
 - I know you are a member keep, don't rub it in
 
 +[*](gin|gin and tonic)[*]
@@ -134,6 +153,9 @@
 - I want to go home to fluffekins
 - too bad your dog is there, or fluffekins would not leave my side
 
++ [*] fluffekins [*]
+- our little kitty! i love her to bits
+
 + [*](dog)[*]
 - you should just get a kitty instead
 - dogs are too loud, get a kitty
@@ -153,6 +175,8 @@
 + [*] bring it up [*]
 - must be getting old, i could have sword i heard you
 
++ [*] (hustle|hustles) [*]
+- jasper is a cheat, refused payment at my clinic, he even gave you some fake coins.
 
 + [*] dating [*]
 - i don't like them dating, any questions {topic=dating}
@@ -169,7 +193,10 @@
   - sigh, looks that away
 
   + [*] like  [*]
-  - sigh, looks like they like each other
+  - sigh, looks like they like each other, it's just my gut telling me he's no good
+
+  + why [*](no good|bad) [*]
+  - it's jasper, you know him, he even hustled you {topic=jasper}
 
   + [*] good thing [*]
   - maybe, maybe not but my heart says no!
@@ -413,8 +440,10 @@
 
 
 
-+ [*](brother|family)[*]
++ [*] your [*](brother|family)[*]
 - he's ok nothing much to say about him, we lost touch a while ago {topic=brother}
+
++ [*] my [*](brother|family)[*]
 - family can be tough to handle sometimes
 
 > topic brother
@@ -468,12 +497,18 @@
 
 
 + [*]jasper[*]
-- jasper, jasper jasper, sorry what was your question again  {topic=jasper}
+- jasper, jasper jasper, sorry can you repeat your question again  {topic=jasper}
 
 
 > topic jasper
   + random
   - {topic=random}
+
+  + do [*] know [*]
+  - the patron of yours, you know the one that hustles people, he still owes me
+
+  + what [*] (owe|payment|pay) [*]
+  - he owes me for my services at the clinic
 
   + what [*] his [*] hobbies [*]
   - why are you asking me
@@ -602,6 +637,14 @@
   + how [*] old [*]
   - 27 this year i believe
 
+  + what [*] doing [*]
+  - she took over being a doctor, so proud!
+
+  + [*] (dog|dogs) [*]
+  - alicia hates em, just like her dad!
+
+  + do [*] dog [*]
+  - o'course not! just our great little kitty
 
   + [*] dating [*]
   - my daughter of all people, dating him!. I suppose you have questions about this? {topic=dating}
