@@ -42,15 +42,15 @@ function chat(userInput, displayFunction) {
       if(ininitalRiveTranlation == "catch"){ //TODO check where catch is set and maybe add cond
         console.log("catching a quick response")
         quickResponse(userInput, displayFunction);
-      } else if (ininitalRiveTranlation == "tellAboutPerson"){
-        testingAskAbout(userInput, displayFunction);
-      }
-      else{
+      // } else if (ininitalRiveTranlation == "tellAboutPerson"){
+      //   testingAskAbout(userInput, displayFunction);
+      // }
+    }else{
         enactPlayerAction(ininitalRiveTranlation, displayFunction);
       }
    })
  }
-//weird doesn't do an action / idela but missebehaving - copied this for now // have it not do an action if it is that tipic 
+// //weird doesn't do an action / idela but missebehaving - copied this for now // have it not do an action if it is that tipic
  function testingAskAbout(ininitalRiveTranlation, displayFunction){
    console.log("BOO-- trying from asking about somone ---  " + ininitalRiveTranlation)
    var townieAction = simpleBot.reply("local-user", ininitalRiveTranlation);
@@ -87,6 +87,10 @@ function enactPlayerAction(ininitalRiveTranlation, displayFunction){
 
     console.log("ensemble expander looking for: "+actionResult)//TODO this one
     var townieActsOn = expandEnsembleActionWithSubject(actionResult, marcoKB)
+
+    if(townieActsOn.includes("no new info")){
+      townieActsOn = "no new info";
+    }
 
     var townieResponce = bot.reply("local-user", townieActsOn)
     console.log("rive looking for: "+ townieActsOn)//todo fiom here to line 91
@@ -133,6 +137,11 @@ function verbalizeTownieAction(currentAction, displayFunction){
   var expandedAction = expandEnsembleActionWithSubject(currentAction["name"], marcoKB)
   console.log("Townie action expanded to: "+expandedAction);
   //adding it to player KB (future to json)/ just logging for now
+
+  if(expandedAction.includes("no new info")){
+    expandedAction = "no new info";
+  }
+
   addLogFact(expandedAction);
   var townieAction = bot.reply("local-user", expandedAction);
 
@@ -155,6 +164,8 @@ function quickResponse(ininitalRiveTranlation, displayFunction){
     if(Math.random() > .25){
       enableInput();
     }else{
+      simpleBot.reply("local-user", "random");
+      
       let currentAction = getBestActionBetween("Marco", "Barkeep");
       console.log("Townie tries to: "+ currentAction["name"]);
 

@@ -54,7 +54,12 @@
 + [*]jasper[*]
 - this is now transfred to jasper topic {topic=jasper}
 
++ random
+- {topic=random}
+
 > topic jasper
+  + random
+  - {topic=random}
 
   + [*] jasper [*] slacker [*]
   - yeah, he hustles poeple, have not worked an honest day in his life {topic=random}
@@ -106,6 +111,9 @@
 -  agh midna, a topic i do not like to talk about... this is now transfred to midna topic {topic=midna}
 
 > topic midna
+
+  + random
+  - {topic=random}
 
   + why not [*]
   - she scares me, people say she dwells in magic
@@ -180,8 +188,11 @@
 
 > topic clinic
 
+  + random
+  - {topic=random}
+
   + why [*] mess
-  - I just handed the bussniess to my daughter, transtioning takes its toll i guess
+  - I just handed the business to my daughter, transtioning takes its toll i guess
 
   + why [*] (daughter|alecia)
   - the clinic was with family for ages, it just seems right that alecia takes over
@@ -211,13 +222,13 @@
   + h
   - no thanks for askin' though
 
-  + how [*] alecia
+  + how [*] alicia
   - she's fine
 
-  + [*] alecia  [*] jasper [*]
+  + [*] alicia  [*] jasper [*]
   -  alecia and jasper, I don't like them dating, the guy is a slacker {topic=jasper}
 
-  + [*] jasper  [*] alecia  [*]
+  + [*] jasper  [*] alicia  [*]
   -  alecia and jasper, I don't like them dating, the guy is a slacker {topic=jasper}
 
 
@@ -239,6 +250,9 @@
 
 > topic dating
 
+  + random
+  - {topic=random}
+
   + [*] meet [*]
   - Alecia does not tell me anything, knowing him it's probably a sketchy place
 
@@ -257,7 +271,7 @@
   + [*] dating [*]
   - i don't like them dating
 
-  + [*] old [*] alecia
+  + [*] old [*] alicia
   - 26, but she will always be my little girl
 
   + [*] sacrifice

@@ -7,6 +7,9 @@ function loadKB(filename){ //shamelessly stolen from ensemble.js
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			fileResults = JSON.parse(xmlhttp.responseText);
+			for (var fact in fileResults) {
+				fact["used"] = false;
+			}
 		}
 	}
 
@@ -17,13 +20,16 @@ function loadKB(filename){ //shamelessly stolen from ensemble.js
 }
 
 function pickRandom(array){
-	return array[Math.floor(Math.random()*array.length)];
+	if(array.length == 0) return null;
+	var element = array[Math.floor(Math.random()*array.length)];
+	element.used = true;
+	return element;
 }
 
 function getWorry(kb){
 	var worries = [];
 	for(var i=0; i< kb.length; i++){
-		if(kb[i].opinion < 0){
+		if(kb[i].opinion < 0 && !kb[i].used){
 			worries.push(kb[i]);
 		}
  	}
@@ -33,7 +39,7 @@ function getWorry(kb){
 function getGoodThing(kb){
 	var goodies = [];
 	for(var i=0; i< kb.length; i++){
-		if(kb[i].opinion > 0){
+		if(kb[i].opinion > 0 && !kb[i].used){
 			goodies.push(kb[i]);
 		}
  	}
@@ -44,8 +50,9 @@ function getAbout(kb, subjectList){
 	var about = [];
 
 	for(var i=0; i<kb.length; i++){
-		if(subjectList.includes(kb[i]["subject"].toLowerCase())
-			|| ("object" in kb[i] && subjectList.includes(kb[i]["object"].toLowerCase()))){
+		if(!kb[i].used && (
+			subjectList.includes(kb[i]["subject"].toLowerCase())
+			|| ("object" in kb[i] && subjectList.includes(kb[i]["object"].toLowerCase())))){
 			about.push(kb[i])
 		}
 	}
@@ -54,6 +61,10 @@ function getAbout(kb, subjectList){
 
 function simpleTextify(fact, name){
 	console.log(fact);
+
+	if(fact == null) return "no new info";
+
+
 	setEmotion(fact["opinion"]);
 	subject = fact["subject"]
 	if(subject == name){

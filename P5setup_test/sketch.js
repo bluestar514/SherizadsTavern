@@ -144,7 +144,6 @@ function formatRectangle(){
 }
 
 function drawEmotion(){
-  console.log("current emotion is "+ getEmotion());
   var emote = getEmotion();
 
   if(emote=="superHappy"){

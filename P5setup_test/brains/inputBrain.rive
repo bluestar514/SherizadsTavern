@@ -77,13 +77,10 @@
 - askaboutday
 
 //ask about family
-+ [*]how[*](family|alicia)
++ [*]how[*](family)
 @ how is the family
 
-+[*](family|alicia)[*]
-@ how is the family
-
-+ [*]married
++[*](family)[*]
 @ how is the family
 
 + how is the family
@@ -96,7 +93,7 @@
 @ how is business going
 
 + [*] jasper
-- tellAboutPerson
+- catch
 
 //+ [*] clinic [*] mess
 //- tellAboutPerson
@@ -104,10 +101,10 @@
 //change person to tellAboutObject ince refinmebnts are done
 
 + [*] midna
-- tellAboutPerson
+- catch
 
 + [*] alicia
-- tellAboutPerson
+- catch
 
 
 + how is business going
