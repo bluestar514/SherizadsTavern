@@ -32,6 +32,12 @@
 
 //family stuff
 
++[*] how are [*]
+- can't complain. how are you?
+
++ i am [*] (good|great) [*]
+- that's's nice to hear
+
 + why [*] sad [*]
 - dealing with the clinic, jasper. i guess it's just a lot right now
 
@@ -44,8 +50,17 @@
 + what [*] paint [*]
 - mostly landscapes
 
++ [*] why
+- why is but the question, could you be more specfic please
+
 + [*] (relaxing|relax) [*]
 -   I like to paint
+
++ [*] art [*]
+- the only kind of art I like is landscape, non of that dark art stuff midna does
+
++ [*] paint [*]
+- I'm the only one in the family who likes to paint
 
 + [*] (coins| fake coins) [*]
 - yeah, I got some fake coins from jasper and I assume so did too...
@@ -130,7 +145,7 @@
 ^ smashes into everything, don't know much else about him
 
 + [*]brewers club[*]
-- I might apply there, given how many times i visit this tavern, you would know more about that though 
+- I might apply there, given how many times i visit this tavern, you would know more about that though
 - might be interestd in joining myself, you would know more about that though
 - I know you are a member keep, don't rub it in
 
@@ -140,6 +155,12 @@
 
 + would [*] drink [*]
 - Gin!
+
++ [*] drink [*]
+- yeah, gin and tonic - the ultimate best drink!
+
++ [*] (vodka|whisky|wine)
+- come on keep, you know me, gin all day long
 
 + what is your favorite drink [*]
 - gin and tonic!
@@ -166,11 +187,14 @@
 + [*] your wife [*]
 - she passed away sadly, I will always wear this hat as it is the last thing she gave me
 
-+  wife
++  [*] wife [*]
 - my wife passed away sadly, I will always wear this hat as it is the last thing she gave me
 
 + [*] badge [*]
 -  it symobolizes the Doctor Guild!
+
++ [*] doctor guild [*]
+- a group of doctors, kinda like your brewer's guild but for docs.
 
 + [*] bring it up [*]
 - must be getting old, i could have sword i heard you
@@ -230,10 +254,6 @@
   - enough of date talk please {topic=random}
 
 < topic
-
-
-
-
 
 
 
@@ -320,6 +340,9 @@
 + [*]midna[*]
 -  agh midna, a topic i do not like to talk about... what did you say again? {topic=midna}
 
++ [*] midna [*] scary [*]
+- she deals in dark stuff, can talk a but about her but not alot. i get scared of this topic {topic=midna}
+
 > topic midna
 
   + random
@@ -377,7 +400,7 @@
   + [*] magic [*]
   - i don't know what she does, but her magic is scary indeed
 
-  + [*] scary [*]
+  + [*] (scary|scared) [*]
   - She deals inn dark stuff is all I know, I thought you kept a candle at night to keep the monsters at bay
 
   + what [*] monsters [*]
@@ -426,11 +449,19 @@
   + how [*] dark [*]
   - real dark, sacrifices and everything
 
-  + [*] dark arts [*]
-  - would not know, i am a doctor not a wizard
+  + [*] (dark arts| dark art| art) [*]
+  - would not know, i am a doctor not a wizard. her arts are inn pure witchcraft
 
-  + what [*] dark magic [*]
-  - would not know, i am a doctor not a wizard
+  + what [*] (dark magic|witchcraft) [*]
+  - i don't do magic, I would not know but screams are an indication
+
+  + (of what|indication) [*]
+  -  the bloody darkness and sacrifices that goes around.
+
+  + [*] screams [*]
+  - people heard screams it's just too scary to think about
+
+  
 
   + *
   - she scars me, better change the topic {topic=random}
@@ -440,18 +471,29 @@
 
 
 
+
 + [*] your [*](brother|family)[*]
-- he's ok nothing much to say about him, we lost touch a while ago {topic=brother}
+- he's ok nothing much to say about him, we lost touch a while ago, what do you wanna know  {topic=brother}
 
 + [*] my [*](brother|family)[*]
 - family can be tough to handle sometimes
+- family is as always is i guess.
+
++ [*] brother [*] (good|health) [*]
+- that's nice to hear, unlike my brother
 
 > topic brother
   + random
   - {topic=random}
 
+  + why [*]
+  -  we just drifted apart,
+
   + why [*] touch [*]
   - we just drifted apart, topic is too hard to talk about.. {topic=random}
+
+  + why [*] drift [*]
+  - he wanted to be an adventurer of all things
 
   + [*] fix [*] relationship
   -  yeah, i should but I have not seen him in years, I don't even know where he lives
@@ -459,7 +501,7 @@
   + who [*] brother [*]
   - little tony, refused to take the clinic seriously and went on the road. mumbling about being an adventurer.
 
-  + why [*] adventurer
+  + why [*] adventurer [*]
   - he will get him self killed, if he didn't already.. topic is too hard to talk about, lets change it please {topic=random}
 
   + [*] adventurer[*]
@@ -491,8 +533,8 @@
 
 
 
-
-
++ how [*] work [*]
+- work is work, but i am retired
 
 
 
